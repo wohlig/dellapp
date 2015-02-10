@@ -1,0 +1,145 @@
+/* Empty. Add your own CSS if you like */
+
+.tac {
+    font-size: 30px;
+}
+
+.menumain {
+    text-align: center;
+    color: #fff;
+    background: #274679;
+    border: 0px;
+}
+
+.menumain a.item-content {
+    padding: 16px 15px 16px 16px;
+    background: #274679;
+}
+
+.main-menu {
+    background: #274679;
+}
+
+.menu .bar-header {
+    z-index: 0;
+}
+
+.bckgrnd {
+    background: url('../img/background.png') no-repeat cover;
+}
+
+.logo-center {
+    text-align: center;
+    padding: 20px 0px 20px 0;
+}
+
+.button-stnd {
+    text-align: center;
+    padding: 5px 20px 50px 20px;
+}
+
+.button.button-light {
+    border-color: #0085c3;
+    background-color: #fff;
+    color: #0085c3;
+    border-radius: 3;
+    width: 120px;
+}
+
+.button-small {
+    padding: 0px 20px 0px;
+    font-size: 14px;
+    line-height: 26px;
+    width: 120px;
+}
+
+.button-stnd1 {
+    margin-right: 40px;
+}
+
+.login-down {
+    text-align: center;
+    background: #7ab800;
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+    padding: 20px 0 25px 0px;
+    min-height: 230px;
+}
+
+span.ion-checkmark-round.float-left {
+    text-align: center;
+}
+
+span.ion-checkmark-round.float-right {
+    float: right;
+    width: 50%;
+}
+
+.button-fb {
+    color: #7AB800;
+    text-transform: lowercase;
+    padding: 0px 10px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button-twit {
+    color: #7AB800;
+    text-transform: lowercase;
+    border-radius: 5px;
+    padding: 0px 10px 0px;
+    font-size: 14px;
+}
+
+.button.button-light:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #0085c3;
+}
+
+.login-down {
+    text-align: center;
+}
+
+.button-fb span {
+    padding-right: 8px;
+    font-size: 17px;
+}
+
+.button-twit span {
+    padding-right: 6px;
+    font-size: 18px;
+}
+
+.login-down p {
+    color: #fff;
+}
+
+.float-right,
+.float-left {
+    color: #fff;
+}
+
+.loginstep p {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.button-tickfb {
+    float: left;
+    width: 50%;
+}
+.button-ticktwit {
+    float: left;  
+    width: 50%;
+}
+.centertick {
+padding-bottom: 3px;
+}
+.connectwith {
+padding-top: 19%;
+}
+.loginstep .ion-record {
+color: #fff;
+}
