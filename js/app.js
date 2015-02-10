@@ -50,8 +50,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl: "templates/login.html",
         controller: 'LoginCtrl'
     })
-
+    
+    
+ .state('welcome', {
+        url: "/welcome",
+        templateUrl: "templates/welcome.html",
+        controller: 'WelcomeCtrl'
+    })
+    
+     .state('landing', {
+        url: "/landing",
+        templateUrl: "templates/landing.html",
+        controller: 'LandingCtrl'
+    })
     ;
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });
+
