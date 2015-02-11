@@ -6,6 +6,10 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $stateParams) {})
 
+.controller('Login1Ctrl', function($scope, $stateParams) {})
+
 .controller('WelcomeCtrl', function($scope, $stateParams) {})
 
-.controller('LandingCtrl', function($scope, $stateParams) {});
+.controller('LandingCtrl', function($scope, $stateParams) {})
+
+.controller('ProfileCtrl', function($scope, $stateParams) {});

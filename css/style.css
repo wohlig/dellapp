@@ -58,7 +58,7 @@
     background: #7ab800;
     margin: 20px 20px 20px 20px;
     border-radius: 20px;
-    padding: 20px 0 25px 0px;
+    padding: 25px 0 28px 0px;
     min-height: 230px;
 }
 
@@ -72,20 +72,24 @@ span.ion-checkmark-round.float-right {
 }
 
 .button-fb {
-    color: #7AB800;
+    border: 1px solid #ddd;
     text-transform: lowercase;
     padding: 0px 10px 0px;
     font-size: 14px;
     border-radius: 5px;
     text-align: center;
+    color: #fff;
+    background: #7AB800;
 }
 
 .button-twit {
-    color: #7AB800;
+    background: #7AB800;
     text-transform: lowercase;
     border-radius: 5px;
     padding: 0px 10px 0px;
     font-size: 14px;
+    border: 1px solid #ddd;
+    color: #F8F8F8;
 }
 
 .button.button-light:hover {
@@ -110,6 +114,9 @@ span.ion-checkmark-round.float-right {
 
 .login-down p {
     color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 5px;
 }
 
 .float-right,
@@ -130,7 +137,8 @@ span.ion-checkmark-round.float-right {
 padding-bottom: 3px;
 }
 .connectwith {
-padding-top: 19%;
+padding-top: 12%;
+padding-bottom: 5px;
 }
 .loginstep .ion-record {
 color: #fff;
@@ -221,4 +229,85 @@ padding: 10px 10% 25px 10%;
 
 .headlanding {
     padding-bottom: 20px;
+}
+
+.input label.item.item-input input {
+text-align: center;
+background: #7AB800;
+color: #fff;
+border-bottom: 1px solid #fff;
+padding: 0px 0px;
+}
+
+.item item-input {
+    background: #7AB800;
+}
+
+label.item.item-input {
+    background: #7AB800;
+    border: 0px solid #ddd;
+    padding: 6px 27px;
+}
+
+.signnow {
+padding: 25px 0 0 0;
+}
+.button-signin {
+color: #7AB800;
+text-transform: uppercase;
+padding: 0px 10px 0px;
+font-size: 14px;
+border-radius: 5px;
+text-align: center;
+}
+.login-circle {
+    text-align: center;
+    padding-top: 20px;
+}
+
+span.ion-record.ion-circle1 {
+    color: #7AB800;
+    margin: 0 5px;
+}
+
+
+  .input label.item.item-input ::-webkit-input-placeholder 
+{ 
+    color: #fff; 
+} 
+span.ion-record.ion-circle2 {
+    margin: 0 5px;
+}
+
+.button-fb:hover, .button-twit:hover {
+text-decoration: none;
+color: #7AB800;
+text-transform: lowercase;
+padding: 0px 10px 0px;
+font-size: 14px;
+border-radius: 5px;
+text-align: center;
+background: #F8F8F8;
+transition: 0.3ms ease;
+}
+.profile-pic img
+{
+width: 65px;
+height: 65px;
+margin: auto;
+border: 2px solid #ddd;
+border-radius: 100%;
+}
+
+.profile-pic {
+text-align: center;
+}
+.profile-cont {
+background: green;
+min-height: 200px;
+}
+
+.profile-name {
+    text-align: center;
+    color: #fff;
 }

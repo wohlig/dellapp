@@ -42,7 +42,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
-    
+     .state('app.profile', {
+        url: "/profile",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/profile.html",
+                controller: 'ProfileCtrl'
+            }
+        }
+    })
     /*Simple Pages*/
 
     .state('login', {
@@ -50,7 +58,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl: "templates/login.html",
         controller: 'LoginCtrl'
     })
-    
+        .state('login1', {
+        url: "/login1",
+        templateUrl: "templates/login1.html",
+        controller: 'Login1Ctrl'
+    })
     
  .state('welcome', {
         url: "/welcome",
