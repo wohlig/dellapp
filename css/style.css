@@ -1,5 +1,31 @@
 /* Empty. Add your own CSS if you like */
 
+@font-face {
+    font-family: 'Museo';
+    src: url(Museo_300.otf);
+}
+
+@font-face {
+    font-family: 'Museo';
+    src: url(Museo_500.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Museo';
+    src: url(Museo_700.otf);
+    font-weight: 700;
+}
+
+body {
+    font-family: Museo;
+}
+
+button {
+    font-family: Museo;
+    font-weight: 500;
+}
+
 .tac {
     font-size: 30px;
 }
@@ -25,7 +51,8 @@
 }
 
 .bckgrnd {
-    background: url('../img/background.png') no-repeat cover;
+    background: url('../img/background.png') no-repeat;
+    background-size: 100% 100%;
 }
 
 .logo-center {
@@ -40,14 +67,14 @@
 
 .button.button-light {
     border-color: #0085c3;
-    background-color: #fff;
     color: #0085c3;
-    border-radius: 3;
     width: 120px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 6px;
 }
 
 .button-small {
-    padding: 0px 20px 0px;
+    padding: 0px 18px 0px;
     font-size: 14px;
     line-height: 26px;
     width: 120px;
@@ -55,14 +82,14 @@
 
 .login-down {
     text-align: center;
-    background: #7ab800;
+    background: rgba(122, 184, 0, 0.7);
     margin: 20px 20px 20px 20px;
     border-radius: 20px;
     padding: 25px 0 28px 0px;
     min-height: 230px;
 }
 
-span.ion-checkmark-round.float-left {
+{
     text-align: center;
 }
 
@@ -72,23 +99,21 @@ span.ion-checkmark-round.float-right {
 }
 
 .button-fb {
-    border: 1px solid #ddd;
+    border: 1px solid #fff;
     text-transform: lowercase;
     padding: 0px 10px 0px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-align: center;
     color: #fff;
-    background: #7AB800;
 }
 
 .button-twit {
-    background: #7AB800;
     text-transform: lowercase;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 0px 10px 0px;
     font-size: 14px;
-    border: 1px solid #ddd;
+    border: 1px solid #fff;
     color: #F8F8F8;
 }
 
@@ -119,11 +144,6 @@ span.ion-checkmark-round.float-right {
     padding-bottom: 5px;
 }
 
-.float-right,
-.float-left {
-    color: #fff;
-}
-
 .loginstep p {
     text-transform: uppercase;
     font-weight: 600;
@@ -133,22 +153,30 @@ span.ion-checkmark-round.float-right {
     float: left;
     width: 50%;
 }
+
 .centertick {
-padding-bottom: 3px;
+    padding-bottom: 3px;
 }
+
 .connectwith {
-padding-top: 12%;
-padding-bottom: 5px;
+    padding-top: 20px;
+    padding-bottom: 5px;
 }
+
 .loginstep .ion-record {
-color: #fff;
+    font-size: 16px;
+    color: #fff;
 }
+
 hr.tab-line {
-    width: 238px;
-    margin-top: -12px;
+    width: 99%;
+    top: 0%;
     position: absolute;
     z-index: -1;
+    height: 0;
+    border: 1px solid #fff;
 }
+
 span.ion-record.ion-record3rd {
     float: right;
 }
@@ -158,15 +186,17 @@ span.ion-record.ion-record1st {
 }
 
 .loginstep {
-    width: 244px;
+    width: 90%;
     margin: auto;
     position: relative;
     z-index: 0;
 }
+
 .headwelcome {
-text-align: center;
-padding: 25px 0;
+    text-align: center;
+    padding: 25px 0;
 }
+
 .welcm-share {
     text-align: center;
 }
@@ -180,6 +210,7 @@ padding: 25px 0;
     font-size: 18px;
     margin-right: 5px;
 }
+
 .welcm-share span.ion-social-twitter {
     background: #63cdf1;
     border: 1px solid #63cdf1;
@@ -189,6 +220,7 @@ padding: 25px 0;
     font-size: 18px;
     margin-left: 5px;
 }
+
 .wel-content {
     background: #7ab800;
     min-height: 500px;
@@ -211,16 +243,20 @@ padding: 25px 0;
     width: 100px;
     margin: 0 10px;
 }
+
 .headwelcome h5 {
     font-weight: 600;
 }
+
 .land-content img {
     width: 100%;
 }
+
 .button-stnd1 {
-text-align: center;
-padding: 10px 10% 25px 10%;
+    text-align: center;
+    padding: 10px 10% 25px 10%;
 }
+
 .headlanding h5 {
     text-align: center;
     font-weight: 600;
@@ -232,11 +268,11 @@ padding: 10px 10% 25px 10%;
 }
 
 .input label.item.item-input input {
-text-align: center;
-background: #7AB800;
-color: #fff;
-border-bottom: 1px solid #fff;
-padding: 0px 0px;
+    text-align: center;
+    background: rgba(122, 184, 0, 0);
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0px 0px;
 }
 
 .item item-input {
@@ -244,22 +280,25 @@ padding: 0px 0px;
 }
 
 label.item.item-input {
-    background: #7AB800;
+    background: rgba(122, 184, 0, 0);
     border: 0px solid #ddd;
     padding: 6px 27px;
 }
 
 .signnow {
-padding: 25px 0 0 0;
+    padding: 25px 0 0 0;
 }
+
 .button-signin {
-color: #7AB800;
-text-transform: uppercase;
-padding: 0px 10px 0px;
-font-size: 14px;
-border-radius: 5px;
-text-align: center;
+    color: #7AB800;
+    text-transform: uppercase;
+    padding: 0px 10px 0px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    border: 0px;
 }
+
 .login-circle {
     text-align: center;
     padding-top: 20px;
@@ -270,44 +309,116 @@ span.ion-record.ion-circle1 {
     margin: 0 5px;
 }
 
-
-  .input label.item.item-input ::-webkit-input-placeholder 
-{ 
-    color: #fff; 
-} 
 span.ion-record.ion-circle2 {
     margin: 0 5px;
 }
 
-.button-fb:hover, .button-twit:hover {
-text-decoration: none;
-color: #7AB800;
-text-transform: lowercase;
-padding: 0px 10px 0px;
-font-size: 14px;
-border-radius: 5px;
-text-align: center;
-background: #F8F8F8;
-transition: 0.3ms ease;
+.button-fb:hover,
+.button-twit:hover {
+    text-decoration: none;
+    color: #A0CC4B!important;
+    text-transform: lowercase;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.3ms ease;
+    background: #fff!important;
 }
-.profile-pic img
-{
-width: 65px;
-height: 65px;
-margin: auto;
-border: 2px solid #ddd;
-border-radius: 100%;
+
+.profile-pic img {
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    border: 2px solid #ddd;
+    border-radius: 100%;
 }
 
 .profile-pic {
-text-align: center;
+    text-align: center;
 }
+
 .profile-cont {
-background: green;
-min-height: 200px;
+    background: green;
+    min-height: 200px;
 }
 
 .profile-name {
     text-align: center;
     color: #fff;
+}
+
+.icon-login {
+    position: relative;
+}
+
+.bgtrans {
+    background: transparent;
+}
+
+input.bgtrans::-webkit-input-placeholder {
+    color: #fff;
+}
+
+i.float-left {
+    background: url('../img/tick.png') no-repeat;
+}
+
+span.ion-circle {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    background: #A1CD4C;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+
+.ion-recordfade {
+    color: rgba(231, 242, 210, 1)!important;
+}
+
+/*
+.button-signin:hover {
+    border: 1px solid #fff;
+    padding: 0px 10px 0px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    background: #A0CC4B;
+}
+*/
+
+.button{
+position: relative;
+display: inline-block;
+margin: 0;
+min-width: 0px;
+min-height: 0px;
+border-width: 1px;
+border-style: solid;
+border-radius: 2px;
+vertical-align: top;
+text-align: center;
+text-overflow: ellipsis;
+font-size: 14px;
+line-height: 21px;
+cursor: pointer;
+padding: 2px 15px;
+}
+.button.icon:before, .button.icon-left:before, .button.icon-right:before {
+display: inline-block;
+padding-right: 0.5em;
+vertical-align: inherit;
+font-size: 20px;
+line-height: 21px;
+pointer-events: none;
+}
+button.button.icon-left.ion-social-facebook.button-fb {
+color: #fff;
+background: rgba(161, 205, 76, 0);
+border-radius: 5px;
+}
+button.button.icon-left.button-twit {
+color: #fff;
+background: rgba(161, 205, 76, 0);
+border-radius: 5px;
 }
