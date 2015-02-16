@@ -502,6 +502,7 @@ button.button.icon-left.button-twit {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+/*
 .home-profile {
     text-align: center;
     display: -webkit-inline-box;
@@ -512,15 +513,17 @@ button.button.icon-left.button-twit {
     width: 100%;
     padding-bottom: 10%;
 }
-
-.home-socials {
+*/
+.home-leader {
+    width: 50%;
+    float: left;
     text-align: center;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -moz-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 100%;
+}
+
+.home-people {
+    text-align: center;
+}
+.home-socials {
     margin-top: 10%;
 }
 
@@ -534,7 +537,31 @@ button.button.icon-left.button-twit {
     width: 30px;
     display: inline-block;
 }
+.home-leader {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
 
+.home-people {
+    text-align: center;
+}
+
+.home-fb {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+.home-twit {
+    text-align: center;
+    width: 33.33%;
+    float: left;
+}
+
+.home-post {
+    text-align: center;
+}
 .icon-star {
     background: url('../img/star.png') no-repeat;
     -webkit-background-size: 20px 20px;
@@ -602,6 +629,7 @@ button.button.icon-left.button-twit {
     display: inline-block;
 }
 
+/*
 .home-fb,
 .home-twit,
 .home-post,
@@ -610,7 +638,9 @@ button.button.icon-left.button-twit {
     display: block;
     margin: auto;
 }
+*/
 
+/*
 .home-fb1,
 .home-twit1,
 .home-post1,
@@ -622,6 +652,7 @@ button.button.icon-left.button-twit {
     padding-top: 8px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+*/
 
 hr.home-divid {
     width: 70%;
