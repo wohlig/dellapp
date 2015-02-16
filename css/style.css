@@ -595,14 +595,14 @@ ion-view.bgprofile.pane {
 }
 
 .profile-cont1 {
-    background: rgba(40, 70, 121, 0.7);
+    background: rgba(40, 70, 121, 0.9);
     min-height: 500px;
     z-index: -8;
     position: relative;
 }
 
 .profile-cont {
-    background: rgba(122, 184, 0, 0.7);
+    background: rgba(122, 184, 0, 0.9);
     min-height: 200px;
     border-bottom: 2px solid #FFF;
     position: relative;
@@ -618,7 +618,7 @@ ion-view.bgprofile.pane {
 .profile-cont:after {
     display: block;
     content: "";
-    border-color: rgba(161, 205, 76, 0.92) transparent transparent transparent;
+    border-color: rgba(131, 188, 23, 1) transparent transparent transparent;
     border-style: solid;
     border-width: 25px;
     height: 0;
@@ -691,7 +691,7 @@ hr.vertical {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #A1CD4B;
+    border-top: 20px solid #87BF19;
     position: absolute;
     left: 50%;
     bottom: 13px;
