@@ -51,6 +51,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
+    .state('app.postinfo', {
+        url: "/postinfo",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/postinfo.html",
+                controller: 'PostinfoCtrl'
+            }
+        }
+    })
     /*Simple Pages*/
 
     .state('login', {
@@ -74,6 +83,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: "/landing",
         templateUrl: "templates/landing.html",
         controller: 'LandingCtrl'
+    })
+        .state('editprofile', {
+        url: "/editprofile",
+        templateUrl: "templates/editprofile.html",
+        controller: 'EditprofileCtrl'
     })
     ;
     // if none of the above states are matched, use this as the fallback

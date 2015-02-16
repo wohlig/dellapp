@@ -12,4 +12,9 @@ angular.module('starter.controllers', [])
 
 .controller('LandingCtrl', function($scope, $stateParams) {})
 
-.controller('ProfileCtrl', function($scope, $stateParams) {});
+.controller('ProfileCtrl', function($scope, $stateParams) {})
+
+.controller('EditprofileCtrl', function($scope, $stateParams) {})
+
+.controller('PostinfoCtrl', function($scope, $stateParams) {})
+;
