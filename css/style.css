@@ -4,54 +4,53 @@
     font-family: 'Museo';
     src: url(Museo_300.otf);
 }
-
 @font-face {
     font-family: 'Museo';
     src: url(Museo_500.otf);
     font-weight: 500;
 }
-
 @font-face {
     font-family: 'Museo';
     src: url(Museo_700.otf);
     font-weight: 700;
 }
-
-body,h1,h2,h3,h4,h5,h6 {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Museo;
 }
-
 button {
     font-family: Museo;
     font-weight: 500;
 }
-
 .tac {
     font-size: 30px;
 }
-
 .menumain {
     text-align: center;
     color: #fff;
     background: #274679;
     border: 0px;
 }
-
 .menumain a.item-content {
     padding: 16px 15px 16px 16px;
     background: #274679;
 }
-
 .main-menu {
     background: #274679;
 }
-
 .menu .bar-header {
     z-index: 0;
 }
-
 .bckgrnd {
     background: url('../img/background.png') no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
     background-size: 100% 100%;
 }
 .bg-white {
@@ -61,115 +60,104 @@ button {
     text-align: center;
     padding: 20px 0px 20px 0;
 }
-
 .button-stnd {
     text-align: center;
     padding: 5px 20px 50px 20px;
 }
-
 .button.button-light {
     border-color: #0085c3;
     color: #0085c3;
     width: 120px;
     background: rgba(255, 255, 255, 0);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
 }
-
 .button-small {
     padding: 0px 18px 0px;
     font-size: 14px;
     line-height: 26px;
     width: 120px;
 }
-
 .login-down {
     text-align: center;
     background: rgba(122, 184, 0, 0.9);
     margin: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
     border-radius: 20px;
     padding: 25px 0 28px 0px;
     min-height: 230px;
 }
-
 {
     text-align: center;
 }
-
 span.ion-checkmark-round.float-right {
     float: right;
     width: 50%;
 }
-
 .button-fb {
     border: 1px solid #fff;
     text-transform: lowercase;
     padding: 0px 10px 0px;
     font-size: 14px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
     text-align: center;
     color: #fff;
 }
-
 .button-twit {
     text-transform: lowercase;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
     padding: 0px 10px 0px;
     font-size: 14px;
     border: 1px solid #fff;
     color: #F8F8F8;
 }
-
 .button.button-light:hover {
     color: #fff;
     text-decoration: none;
     background: #0085c3;
 }
-
 .login-down {
     text-align: center;
 }
-
 .button-fb span {
     padding-right: 8px;
     font-size: 17px;
 }
-
 .button-twit span {
     padding-right: 6px;
     font-size: 18px;
 }
-
 .login-down p {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
     padding-bottom: 5px;
 }
-
 .loginstep p {
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .button-tickfb {
     float: left;
     width: 50%;
 }
-
 .centertick {
     padding-bottom: 3px;
 }
-
 .connectwith {
     padding-top: 20px;
     padding-bottom: 5px;
 }
-
 .loginstep .ion-record {
     font-size: 16px;
     color: #fff;
 }
-
 hr.tab-line {
     width: 99%;
     top: 0%;
@@ -178,102 +166,91 @@ hr.tab-line {
     height: 0;
     border: 1px solid #fff;
 }
-
 span.ion-record.ion-record3rd {
     float: right;
 }
-
 span.ion-record.ion-record1st {
     float: left;
 }
-
 .loginstep {
     width: 90%;
     margin: auto;
     position: relative;
     z-index: 0;
 }
-
 .headwelcome {
     text-align: center;
     padding: 25px 0;
 }
-
 .welcm-share {
     text-align: center;
 }
-
 .welcm-share span.ion-social-facebook {
     background: #507cbe;
     border: 1px solid #507cbe;
     color: beige;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 6px 14px 6px 14px;
     font-size: 20px;
     margin-right: 5px;
 }
-
 .welcm-share span.ion-social-twitter {
     background: #63cdf1;
     border: 1px solid #63cdf1;
     color: beige;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 6px 10px 6px 10px;
     font-size: 18px;
     margin-left: 5px;
 }
-
 .wel-content {
     background: rgba(122, 184, 0, 0.9);
     min-height: 500px;
 }
-
 .welcm-share p {
     padding-bottom: 20px;
     color: #fff;
     text-transform: uppercase;
     font-size: 11px;
 }
-
 .welcm-btn {
     padding: 35px 0;
     text-align: center;
 }
-
 .welcm-btn .button.button-small {
     color: rgb(122, 184, 0);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     width: 100px;
     margin: 0 10px;
     padding: 5px 0 5px 0;
     text-transform: uppercase;
 }
-
 .headwelcome h5 {
     color: #fff;
     font-size: 15px;
-    font-weight:300;
+    font-weight: 300;
 }
-
 .land-content img {
     width: 100%;
 }
-
 .button-stnd1 {
     text-align: center;
     padding: 10px 10% 25px 10%;
 }
-
 .headlanding h5 {
     text-align: center;
     font-weight: 500;
     color: #0085c3;
 }
-
 .headlanding {
     padding-bottom: 20px;
 }
-
 .input label.item.item-input input {
     text-align: center;
     background: rgba(122, 184, 0, 0);
@@ -281,45 +258,39 @@ span.ion-record.ion-record1st {
     border-bottom: 1px solid #fff;
     padding: 0px 0px;
 }
-
 .item item-input {
     background: #7AB800;
 }
-
 label.item.item-input {
     background: rgba(122, 184, 0, 0);
     border: 0px solid #ddd;
     padding: 6px 27px;
 }
-
 .signnow {
     padding: 25px 0 0 0;
 }
-
 .button-signin {
     color: #7AB800;
     text-transform: uppercase;
     padding: 0px 10px 0px;
     font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     text-align: center;
     border: 0px;
 }
-
 .login-circle {
     text-align: center;
     padding-top: 20px;
 }
-
 span.ion-record.ion-circle1 {
     color: #7AB800;
     margin: 0 5px;
 }
-
 span.ion-record.ion-circle2 {
     margin: 0 5px;
 }
-
 .button-fb:hover,
 .button-twit:hover {
     text-decoration: none;
@@ -327,54 +298,52 @@ span.ion-record.ion-circle2 {
     text-transform: lowercase;
     font-size: 14px;
     text-align: center;
+    -webkit-transition: 0.3ms ease;
+    -moz-transition: 0.3ms ease;
+    -o-transition: 0.3ms ease;
     transition: 0.3ms ease;
     background: #fff!important;
 }
-
 .profile-pic img {
     width: 65px;
     height: 65px;
     margin: auto;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     vertical-align: middle;
     margin-top: 4px;
 }
-
 .profile-pic {
     text-align: center;
 }
-
 .profile-name {
     text-align: center;
     color: #fff;
 }
-
 .icon-login {
     position: relative;
 }
-
 .bgtrans {
     background: transparent;
     border: 0px;
 }
-
 input.bgtrans::-webkit-input-placeholder {
     color: #fff;
 }
-
 i.float-left {
     background: url('../img/tick.png') no-repeat;
 }
-
 span.ion-circle {
     border: 2px solid #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     background: #A1CD4C;
     height: 15px;
     width: 15px;
     display: inline-block;
 }
-
 .ion-recordfade {
     color: rgba(231, 242, 210, 1)!important;
 }
@@ -398,9 +367,12 @@ span.ion-circle {
     min-height: 0px;
     border-width: 1px;
     border-style: solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     vertical-align: top;
     text-align: center;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     font-size: 14px;
     line-height: 21px;
@@ -409,7 +381,6 @@ span.ion-circle {
     border-color: #fff;
     font-weight: 700;
 }
-
 .button.icon:before,
 .button.icon-left:before,
 .button.icon-right:before {
@@ -420,30 +391,32 @@ span.ion-circle {
     line-height: 21px;
     pointer-events: none;
 }
-
 button.button.icon-left.ion-social-facebook.button-fb {
     color: #fff;
     background: rgba(161, 205, 76, 0);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
 button.button.icon-left.button-twit {
     color: #fff;
     background: rgba(161, 205, 76, 0);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
 .home-content {
     text-align: center;
     color: #ffffff;
     margin-bottom: 10%;
 }
-
 .bghome {
     background: url('../img/homebg.jpg') no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
     background-size: 100% 100%;
 }
-
 .home-name h5 {
     color: #fff;
     letter-spacing: 1px;
@@ -451,78 +424,97 @@ button.button.icon-left.button-twit {
     font-size: 18px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 .home-profile {
     text-align: center;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
     padding-bottom: 10%;
 }
-
 .home-socials {
     text-align: center;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
     margin-top: 10%;
 }
-
 .icon-medal {
     background: url('../img/medal.png') no-repeat;
+    -webkit-background-size: 23px 23px;
+    -moz-background-size: 23px 23px;
+    -o-background-size: 23px 23px;
     background-size: 23px 23px;
     height: 25px;
     width: 30px;
     display: inline-block;
 }
-
 .icon-star {
     background: url('../img/star.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
+    -o-background-size: 20px 20px;
     background-size: 20px 20px;
     height: 20px;
     width: 30px;
     display: inline-block;
     margin-left: 20px;
 }
-
 .icon-trophy {
     background: url('../img/trophy.png') no-repeat;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
     background-size: 35px 35px;
     height: 35px;
     width: 35px;
     display: inline-block;
 }
-
 .icon-people {
     background: url('../img/people.png') no-repeat;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
     background-size: 35px 35px;
     height: 35px;
     width: 35px;
     display: inline-block;
 }
-
 .icon-fb {
     background: url('../img/fbicon.png') no-repeat;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
     background-size: 35px 35px;
     height: 35px;
     width: 35px;
     display: inline-block;
 }
-
 .icon-twit {
     background: url('../img/twiticon.png') no-repeat;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
     background-size: 35px 35px;
     height: 35px;
     width: 35px;
     display: inline-block;
 }
-
 .icon-post {
     background: url('../img/post.png') no-repeat;
+    -webkit-background-size: 35px 35px;
+    -moz-background-size: 35px 35px;
+    -o-background-size: 35px 35px;
     background-size: 35px 35px;
     height: 35px;
     width: 35px;
     display: inline-block;
 }
-
 .home-fb,
 .home-twit,
 .home-post,
@@ -531,7 +523,6 @@ button.button.icon-left.button-twit {
     display: block;
     margin: auto;
 }
-
 .home-fb1,
 .home-twit1,
 .home-post1,
@@ -543,65 +534,60 @@ button.button.icon-left.button-twit {
     padding-top: 8px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 hr.home-divid {
     width: 70%;
     background: rgba(255, 255, 255, 0.5);
     height: 1px;
     border: 0;
 }
-
 a {
     text-decoration: none;
 }
-
 .bar-positive .button.button-icon {
     border-color: transparent;
     background: none;
     padding: 0px 0px 0px 2px;
     margin: -2px 0px 0px 0;
 }
-
 .buttons.buttons-left.header-item {
     border: 2px solid #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     height: 35px;
     width: 36px;
 }
-
-
-
 ion-view.bgprofile.pane {
     background: url('../img/bgprofile.png') no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
     background-size: 100% 100%;
 }
-
 .profile-name p {
     padding-top: 20px;
     font-size: 15px;
     text-transform: uppercase;
 }
-
 .profile-pic {
     width: 74px;
     margin: auto;
     height: 74px;
     border: 1px solid #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
 }
-
 .img-profile {
     margin: auto;
     text-align: center;
 }
-
 .profile-cont1 {
     background: rgba(40, 70, 121, 0.9);
     min-height: 500px;
     z-index: -8;
     position: relative;
 }
-
 .profile-cont {
     background: rgba(122, 184, 0, 0.9);
     min-height: 200px;
@@ -615,7 +601,6 @@ ion-view.bgprofile.pane {
     box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     z-index: 0;
 }
-
 .profile-cont:after {
     display: block;
     content: "";
@@ -627,9 +612,12 @@ ion-view.bgprofile.pane {
     position: absolute;
     bottom: -25%;
     right: 50%;
+    -webkit-transform: translate(50%);
+    -moz-transform: translate(50%);
+    -ms-transform: translate(50%);
+    -o-transform: translate(50%);
     transform: translate(50%);
 }
-
 hr.vertical {
     width: 0px;
     height: 250px;
@@ -638,55 +626,53 @@ hr.vertical {
     z-index: -1;
     color: #fff;
     top: 18px;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
 }
-
 .all-profile {
     text-align: center;
     color: #fff;
     z-index: 9;
 }
-
 .social-fb i.ion-social-facebook {
     color: #5b76c1;
     background: #fff;
     padding: 4px 12px 4px 12px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     font-size: 18px;
 }
-
 .social-twit i.ion-social-twitter {
     color: #fff;
     background: #2d8bd6;
     padding: 6px 10px 6px 10px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     font-size: 16px;
 }
-
 .profile-action {
     padding-top: 30px;
 }
-
 .profile-remain {
     padding-top: 5px;
 }
-
 .social-fb {
     padding-top: 30px;
 }
-
 .social-twit {
     padding-top: 30px;
 }
-
 .social-twit p {
     padding-top: 12px;
 }
-
 .social-fb p {
     padding-top: 12px;
 }
-
 .triangle {
     width: 0;
     height: 0;
@@ -696,10 +682,13 @@ hr.vertical {
     position: absolute;
     left: 50%;
     bottom: 13px;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     margin-top: 4px;
 }
-
 .triangle1 {
     width: 0;
     height: 0;
@@ -709,11 +698,14 @@ hr.vertical {
     position: absolute;
     left: 50%;
     bottom: 10px;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     margin-top: 5px;
     z-index: -1;
 }
-
 .triangle2 {
     width: 0;
     height: 0;
@@ -722,178 +714,194 @@ hr.vertical {
     border-top: 27px solid #fff;
     position: absolute;
     left: 50%;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     margin-top: 0px;
     z-index: -1;
 }
-
 .pic-edit img {
     width: 90px;
     height: 90px;
     margin: auto;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     vertical-align: middle;
     border: 3px solid #73d3f6;
     position: relative;
     cursor: pointer;
 }
-
 .lockicon {
     background: url('../img/lock.png') no-repeat;
 }
-
 .iicon {
+    -webkit-background-size: 15px 18px;
+    -moz-background-size: 15px 18px;
+    -o-background-size: 15px 18px;
     background-size: 15px 18px;
     height: 20px;
     width: 30px;
     display: inline-block;
     margin-left: 20px;
 }
-
 .editicon {
     background: url('../img/edit.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
+    -o-background-size: 20px 20px;
     background-size: 20px 20px;
 }
-
 .personicon {
     background: url('../img/peopleedit.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
+    -o-background-size: 20px 20px;
     background-size: 20px 20px;
 }
-
 .cardicon {
     background: url('../img/postedit.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
+    -o-background-size: 20px 20px;
     background-size: 20px 20px;
 }
-
 .capicon {
     background: url('../img/cap.png') no-repeat;
+    -webkit-background-size: 25px 32px;
+    -moz-background-size: 25px 32px;
+    -o-background-size: 25px 32px;
     background-size: 25px 32px;
     height: 26px;
 }
-
 .contacticon {
     background: url('../img/mobile.png') no-repeat;
+    -webkit-background-size: 18px 27px;
+    -moz-background-size: 18px 27px;
+    -o-background-size: 18px 27px;
     background-size: 18px 27px;
     height: 27px;
 }
-
 .cityicon {
     background: url('../img/contact.png') no-repeat;
+    -webkit-background-size: 22px 28px;
+    -moz-background-size: 22px 28px;
+    -o-background-size: 22px 28px;
     background-size: 22px 28px;
     height: 28px;
 }
-
 .bodicon {
     background: url('../img/bod.png') no-repeat;
+    -webkit-background-size: 25px 25px;
+    -moz-background-size: 25px 25px;
+    -o-background-size: 25px 25px;
     background-size: 25px 25px;
     height: 26px;
 }
-
 .retweet {
     background: url('../img/retweet.png') no-repeat;
+    -webkit-background-size: 27px 27px;
+    -moz-background-size: 27px 27px;
+    -o-background-size: 27px 27px;
     background-size: 27px 27px;
     height: 24px;
 }
-
 .hrt-icon {
     background: url('../img/heart.png') no-repeat;
+    -webkit-background-size: 18px 18px;
+    -moz-background-size: 18px 18px;
+    -o-background-size: 18px 18px;
     background-size: 18px 18px;
     height: 18px;
     margin-top: 4px;
 }
-
 ul.pswd-chgn,
 ul.edit-chgn {
     border-top: 1px solid #0085c3;
 }
-
 li.chng-paswd h5 i.ion-chevron-down {
     padding: 9px 0;
     float: right;
     color: #0085c3;
 }
-
 li.chng-paswd h5 {
     padding: 4px 0;
     color: #0085c3;
 }
-
 li.chng-profile h5 i.ion-chevron-down {
     padding: 9px 0;
     float: right;
     color: #0085c3;
 }
-
 li.chng-profile h5 {
     padding: 4px 0;
     color: #0085c3;
 }
-
 ul.edit-dropdown {
     padding: 0px 60px;
 }
-
 ul li label.item.item-input {
     border-bottom: 1px solid #0085c3;
     height: 0px;
     padding: 0px;
 }
-
 ul.edit-dropdown li ul {
     display: none;
 }
-
 ul.edit-dropdown li:hover ul {
     display: block;
 }
-
 ul:hover li label.item.item-input {
     height: 50px;
     padding: 0px;
 }
-
 ul.edit-dropdown li:hover h5 i.ion-chevron-down {
     -ms-transform: rotate(180deg);
     /* IE 9 */
-    
     -webkit-transform: rotate(180deg);
     /* Chrome, Safari, Opera */
-    
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
     transform: rotate(180deg);
     padding: 9px 0px;
 }
-
 ul.edit-dropdown li {
     border-bottom: 1px solid #0085c3;
     cursor: pointer;
 }
-
 .edit-header button.button.button-icon.icon.ion-close-round {
     color: #0085C3;
     border: 1px solid #0085C3;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 4px 0px 4px 9px;
     margin: 15px 0 0 25px;
 }
-
 .edit-header button.button.button-icon.icon.ion-checkmark {
     color: #0085C3;
     border: 1px solid #0085C3;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 4px 0px 4px 9px;
     margin: 15px 25px 0 0px;
     float: right;
 }
-
 ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     color: #0085C3;
 }
-
 .picsupload {
     width: 90px;
     margin: auto;
     position: absolute;
     left: 50%;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     top: 50%;
     background: rgba(255, 255, 255, 0.65);
@@ -903,7 +911,6 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     opacity: 1;
     cursor: pointer;
 }
-
 .pic-edit {
     position: relative;
 }
@@ -913,18 +920,15 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     text-align: center;
     color: #91ddf8;
 }
-
 .box h3 a {
     text-align: center;
 }
-
 .post-infocont {
     text-align: center;
     color: #0085C3;
     padding-top: 5%;
     font-weight: 700;
 }
-
 .postinfo h4 {
     text-align: center;
     color: #91ddf8;
@@ -932,27 +936,24 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
 .postinfo h4 a {
     color: #91ddf8;
 }
-
-
 .post-infocont i {
     color: #fff;
     background: #0085c3;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     padding: 4px 8px 4px 8px;
     font-size: 20px;
 }
-
 .post-infocont h5 {
     color: #0085C3;
     text-transform: uppercase;
     font-size: 1.1em;
     font-weight: 700;
 }
-
 .box-slider {
     padding: 12% 0;
 }
-
 .like-comnt {
     text-align: center;
     background: #7ab800;
@@ -961,19 +962,16 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     padding: 2px 0 5px 0px;
     height: 33px;
 }
-
 .tab-items1 {
     width: 50%;
     float: left;
     text-align: center;
 }
-
 .tab-items2 {
     width: 50%;
     float: left;
     text-align: center;
 }
-
 .postinfo {
     min-height: 120px;
 }
@@ -982,39 +980,31 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
 .title.title-center.header-item {
     text-transform: uppercase;
 }
-
 label.item.item-input.fb-twt {
     color: #2e8cd6;
 }
-
 label.item.item-input.fb-twt i {
     font-size: 20px;
     padding-right: 20px;
 }
-
 label.item.item-input.image-sugest button {
     color: #2E8CD6;
     background: #fff;
     border: 1px solid #2E8CD6;
 }
-
 .suggest {
     text-align: center;
 }
-
 .menu {
     width: 135px!important;
 }
-
 .head-text {
     text-transform: uppercase;
     font-size: 14px;
 }
-
 h1.title i {
     font-size: 2.7em;
 }
-
 button.button.menu-btncolor {
     color: #fff;
     padding-left: 3px!important;
@@ -1027,10 +1017,16 @@ hr.dividhome {
     height: 1px;
 }
 .button-sidelog .button {
-padding: 2px 0;
+    padding: 2px 0;
 }
 .titlemain {
-font-size: 18px;
-text-transform: uppercase;
-color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.vertical-line {
+    width: 1px;
+    background: white;
+    margin: 0 auto;
+    height: 30px;
 }
