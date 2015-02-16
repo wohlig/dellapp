@@ -1196,7 +1196,11 @@ hr.dividhome {
     background: url('../img/facebook.png') no-repeat;
     height: 32px;
     margin: auto;
-    width: 30px;
+    width: 31px;
+    -webkit-background-size: 31px 32px;
+    -moz-background-size: 31px 32px;
+    -o-background-size: 31px 32px;
+    background-size: 31px 32px;
 }
 
 .ion-twit {
@@ -1204,6 +1208,10 @@ hr.dividhome {
     height: 31px;
     margin: auto;
     width: 31px;
+    -webkit-background-size: 31px 32px;
+    -moz-background-size: 31px 32px;
+    -o-background-size: 31px 32px;
+    background-size: 31px 32px;
 }
 
 .social-fb {
@@ -1245,6 +1253,7 @@ hr.vertical-title {
 span.dob-prf {
     text-transform: uppercase;
 }
+
 .prf-gear i {
     color: #fff;
     position: absolute;
