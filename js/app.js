@@ -6,8 +6,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
+.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -20,11 +20,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 
-    .state('app', {
+        .state('app', {
         url: "/app",
         abstract: true,
         templateUrl: "templates/menu.html",
@@ -32,65 +32,72 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     /*Sidemenu Pages*/
-    
+
     .state('app.home', {
-        url: "/home",
-        views: {
-            'menuContent': {
-                templateUrl: "templates/home.html",
-                controller: 'HomeCtrl'
+            url: "/home",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/home.html",
+                    controller: 'HomeCtrl'
+                }
             }
-        }
-    })
-     .state('app.profile', {
-        url: "/profile",
-        views: {
-            'menuContent': {
-                templateUrl: "templates/profile.html",
-                controller: 'ProfileCtrl'
+        })
+        .state('app.profile', {
+            url: "/profile",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/profile.html",
+                    controller: 'ProfileCtrl'
+                }
             }
-        }
-    })
-    .state('app.postinfo', {
-        url: "/postinfo",
-        views: {
-            'menuContent': {
-                templateUrl: "templates/postinfo.html",
-                controller: 'PostinfoCtrl'
+        })
+        .state('app.postinfo', {
+            url: "/postinfo",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/postinfo.html",
+                    controller: 'PostinfoCtrl'
+                }
             }
-        }
-    })
-    /*Simple Pages*/
+        })
+        .state('app.suggestpost', {
+            url: "/suggestpost",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/suggestpost.html",
+                    controller: 'SuggestpostCtrl'
+                }
+            }
+        })
+        /*Simple Pages*/
 
     .state('login', {
-        url: "/login",
-        templateUrl: "templates/login.html",
-        controller: 'LoginCtrl'
-    })
+            url: "/login",
+            templateUrl: "templates/login.html",
+            controller: 'LoginCtrl'
+        })
         .state('login1', {
-        url: "/login1",
-        templateUrl: "templates/login1.html",
-        controller: 'Login1Ctrl'
-    })
-    
- .state('welcome', {
+            url: "/login1",
+            templateUrl: "templates/login1.html",
+            controller: 'Login1Ctrl'
+        })
+
+    .state('welcome', {
         url: "/welcome",
         templateUrl: "templates/welcome.html",
         controller: 'WelcomeCtrl'
     })
-    
-     .state('landing', {
-        url: "/landing",
-        templateUrl: "templates/landing.html",
-        controller: 'LandingCtrl'
-    })
+
+    .state('landing', {
+            url: "/landing",
+            templateUrl: "templates/landing.html",
+            controller: 'LandingCtrl'
+        })
         .state('editprofile', {
-        url: "/editprofile",
-        templateUrl: "templates/editprofile.html",
-        controller: 'EditprofileCtrl'
-    })
-    ;
+            url: "/editprofile",
+            templateUrl: "templates/editprofile.html",
+            controller: 'EditprofileCtrl'
+        });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });
-
