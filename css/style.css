@@ -502,18 +502,6 @@ button.button.icon-left.button-twit {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/*
-.home-profile {
-    text-align: center;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -moz-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 100%;
-    padding-bottom: 10%;
-}
-*/
 .home-leader {
     width: 50%;
     float: left;
@@ -523,6 +511,7 @@ button.button.icon-left.button-twit {
 .home-people {
     text-align: center;
 }
+
 .home-socials {
     margin-top: 10%;
 }
@@ -537,6 +526,7 @@ button.button.icon-left.button-twit {
     width: 30px;
     display: inline-block;
 }
+
 .home-leader {
     width: 50%;
     float: left;
@@ -562,6 +552,7 @@ button.button.icon-left.button-twit {
 .home-post {
     text-align: center;
 }
+
 .icon-star {
     background: url('../img/star.png') no-repeat;
     -webkit-background-size: 20px 20px;
@@ -628,31 +619,6 @@ button.button.icon-left.button-twit {
     width: 35px;
     display: inline-block;
 }
-
-/*
-.home-fb,
-.home-twit,
-.home-post,
-.home-people,
-.home-leader {
-    display: block;
-    margin: auto;
-}
-*/
-
-/*
-.home-fb1,
-.home-twit1,
-.home-post1,
-.my-profile,
-.leader {
-    display: block;
-    color: #fff;
-    text-transform: uppercase;
-    padding-top: 8px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-*/
 
 hr.home-divid {
     width: 70%;
@@ -795,7 +761,6 @@ hr.vertical {
     padding: 5px 0;
 }
 
-
 .triangle {
     width: 0;
     height: 0;
@@ -873,7 +838,7 @@ hr.vertical {
     height: 20px;
     width: 30px;
     display: inline-block;
-    margin-left: 20px;
+    margin: auto;
 }
 
 .editicon {
@@ -1178,6 +1143,7 @@ label.item.item-input.image-sugest button {
 
 h1.title i {
     font-size: 2.7em;
+    text-align: center;
 }
 
 button.button.menu-btncolor {
@@ -1197,6 +1163,17 @@ hr.dividhome {
     padding: 2px 0;
 }
 
+.leader,
+.my-profile,
+.home-post1,
+.home-fb1,
+.home-twit1 {
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
+}
+
 .titlemain {
     font-size: 18px;
     text-transform: uppercase;
@@ -1204,10 +1181,10 @@ hr.dividhome {
 }
 
 .vertical-line {
-width: 1px;
-background: white;
-margin: 0 auto;
-height: 20px;
+    width: 1px;
+    background: white;
+    margin: 0 auto;
+    height: 20px;
 }
 
 .score {
@@ -1218,16 +1195,17 @@ height: 20px;
 .ion-fb {
     background: url('../img/facebook.png') no-repeat;
     height: 32px;
-    margin: 0;
+    margin: auto;
     width: 30px;
 }
 
 .ion-twit {
     background: url('../img/twitter.png') no-repeat;
-    height: 32px;
-    margin: 0;
-    width: 30px;
+    height: 31px;
+    margin: auto;
+    width: 31px;
 }
+
 .social-fb {
     padding-top: 6px;
 }
@@ -1243,22 +1221,34 @@ height: 20px;
 .profile-action p {
     margin: 0;
 }
+
 .profile-action {
     padding: 5px 0;
 }
+
 .social-fb p {
-margin: 0 0 2px;
+    margin: 0 0 2px;
 }
+
 .profile-contmain {
-padding: 15px 0;
-color: #fff;
+    padding: 15px 0;
+    color: #fff;
 }
+
 hr.vertical-title {
     width: 45%;
     height: 1px;
     border: 0;
     background: rgba(255, 255, 255, 0.5);
 }
+
 span.dob-prf {
-text-transform: uppercase;
+    text-transform: uppercase;
+}
+.prf-gear i {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    font-size: 24px;
 }
