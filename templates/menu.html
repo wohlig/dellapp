@@ -1,40 +1,60 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bgtrans">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+    <ion-side-menu-content>
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon menu-btncolor" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-  <ion-side-menu side="left" width="135">
-    <ion-header-bar class="bar-positive bg-menu">
-      <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
-    </ion-header-bar>
-    <ion-content class="main-menu">
-      <ion-list>
-        <ion-item nav-clear menu-close href="#/app/home" class="menumain">
-         <span class="ion-home tac" title="home" aria-hidden="true"></span>
-         <div class="head-text">Dashboard</div> 
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/profile" class="menumain">
-         <span class="ion-person tac" title="home" aria-hidden="true"></span>
-            <div class="head-text">Profile</div>
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse" class="menumain">
-         <span class="ion-email tac" title="home" aria-hidden="true"></span>
-            <div class="head-text">Posting</div>
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists" class="menumain">
-         <span class="ion-trophy tac" title="home" aria-hidden="true"></span>
-            <div class="head-text">Leader Board</div>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu side="left" width="135">
+        <ion-header-bar class="bar-positive bg-menu">
+            <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
+        </ion-header-bar>
+        <ion-content class="main-menu">
+            <ion-list>
+                <ion-item nav-clear menu-close href="#/app/home" class="menumain">
+                    <span class="ion-home tac" title="home" aria-hidden="true"></span>
+                    <div class="head-text">Dashboard</div>
+                </ion-item>
+                <ion-item nav-clear href="#" class="menumain">
+                    <span class="ion-person tac" title="profile" aria-hidden="true"></span>
+                    <div class="head-text">Profile</div>
+                    <ion-list>
+                        <ion-item nav-clear menu-close href="#/app/profile" class="menumain">
+                            <span class="ion-information tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Information</div>
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/postinfofb" class="menumain">
+                            <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Facebook</div>
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/postinfo" class="menumain">
+                            <span class="ion-social-twitter tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Twitter</div>
+                        </ion-item>
+                    </ion-list>
+                </ion-item>
+                <ion-item nav-clear href="#" class="menumain">
+                    <span class="ion-email tac" title="posting" aria-hidden="true"></span>
+                    <div class="head-text">Posting</div>
+                    <ion-list>
+                        <ion-item nav-clear menu-close href="#/app/postfb" class="menumain">
+                            <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Facebook</div>
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/post" class="menumain">
+                            <span class="ion-social-twitter tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Twitter</div>
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/suggestedpost" class="menumain">
+                            <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
+                            <div class="head-text">Co-Create</div>
+                        </ion-item>
+                    </ion-list>
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/leaderboard" class="menumain">
+                    <span class="ion-trophy tac" title="leaderboard" aria-hidden="true"></span>
+                    <div class="head-text">Leader Board</div>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

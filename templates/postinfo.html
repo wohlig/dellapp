@@ -1,4 +1,22 @@
-<ion-view title="Post Information">
+<ion-view>
+    <ion-nav-bar class="bgtrans" title="Createpost" class="leader-cont">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon menu-btncolor green blue" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+        <div class="head-lead">
+            Post Information
+            <hr class="verticalup">
+        </div>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-edit post-icon blue">
+            </button>
+            <button class="button button-icon button-clear ion-search menu-btncolor green blue">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-content>
         <div class="post-infocont">
             <h5>Platform</h5>
@@ -9,21 +27,38 @@
             <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" does-continue="true" auto-play="3000">
                 <ion-slide>
                     <div class="box">
-                        <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
+                        <div class="post-cont">
+                            <div class="card">
+                                <div class="item item-text-wrap">
+                                    <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
     Link:<a href="">http://bit.ly/myDellrewards</a></h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </ion-slide>
                 <ion-slide>
                     <div class="box">
-                        <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
-    Link:<a href="">http://bit.ly/myDellrewards</a>
-               </h3>
+                        <div class="post-cont">
+                            <div class="card">
+                                <div class="item item-text-wrap">
+                                    <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
+    Link:<a href="">http://bit.ly/myDellrewards</a></h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </ion-slide>
                 <ion-slide>
                     <div class="box">
-                        <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
+                        <div class="post-cont">
+                            <div class="card">
+                                <div class="item item-text-wrap">
+                                    <h3>Get your voucher code as soon as your reward points on My Dell Rewards.
     Link:<a href="">http://bit.ly/myDellrewards</a></h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </ion-slide>
             </ion-slide-box>
@@ -32,14 +67,13 @@
             <h4>Get your voucher code as soon as your reward points on My Dell Rewards.
     Link:<a href="">http://bit.ly/myDellrewards</a></h4>
         </div>
-        <div class="like-comnt">
-            <div class="tab-items1">
+        <div class="row like-comnt">
+            <div class=" col tab-items1">
                 <a>
-                    <i class="iicon hrt-icon"></i>
-                    1
+                    <i class="iicon hrt-icon"></i> 1
                 </a>
             </div>
-            <div class="tab-items2">
+            <div class="col tab-items2">
                 <a>
                     <i class="iicon retweet"></i> 1
                 </a>

@@ -60,12 +60,84 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 }
             }
         })
+        .state('app.postinfofb', {
+            url: "/postinfofb",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/postinfofb.html",
+                    controller: 'PostinfofbCtrl'
+                }
+            }
+        })
         .state('app.suggestpost', {
             url: "/suggestpost",
             views: {
                 'menuContent': {
                     templateUrl: "templates/suggestpost.html",
                     controller: 'SuggestpostCtrl'
+                }
+            }
+        })
+        .state('app.postfb', {
+            url: "/postfb",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/postfb.html",
+                    controller: 'PostfbCtrl'
+                }
+            }
+        })
+        .state('app.leaderboard', {
+            url: "/leaderboard",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/leaderboard.html",
+                    controller: 'LeaderboardCtrl'
+                }
+            }
+        })
+        .state('app.post', {
+            url: "/post",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/post.html",
+                    controller: 'PostCtrl'
+                }
+            }
+        })
+        .state('app.createpost', {
+            url: "/createpost",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/createpost.html",
+                    controller: 'CreatepostCtrl'
+                }
+            }
+        })
+        .state('app.table', {
+            url: "/table",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/table.html",
+                    controller: 'TableCtrl'
+                }
+            }
+        })
+        .state('app.tablefb', {
+            url: "/tablefb",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/tablefb.html",
+                    controller: 'TablefbCtrl'
+                }
+            }
+        })
+        .state('app.suggestedpost', {
+            url: "/suggestedpost",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/suggestedpost.html",
+                    controller: 'SuggestedpostCtrl'
                 }
             }
         })

@@ -1,4 +1,12 @@
 <ion-view class="bghome bgtrans">
+    <ion-nav-bar class="bgtrans">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon menu-btncolor" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-content class="no-header">
         <div class="logo-center">
             <img src="img/logohome.png">
@@ -13,28 +21,31 @@
         </div>
         <div class="home-profile">
             <div class="home-leader">
-               <a href="#"> <i class="icon icon-trophy">&nbsp;</i>
-                   <div class="leader">Leaderboard</div></a>
+                <a href="#/app/leaderboard"> <i class="icon icon-trophy">&nbsp;</i>
+                    <div class="leader">Leaderboard</div>
+                </a>
             </div>
             <div class="home-people">
-               <a href="#"><i class="icon icon-people">&nbsp;</i>
+                <a href="#/app/profile"><i class="icon icon-people">&nbsp;</i>
                    <div class="my-profile">My profile</div></a>
             </div>
         </div>
         <hr class="home-divid">
         <div class="home-socials">
             <div class="home-fb">
-               <a href="#"> <i class="icon icon-fb"></i>
-                   <div class="home-fb1">Facebook</div></a>
+                <a href="#/app/postinfofb"> <i class="icon icon-fb"></i>
+                    <div class="home-fb1">Facebook</div>
+                </a>
 
             </div>
             <div class="home-twit">
-               <a href="#"> <i class="icon icon-twit"></i>
-                   <div class="home-twit1">Twitter</div></a>
+                <a href="#/app/postinfo"> <i class="icon icon-twit"></i>
+                    <div class="home-twit1">Twitter</div>
+                </a>
 
             </div>
             <div class="home-post">
-                <a href="#"><i class="icon-post"></i>
+                <a href="#/app/suggestedpost"><i class="icon-post"></i>
                 <div class="home-post1"> Create Post</div>
                 </a>
             </div>

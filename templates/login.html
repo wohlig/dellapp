@@ -15,35 +15,87 @@
                 </button>
             </div>
         </div>
-        <div class="login-down">
-            <div class="loginstep">
-                <p>Step 2 of 2</p>
-                <div class="icon-login">
-                    <span class="ion-record ion-record1st"></span>
-                    <span class="ion-record ion-record2nd"></span>
-                    <span class="ion-record ion-record3rd"></span>
-                    <hr class="tab-line">
-                </div>
-            </div>
-            <div class="connectwith">
-                <p>Connect With</p>
-                <div class="button-login">
-                    <div class="button-tickfb">
-                        <div class="centertick">
-                            <i class="float-left">&nbsp;&nbsp;&nbsp;</i>
-                        </div>
-                        <div class="button-side">
-                             <button class="button icon-left ion-social-facebook button-fb">Facebook</button>
+        <!--                   box slider-->
+        <div class="box-slider login">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
+                <ion-slide>
+                    <div class="item-login">
+                        <div class="land-content">
+                            <h5>Lorem Ipsum Lorem Ipsum</h5>
+                            <h5>Lorem Ipsum Lorem Ipsum</h5>
+                            <img src="img/college-kids.jpg">
                         </div>
                     </div>
-                    <div class="button-ticktwit">
-                        <div class="centertick">
-                            <i class="float-left">&nbsp;&nbsp;&nbsp;</i>
-                        </div> 
-                         <button class="button icon-left ion-social-twitter button-twit">Twitter</button>
+                </ion-slide>
+                <ion-slide>
+                    <div class="item-login">
+                        <div class="login-down">
+                            <div class="loginstep">
+                                <p>Step 1 of 2</p>
+                                <div class="icon-login">
+                                    <span class="ion-record ion-record1st"></span>
+                                    <span class="ion-circle">&nbsp;&nbsp;</span>
+                                    <span class="ion-record ion-record3rd ion-recordfade"></span>
+                                    <hr class="tab-line">
+                                </div>
+                            </div>
+                            <div class="signnow">
+                                <div class="list input bgtrans">
+                                    <label class="item item-input bgtrans">
+                                        <input type="text" placeholder="Username" class="bgtrans">
+                                    </label>
+                                    <label class="item item-input bgtrans">
+                                        <input type="password" placeholder="Password" class="bgtrans">
+                                    </label>
+                                </div>
+                                <div class="button-login1">
+                                    <div class="button-sidelog">
+                                        <button class="button button-small button-signin">
+                                            Sign In Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="item-login">
+                        <div class="login-down">
+                            <div class="loginstep">
+                                <p>Step 2 of 2</p>
+                                <div class="icon-login">
+                                    <span class="ion-record ion-record1st"></span>
+                                    <span class="ion-record ion-record2nd"></span>
+                                    <span class="ion-record ion-record3rd"></span>
+                                    <hr class="tab-line">
+                                </div>
+                            </div>
+                            <div class="connectwith">
+                                <p>Connect With</p>
+                                <div class="button-login">
+                                    <div class="button-tickfb">
+                                        <div class="centertick">
+                                            <i class="float-left">&nbsp;&nbsp;&nbsp;</i>
+                                        </div>
+                                        <div class="button-side">
+                                            <button class="button icon-left ion-social-facebook button-fb">Facebook</button>
+                                        </div>
+                                    </div>
+                                    <div class="button-ticktwit">
+                                        <div class="centertick">
+                                            <i class="float-left">&nbsp;&nbsp;&nbsp;</i>
+                                        </div>
+                                        <button class="button icon-left ion-social-twitter button-twit">Twitter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+
         </div>
+        <!--                   box slider-->
     </ion-content>
 </ion-view>
