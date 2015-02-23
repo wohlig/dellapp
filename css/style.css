@@ -1995,15 +1995,6 @@ ul.pswd-chgn li label i {
     width: 100%;
 }
 
-.item-content.active {
-    background: #0E1725;
-    border-color: #0E1725;
-}
-
-.item .item-content.activited {
-    background: #7AB800!important;
-}
-
 button.button.back-button.buttons.button-clear.header-item {
     color: #243F6D;
 }
