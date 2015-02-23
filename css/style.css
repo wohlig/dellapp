@@ -1970,16 +1970,15 @@ label.item.item-input.image-sugest button {
 }
 
 .list ion-item.menumain.item.item-complex:hover .list {
-    height: 221px;
+    display: block;
 }
 
 .list ion-item.menumain.item.item-complex .list {
-    height: 0px;
+    display: none;
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
     transition: 300ms ease;
-    overflow: hidden;
 }
 
 .item-login {
