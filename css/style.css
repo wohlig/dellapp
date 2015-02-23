@@ -348,10 +348,10 @@ span.ion-record.ion-record1st {
     background: #7AB800;
 }
 
-label.item.item-input {
+.signnow label.item.item-input {
     background: rgba(122, 184, 0, 0);
     border: 0px solid #ddd;
-    /* padding: 6px 27px; */
+    padding: 6px 27px;
 }
 
 .signnow {
@@ -717,7 +717,7 @@ ion-view.bgprofile.pane {
 
 .profile-cont1 {
     background: rgba(40, 70, 121, 0.9);
-    min-height: 340px;
+    min-height: 440px;
     z-index: -8;
     position: relative;
 }
@@ -1076,10 +1076,10 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
 }
 
 .picsupload {
-    width: 100%;
+    width: 90px;
     margin: auto;
     position: absolute;
-    left: 42%;
+    left: 50%;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -1088,10 +1088,15 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     top: 50%;
     background: rgba(255, 255, 255, 0.65);
     line-height: 1.1;
-    color: #0085C3;
     opacity: 1;
     cursor: pointer;
     overflow: hidden;
+    padding: 5px 0 5px 0px;
+    font-weight: 500;
+}
+
+.picsupload a {
+    color: #0085C3;
 }
 
 .pic-edit {
@@ -1989,4 +1994,14 @@ ul.pswd-chgn li label i {
 
 button.button.back-button.buttons.button-clear.header-item {
     color: #243F6D;
+}
+
+label.item.item-input {
+    background: rgba(122, 184, 0, 0);
+    border: 0px solid #ddd;
+    padding: 6px 27px;
+}
+
+button.button.button-icon.button-clear.ion-gear-a.menu-btncolor {
+    padding-right: 10px;
 }
