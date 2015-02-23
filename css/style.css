@@ -730,7 +730,7 @@ ion-view.bgprofile.pane {
 }
 
 .profile-cont:hover {
-    height: auto;
+    height: 320px;
 }
 
 {
@@ -1970,15 +1970,16 @@ label.item.item-input.image-sugest button {
 }
 
 .list ion-item.menumain.item.item-complex:hover .list {
-    display: block;
+    height: 221px;
 }
 
 .list ion-item.menumain.item.item-complex .list {
-    display: none;
+    height: 0px;
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
     transition: 300ms ease;
+    overflow: hidden;
 }
 
 .item-login {
@@ -2029,4 +2030,22 @@ button.button.back-button.header-item {
 button.button.back-button i.icon.ion-ios7-arrow-back {
     top: -10px!important;
     position: relative;
+}
+
+button.button.back-button.buttons.header-item.blue {
+    color: #1189C5!important;
+}
+
+button.button.back-button.buttons.header-item.green {
+    color: #7ab800!important;
+}
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+    border-color: #7AB800;
+    background-color: #7AB800;
 }
