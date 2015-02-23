@@ -704,7 +704,7 @@ ion-view.bgprofile.pane {
 
 .profile-cont1 {
     background: rgba(40, 70, 121, 0.9);
-    min-height: 440px;
+    min-height: 470px;
     z-index: -8;
     position: relative;
 }
