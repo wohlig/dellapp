@@ -49,21 +49,6 @@ button {
     font-size: 30px;
 }
 
-a {
-    text-decoration: none;
-    -moz-transition: all 300ms ease;
-    -webkit-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-
-* {
-    -moz-transition: all 800ms ease;
-    -webkit-transition: all 800ms ease;
-    -o-transition: all 800ms ease;
-    transition: all 800ms ease;
-}
-
 .menumain {
     text-align: center;
     color: #fff;
@@ -72,7 +57,7 @@ a {
 }
 
 .menumain a.item-content {
-    padding: 20px 0px 0px 0;
+    padding: 10px 0;
     background: #274679;
 }
 
@@ -123,6 +108,10 @@ a {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .button-small {
@@ -173,6 +162,10 @@ span.ion-checkmark-round.float-right {
     font-size: 14px;
     border: 1px solid #fff;
     color: #F8F8F8;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .button.button-light:hover {
@@ -193,6 +186,10 @@ span.ion-checkmark-round.float-right {
 .button-twit span {
     padding-right: 6px;
     font-size: 18px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .login-down p {
@@ -384,13 +381,6 @@ span.ion-record.ion-circle2 {
     margin: 0 5px;
 }
 
-*:hover {
-    -webkit-transition: 0.8ms ease;
-    -moz-transition: 0.8ms ease;
-    -o-transition: 0.8ms ease;
-    transition: 0.8ms ease;
-}
-
 .button-fb:hover,
 .button-twit:hover {
     text-decoration: none;
@@ -406,14 +396,14 @@ span.ion-record.ion-circle2 {
 }
 
 .profile-pic img {
-    width: 65px;
-    height: 65px;
+    width: 66px;
+    height: 66px;
     margin: auto;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     vertical-align: middle;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 .profile-pic {
@@ -456,17 +446,6 @@ span.ion-circle {
 .ion-recordfade {
     color: rgba(231, 242, 210, 1)!important;
 }
-/*
-.button-signin:hover {
-    border: 1px solid #fff;
-    padding: 0px 10px 0px;
-    font-size: 14px;
-    border-radius: 6px;
-    text-align: center;
-    color: #fff;
-    background: #A0CC4B;
-}
-*/
 
 .button {
     position: relative;
@@ -508,6 +487,10 @@ button.button.icon-left.ion-social-facebook.button-fb {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 button.button.icon-left.button-twit {
@@ -516,6 +499,10 @@ button.button.icon-left.button-twit {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .home-content {
@@ -727,14 +714,23 @@ ion-view.bgprofile.pane {
     min-height: 200px;
     border-bottom: 2px solid #FFF;
     position: relative;
-    margin: 0;
-    padding: 15px;
+    margin-top: 0px;
+    padding: 16px;
     text-align: center;
     -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     z-index: 0;
-    height: 230px;
+    height: 190px;
+    overflow: hidden;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    -o-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+}
+
+.profile-cont:hover {
+    height: auto;
 }
 
 {
@@ -808,7 +804,7 @@ hr.vertical {
     border-top: 16px solid #87BF19;
     position: absolute;
     left: 50%;
-    bottom: 8px;
+    bottom: 4px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -825,7 +821,7 @@ hr.vertical {
     border-top: 16px solid #fff;
     position: absolute;
     left: 50%;
-    bottom: 5px;
+    bottom: 1px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -1021,6 +1017,10 @@ ul li label.item.item-input {
 
 ul.edit-dropdown li ul {
     display: none;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 ul.edit-dropdown li:hover ul {
@@ -1030,6 +1030,10 @@ ul.edit-dropdown li:hover ul {
 ul:hover li label.item.item-input {
     height: 50px;
     padding: 0px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 ul.edit-dropdown li:hover h5 i.ion-chevron-down {
@@ -1048,6 +1052,10 @@ ul.edit-dropdown li:hover h5 i.ion-chevron-down {
 ul.edit-dropdown li {
     border-bottom: 1px solid #0085c3;
     cursor: pointer;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .edit-header button.button.button-icon.icon.ion-close-round {
@@ -1311,9 +1319,8 @@ hr.dividhome {
 }
 
 .profile-contmain {
-    padding: 15px 0;
+    padding: 20px 0;
     color: #fff;
-    display: none;
 }
 
 hr.vertical-title {
@@ -1968,6 +1975,10 @@ label.item.item-input.image-sugest button {
 
 .list ion-item.menumain.item.item-complex .list {
     display: none;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .item-login {
@@ -1989,7 +2000,7 @@ ul.pswd-chgn li label i {
 }
 
 .item .item-content.activited {
-    background: #0E1725!important;
+    background: #7AB800!important;
 }
 
 button.button.back-button.buttons.button-clear.header-item {
@@ -2004,4 +2015,18 @@ label.item.item-input {
 
 button.button.button-icon.button-clear.ion-gear-a.menu-btncolor {
     padding-right: 10px;
+}
+
+.bar .title.title-left {
+    text-align: center;
+}
+
+button.button.back-button.header-item {
+    color: #fff!important;
+    margin-top: 0px;
+}
+
+button.button.back-button i.icon.ion-ios7-arrow-back {
+    top: -10px!important;
+    position: relative;
 }

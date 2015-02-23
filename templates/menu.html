@@ -1,6 +1,9 @@
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
-
+        <ion-nav-bar class="">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
 
@@ -17,6 +20,7 @@
                 <ion-item nav-clear href="#" class="menumain">
                     <span class="ion-person tac" title="profile" aria-hidden="true"></span>
                     <div class="head-text">Profile</div>
+                    <i class="icon ion-chevron-down"></i>
                     <ion-list>
                         <ion-item nav-clear menu-close href="#/app/profile" class="menumain">
                             <span class="ion-information tac" title="profile" aria-hidden="true"></span>
@@ -34,7 +38,9 @@
                 </ion-item>
                 <ion-item nav-clear href="#" class="menumain">
                     <span class="ion-email tac" title="posting" aria-hidden="true"></span>
-                    <div class="head-text">Posting</div>
+                    <div class="head-text">Posting
+                    </div>
+                    <i class="icon ion-chevron-down"></i>
                     <ion-list>
                         <ion-item nav-clear menu-close href="#/app/postfb" class="menumain">
                             <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
