@@ -57,8 +57,9 @@ button {
 }
 
 .menumain a.item-content {
-    padding: 10px 0;
-    background: #274679;
+    padding: 0;
+    background: none repeat scroll 0% 0% #274679;
+    margin: 10px 0px;
 }
 
 .main-menu {
@@ -732,8 +733,8 @@ ion-view.bgprofile.pane {
 .profile-cont.openprf {
     height: 320px;
 }
-
-{
+/*
+.profile-cont {
     display: block;
     content: "";
     border-color: rgba(131, 188, 23, 1) transparent transparent transparent;
@@ -750,6 +751,7 @@ ion-view.bgprofile.pane {
     -o-transform: translate(50%);
     transform: translate(50%);
 }
+*/
 
 hr.vertical {
     width: 0px;
@@ -1011,22 +1013,26 @@ ul.edit-dropdown {
 
 ul li label.item.item-input {
     border-bottom: 1px solid #0085c3;
-    height: 0px;
     padding: 0px;
 }
 
 ul.edit-dropdown li ul {
-    display: none;
+    height: 0px;
+    overflow: hidden;
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
     transition: 300ms ease;
 }
 
-ul.edit-dropdown li:hover ul {
-    display: block;
+ul.edit-dropdown li ul.changesul {
+    height: 205px;
 }
 
+ul.edit-dropdown li ul.changesul1 {
+    height: 102px;
+}
+/*
 ul:hover li label.item.item-input {
     height: 50px;
     padding: 0px;
@@ -1035,8 +1041,9 @@ ul:hover li label.item.item-input {
     -o-transition: 300ms ease;
     transition: 300ms ease;
 }
+*/
 
-ul.edit-dropdown li:hover h5 i.ion-chevron-down {
+ul.edit-dropdown li h5 i.ion-chevron-down.changesi {
     -ms-transform: rotate(180deg);
     /* IE 9 */
     
@@ -1971,6 +1978,7 @@ label.item.item-input.image-sugest button {
 
 .list ion-item.menumain.item.item-complex .cls-margin.open .list {
     height: 220px;
+    margin-bottom: -19px;
 }
 
 .list ion-item.menumain.item.item-complex .list {
@@ -1980,6 +1988,7 @@ label.item.item-input.image-sugest button {
     transition: 300ms ease;
     height: 0px;
     overflow: hidden;
+    padding: 0px;
 }
 
 .item-login {

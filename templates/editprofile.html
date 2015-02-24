@@ -15,13 +15,13 @@
         </div>
         <div class="edit-cont">
             <ul class="edit-dropdown">
-                <li class="chng-paswd">
+                <li class="chng-paswd" ng-click="mkopen2();">
                     <h5> 
                     <i class="lockicon iicon"></i>
                     Change Password
-                    <i class="ion-chevron-down"></i>
+                    <i class="ion-chevron-down" ng-class="shldopens4"></i>
                     </h5>
-                    <ul class="pswd-chgn">
+                    <ul class="pswd-chgn" ng-class="shldopens3">
                         <li>
                             <label class="item item-input">
                                 <i class="lockicon iicon"></i>
@@ -38,13 +38,13 @@
                         </li>
                     </ul>
                 </li>
-                <li class="chng-profile">
+                <li class="chng-profile" ng-click="mkopen1();">
                     <h5>
                     <i class="editicon iicon"></i> 
                     Edit Profile 
-                    <i class="ion-chevron-down"></i>
+                    <i class="ion-chevron-down" ng-class="shldopens2"></i>
                     </h5>
-                    <ul class="edit-chgn">
+                    <ul class="edit-chgn" ng-class="shldopens1">
                         <li>
                             <div class="list">
                                 <label class="item item-input">

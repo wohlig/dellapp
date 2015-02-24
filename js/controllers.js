@@ -12,20 +12,42 @@ angular.module('starter.controllers', [])
 
 .controller('LandingCtrl', function ($scope, $stateParams) {})
 
-.controller('ProfileCtrl', function ($scope, $stateParams) {})
-
-.controller('EditprofileCtrl', function ($scope, $stateParams) {
-
+.controller('ProfileCtrl', function ($scope, $stateParams) {
     $scope.mkopen = function () {
         console.log("cbd");
         if ($scope.shldopens == "openprf") {
             $scope.shldopens = "";
         } else {
-            $scope. = "openprf";
+            $scope.shldopens = "openprf";
         }
     };
 
+})
 
+.controller('EditprofileCtrl', function ($scope, $stateParams) {
+    $scope.mkopen1 = function () {
+        console.log("cbd");
+        if ($scope.shldopens1 == "changesul" &&
+            $scope.shldopens2 == "changesi") {
+            $scope.shldopens1 = "";
+            $scope.shldopens2 = "";
+        } else {
+            $scope.shldopens1 = "changesul";
+            $scope.shldopens2 = "changesi";
+        }
+    };
+
+    $scope.mkopen2 = function () {
+        console.log("cbd");
+        if ($scope.shldopens3 == "changesul1" &&
+            $scope.shldopens4 == "changesi") {
+            $scope.shldopens3 = "";
+            $scope.shldopens4 = "";
+        } else {
+            $scope.shldopens3 = "changesul1";
+            $scope.shldopens4 = "changesi";
+        }
+    };
 })
 
 .controller('PostinfoCtrl', function ($scope, $stateParams) {})
