@@ -133,10 +133,6 @@ button {
     min-height: 230px;
 }
 
-{
-    text-align: center;
-}
-
 span.ion-checkmark-round.float-right {
     float: right;
     width: 50%;
@@ -239,6 +235,23 @@ span.ion-record.ion-record3rd {
 
 span.ion-record.ion-record1st {
     float: left;
+}
+
+.menumain a i.ion-chevron-down {
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    padding: 9px 0px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 .loginstep {
@@ -544,10 +557,10 @@ button.button.icon-left.button-twit {
 
 .icon-medal {
     background: url('../img/medal.png') no-repeat;
-    -webkit-background-size: 23px 23px;
-    -moz-background-size: 23px 23px;
-    -o-background-size: 23px 23px;
-    background-size: 23px 23px;
+    -webkit-background-size: 25px 22px;
+    -moz-background-size: 25px 22px;
+    -o-background-size: 25px 22px;
+    background-size: 25px 22px;
     height: 25px;
     width: 30px;
     display: inline-block;
@@ -1026,11 +1039,11 @@ ul.edit-dropdown li ul {
 }
 
 ul.edit-dropdown li ul.changesul {
-    height: 205px;
+    height: 207px;
 }
 
 ul.edit-dropdown li ul.changesul1 {
-    height: 102px;
+    height: 104px;
 }
 /*
 ul:hover li label.item.item-input {
@@ -1054,6 +1067,10 @@ ul.edit-dropdown li h5 i.ion-chevron-down.changesi {
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
     padding: 9px 0px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
 }
 
 ul.edit-dropdown li {
