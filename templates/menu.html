@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="MenuCtrl">
     <ion-side-menu-content>
         <ion-nav-bar class="">
             <ion-nav-back-button>
@@ -17,11 +17,11 @@
                     <span class="ion-home tac" title="home" aria-hidden="true"></span>
                     <div class="head-text">Dashboard</div>
                 </ion-item>
-                <ion-item nav-clear href="#" class="menumain">
+                <ion-item nav-clear href="#" class="menumain" ng-click="changeopen1();">
                     <span class="ion-person tac" title="profile" aria-hidden="true"></span>
                     <div class="head-text">Profile</div>
                     <i class="icon ion-chevron-down"></i>
-                    <ion-list class="cls-margin">
+                    <ion-list class="cls-margin" ng-class="shouldopen1">
                         <ion-item nav-clear menu-close href="#/app/profile" class="menumain">
                             <span class="ion-information tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Information</div>
@@ -36,12 +36,12 @@
                         </ion-item>
                     </ion-list>
                 </ion-item>
-                <ion-item nav-clear href="#" class="menumain">
+                <ion-item nav-clear href="#" class="menumain" ng-click="changeopen2();">
                     <span class="ion-email tac" title="posting" aria-hidden="true"></span>
                     <div class="head-text">Posting
                     </div>
                     <i class="icon ion-chevron-down"></i>
-                    <ion-list class="cls-margin">
+                    <ion-list class="cls-margin" ng-class="shouldopen2">
                         <ion-item nav-clear menu-close href="#/app/postfb" class="menumain">
                             <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Facebook</div>

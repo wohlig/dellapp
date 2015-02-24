@@ -729,7 +729,7 @@ ion-view.bgprofile.pane {
     transition: 300ms ease-in-out;
 }
 
-.profile-cont:hover {
+.profile-cont.openprf {
     height: 320px;
 }
 
@@ -1969,16 +1969,17 @@ label.item.item-input.image-sugest button {
     right: 12px;
 }
 
-.list ion-item.menumain.item.item-complex:hover .list {
-    display: block;
+.list ion-item.menumain.item.item-complex .cls-margin.open .list {
+    height: 220px;
 }
 
 .list ion-item.menumain.item.item-complex .list {
-    display: none;
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
     transition: 300ms ease;
+    height: 0px;
+    overflow: hidden;
 }
 
 .item-login {

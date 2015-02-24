@@ -14,7 +14,19 @@ angular.module('starter.controllers', [])
 
 .controller('ProfileCtrl', function ($scope, $stateParams) {})
 
-.controller('EditprofileCtrl', function ($scope, $stateParams) {})
+.controller('EditprofileCtrl', function ($scope, $stateParams) {
+
+    $scope.mkopen = function () {
+        console.log("cbd");
+        if ($scope.shldopens == "openprf") {
+            $scope.shldopens = "";
+        } else {
+            $scope. = "openprf";
+        }
+    };
+
+
+})
 
 .controller('PostinfoCtrl', function ($scope, $stateParams) {})
 
@@ -34,4 +46,23 @@ angular.module('starter.controllers', [])
 
 .controller('TableCtrl', function ($scope, $stateParams) {})
 
-.controller('TablefbCtrl', function ($scope, $stateParams) {});
+.controller('TablefbCtrl', function ($scope, $stateParams) {})
+
+.controller('MenuCtrl', function ($scope, $stateParams) {
+
+    $scope.changeopen1 = function () {
+        if ($scope.shouldopen1 == "open") {
+            $scope.shouldopen1 = "";
+        } else {
+            $scope.shouldopen1 = "open";
+        }
+    };
+
+    $scope.changeopen2 = function () {
+        if ($scope.shouldopen2 == "open") {
+            $scope.shouldopen2 = "";
+        } else {
+            $scope.shouldopen2 = "open";
+        }
+    };
+});
