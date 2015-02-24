@@ -1993,17 +1993,35 @@ label.item.item-input.image-sugest button {
     right: 12px;
 }
 
-.list ion-item.menumain.item.item-complex .cls-margin.open .list {
+.list .menumain.open .list {
     height: 220px;
     margin-bottom: -19px;
 }
 
-.list ion-item.menumain.item.item-complex .list {
+.menumain.open i.ion-chevron-down:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.menumain i.ion-chevron-down:before {
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
     transition: 300ms ease;
+}
+
+.list .menumain .list {
     height: 0px;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
+}
+
+.list .menumain {
     overflow: hidden;
     padding: 0px;
 }
