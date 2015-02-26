@@ -8,7 +8,24 @@ angular.module('starter.controllers', [])
 
 .controller('Login1Ctrl', function ($scope, $stateParams) {})
 
-.controller('WelcomeCtrl', function ($scope, $stateParams) {})
+.controller('WelcomeCtrl', function ($scope, $stateParams, $ionicModal) {
+
+    $ionicModal.fromTemplateUrl('templates/model.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openedit = function () {
+        $scope.modal.show();
+    }
+
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    };
+
+})
 
 .controller('LandingCtrl', function ($scope, $stateParams) {})
 
