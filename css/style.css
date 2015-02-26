@@ -124,7 +124,7 @@ button {
 
 .login-down {
     text-align: center;
-    background: rgba(122, 184, 0, 0.9);
+    background: rgba(255, 119, 1, 0.85);
     margin: 20px 20px 20px 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -356,7 +356,7 @@ span.ion-record.ion-record1st {
 }
 
 .item item-input {
-    background: #7AB800;
+    background: #ff7701;
 }
 
 .signnow label.item.item-input {
@@ -370,7 +370,7 @@ span.ion-record.ion-record1st {
 }
 
 .button-signin {
-    color: #7AB800;
+    color: #ff7701;
     text-transform: uppercase;
     padding: 0px 10px 0px;
     font-size: 14px;
@@ -387,7 +387,7 @@ span.ion-record.ion-record1st {
 }
 
 span.ion-record.ion-circle1 {
-    color: #7AB800;
+    color: #ff7701;
     margin: 0 5px;
 }
 
@@ -451,7 +451,7 @@ span.ion-circle {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    background: #A1CD4C;
+    background: #FF8B26;
     height: 15px;
     width: 15px;
     display: inline-block;
@@ -724,7 +724,7 @@ ion-view.bgprofile.pane {
 }
 
 .profile-cont {
-    background: rgba(122, 184, 0, 0.9);
+    background: rgba(255, 119, 1, 0.9);
     min-height: 200px;
     border-bottom: 2px solid #FFF;
     position: relative;
@@ -816,7 +816,7 @@ hr.vertical {
     height: 0;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 16px solid #87BF19;
+    border-top: 16px solid #FF8419;
     position: absolute;
     left: 50%;
     bottom: 4px;
@@ -851,7 +851,7 @@ hr.vertical {
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 20px solid #87BF19;
+    border-top: 20px solid #FF8419;
     position: absolute;
     left: 50%;
     -webkit-transform: translatex(-50%);
@@ -1083,8 +1083,8 @@ ul.edit-dropdown li {
 }
 
 .edit-header button.button.button-icon.icon.ion-close-round {
-    color: #0085C3;
-    border: 2px solid #0085C3;
+    color: #ff7701;
+    border: 2px solid #ff7701;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -1093,8 +1093,8 @@ ul.edit-dropdown li {
 }
 
 .edit-header button.button.button-icon.icon.ion-checkmark {
-    color: #0085C3;
-    border: 2px solid #0085C3;
+    color: #ff7701;
+    border: 2px solid #ff7701;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -1188,7 +1188,7 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
 
 .like-comnt {
     text-align: center;
-    background: #7ab800;
+    background: #ff7701;
     color: #fff;
     font-size: 20px;
     padding: 0px 0 0px 0px;
@@ -1507,7 +1507,7 @@ hr.vertical-blue {
 }
 
 .box-slider.login .slider-pager .slider-pager-page {
-    color: #87BF19;
+    color: #FF7701;
 }
 
 span.twit-score i {
@@ -1526,7 +1526,8 @@ span.lead-score {
 }
 
 .leader-brd {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    /* position: relative; */
 }
 
 .social-lead span {
@@ -1537,6 +1538,8 @@ span.lead-score {
     padding: 0px 0 0px 0px;
     margin: 0 0 0px 0px;
     height: 36px;
+    position: absolute;
+    bottom: -4px;
 }
 
 .bod-right {
@@ -1562,14 +1565,14 @@ h5.score-tot {
 }
 
 button.button-clear.post-icon {
-    border: 1px solid #1189C5;
+    border: 1px solid #ff7701;
     padding: 2px 0px 0px 0px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     height: 35px;
     width: 35px;
-    color: #1189C5;
+    color: #ff7701;
 }
 
 .post-cont h4 {
@@ -1605,10 +1608,10 @@ button.button.icon-left.ion-social-twitter.button-post {
 }
 
 button.button.ion-edit.post-icon {
-    background: #7ab800;
+    background: #ff7701;
     font-size: 20px;
     color: #fff;
-    border: 1px solid #7ab800;
+    border: 1px solid #ff7701;
     padding: 0px 6px 0px 6px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -1712,24 +1715,24 @@ ion-item.mk-class.item {
 }
 
 button.button.menu-btncolor.green {
-    border: 2px solid #7AB800;
+    border: 2px solid #ff7701;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    color: #7AB800;
+    color: #ff7701;
     padding: 0px 7px;
     width: 35px;
     height: 35px;
 }
 
 button.button.menu-btncolor.green.blue {
-    color: #1189C5;
-    border-color: #1189C5;
+    color: #ff7701;
+    border-color: #ff7701;
 }
 
 button.ion-edit.post-icon.blue {
-    background: #1189C5;
-    border-color: #1189C5;
+    background: #ff7701;
+    border-color: #ff7701;
 }
 
 .crt-post {
@@ -1881,8 +1884,8 @@ button.button.button-small.imgset {
 }
 
 .clrgreen {
-    border-color: #7ab800;
-    background: #7ab800;
+    border-color: #ff7701;
+    background: #ff7701;
 }
 
 .clrgred {
@@ -1998,7 +2001,7 @@ label.item.item-input.image-sugest button {
     margin-bottom: -19px;
 }
 
-.menumain.open i.ion-chevron-down:before {
+.menumain.open i.ion-chevron-up:before {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -2006,7 +2009,7 @@ label.item.item-input.image-sugest button {
     transform: rotate(180deg);
 }
 
-.menumain i.ion-chevron-down:before {
+.menumain i.ion-chevron-up:before {
     -webkit-transition: 300ms ease;
     -moz-transition: 300ms ease;
     -o-transition: 300ms ease;
@@ -2040,7 +2043,7 @@ ul.pswd-chgn li label i {
 }
 
 button.button.back-button.buttons.button-clear.header-item {
-    color: #243F6D;
+    color: #FF7701;
 }
 
 label.item.item-input {
@@ -2063,16 +2066,16 @@ button.button.back-button.header-item {
 }
 
 button.button.back-button i.icon.ion-ios7-arrow-back {
-    top: -10px!important;
+    top: -15px!important;
     position: relative;
 }
 
 button.button.back-button.buttons.header-item.blue {
-    color: #1189C5!important;
+    color: #FF7701!important;
 }
 
 button.button.back-button.buttons.header-item.green {
-    color: #7ab800!important;
+    color: #ff7701!important;
 }
 
 .item.active,
@@ -2081,6 +2084,6 @@ button.button.back-button.buttons.header-item.green {
 .item-complex.activated .item-content,
 .item .item-content.active,
 .item .item-content.activated {
-    border-color: #7AB800;
-    background-color: #7AB800;
+    border-color: #ff7701;
+    background-color: #ff7701;
 }
