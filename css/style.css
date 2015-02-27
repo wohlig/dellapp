@@ -740,7 +740,13 @@ ion-view.bgprofile.pane {
     -moz-transition: 200ms ease-in-out;
     -o-transition: 200ms ease-in-out;
     transition: 100ms ease-in-out;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
+    -webkit-transition-property: height;
+    -moz-transition-property: height;
+    -o-transition-property: height;
     transition-property: height;
 }
 
@@ -768,6 +774,9 @@ ion-view.bgprofile.pane {
     -moz-transition: 300ms ease-in-out;
     -o-transition: 300ms ease-in-out;
     transition: 100ms ease-in-out;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
 }
 
@@ -793,6 +802,9 @@ ion-view.bgprofile.pane {
     -moz-transition: 300ms ease-in-out;
     -o-transition: 300ms ease-in-out;
     transition: 100ms ease-in-out;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
 }
 
@@ -816,6 +828,9 @@ ion-view.bgprofile.pane {
     -moz-transition: 300ms ease-in-out;
     -o-transition: 300ms ease-in-out;
     transition: 100ms ease-in-out;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
 }
 
@@ -839,6 +854,10 @@ ion-view.bgprofile.pane {
 
 .profile-cont.openprf .tri-grp {
     position: absolute;
+    -webkit-transform: rotate(180deg) translatex(-50%);
+    -moz-transform: rotate(180deg) translatex(-50%);
+    -ms-transform: rotate(180deg) translatex(-50%);
+    -o-transform: rotate(180deg) translatex(-50%);
     transform: rotate(180deg) translatex(-50%);
     left: 50%;
     bottom: 310px;
@@ -846,6 +865,10 @@ ion-view.bgprofile.pane {
 
 .profile-cont.openprf .tri-grp1 {
     position: absolute;
+    -webkit-transform: rotate(180deg) translatex(-50%);
+    -moz-transform: rotate(180deg) translatex(-50%);
+    -ms-transform: rotate(180deg) translatex(-50%);
+    -o-transform: rotate(180deg) translatex(-50%);
     transform: rotate(180deg) translatex(-50%);
     left: 50%;
     bottom: 272px;
@@ -861,6 +884,9 @@ ion-view.bgprofile.pane {
     -moz-transition: 800ms ease;
     -o-transition: 800ms ease;
     transition: 800ms ease;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
 }
 
@@ -2137,6 +2163,8 @@ button.button.back-button.buttons.header-item.green {
 
 .buttons.close-modal button {
     border: 1px solid #0084c4;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     font-size: 13px;
     padding: 1px 6px 0px 7px;
