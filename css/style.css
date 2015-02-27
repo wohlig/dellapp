@@ -1629,8 +1629,8 @@ button.button-clear.post-icon {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 32px;
-    width: 32px;
+    height: 35px;
+    width: 35px;
     color: #ff7701;
 }
 
@@ -1671,7 +1671,7 @@ button.button.ion-edit.post-icon {
     font-size: 20px;
     color: #fff;
     border: 1px solid #ff7701;
-    padding: 0px 3px 0px 3px;
+    padding: 0px 6px 0px 6px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -1779,9 +1779,9 @@ button.button.menu-btncolor.green {
     -moz-border-radius: 100%;
     border-radius: 100%;
     color: #ff7701;
-    padding: 0px 5px;
-    width: 32px;
-    height: 32px;
+    padding: 0px 7px;
+    width: 35px;
+    height: 35px;
 }
 
 button.button.menu-btncolor.green.blue {
