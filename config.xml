@@ -37,7 +37,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="StatusBarOverlaysWebView" value="false" />
 
-    <icon src="img/CampassadorAppIcon.png.png" />
+    <icon src="img/CampassadorAppIcon.png" />
 
     <gap:splash src="img/screen.png" />
 
