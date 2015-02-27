@@ -837,22 +837,6 @@ ion-view.bgprofile.pane {
     z-index: 0;
 }
 
-.tri-grp {
-    -webkit-transition: 300ms ease;
-    -moz-transition: 300ms ease;
-    -o-transition: 300ms ease;
-    transition: 00ms ease;
-    transition-timing-function: linear;
-}
-
-.tri-grp2 {
-    -webkit-transition: 300ms ease;
-    -moz-transition: 300ms ease;
-    -o-transition: 300ms ease;
-    transition: 00ms ease;
-    transition-timing-function: linear;
-}
-
 .profile-cont.openprf .tri-grp {
     position: absolute;
     transform: rotate(180deg) translatex(-50%);
@@ -870,67 +854,19 @@ ion-view.bgprofile.pane {
 .profile-cont.openprf .triangle2 {
     border-top: 20px solid #3D5886;
 }
-/*
-.profile-cont.openprf .triangle1 {
-    left: 50%;
-    top: 274px;
-    -webkit-transform: rotate(180deg) translatex(50%);
-    -moz-transform: rotate(180deg) translatex(50%);
-    -ms-transform: rotate(180deg) translatex(50%);
-    -o-transform: rotate(180deg) translatex(50%);
-    transform: rotate(180deg) translatex(50%);
+
+.profile-contmain1 {
+    opacity: 0;
+    -webkit-transition: 800ms ease;
+    -moz-transition: 800ms ease;
+    -o-transition: 800ms ease;
+    transition: 800ms ease;
+    transition-timing-function: linear;
 }
 
-.profile-cont.openprf .triangle {
-    left: 50%;
-    top: 278px;
-    -webkit-transform: rotate(180deg) translatex(50%);
-    -moz-transform: rotate(180deg) translatex(50%);
-    -ms-transform: rotate(180deg) translatex(50%);
-    -o-transform: rotate(180deg) translatex(50%);
-    transform: rotate(180deg) translatex(50%);
+.profile-cont.openprf .profile-contmain1 {
+    opacity: 1;
 }
-
-.profile-cont.openprf .triangle2 {
-    left: 50%;
-    top: 304px;
-    -webkit-transform: rotate(180deg) translatex(50%);
-    -moz-transform: rotate(180deg) translatex(50%);
-    -ms-transform: rotate(180deg) translatex(50%);
-    -o-transform: rotate(180deg) translatex(50%);
-    transform: rotate(180deg) translatex(50%);
-    border-top: 20px solid #3D5886;
-}
-
-.profile-cont.openprf .triangle3 {
-    left: 50%;
-    top: 298px;
-    -webkit-transform: rotate(180deg) translatex(50%);
-    -moz-transform: rotate(180deg) translatex(50%);
-    -ms-transform: rotate(180deg) translatex(50%);
-    -o-transform: rotate(180deg) translatex(50%);
-    transform: rotate(180deg) translatex(50%);
-}
-*/
-/*
-.profile-cont {
-    display: block;
-    content: "";
-    border-color: rgba(131, 188, 23, 1) transparent transparent transparent;
-    border-style: solid;
-    border-width: 25px;
-    height: 0;
-    width: 0;
-    position: absolute;
-    bottom: -17%;
-    right: 50%;
-    -webkit-transform: translate(50%);
-    -moz-transform: translate(50%);
-    -ms-transform: translate(50%);
-    -o-transform: translate(50%);
-    transform: translate(50%);
-}
-*/
 
 hr.vertical {
     width: 0px;
