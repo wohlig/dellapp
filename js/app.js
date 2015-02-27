@@ -141,6 +141,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 }
             }
         })
+        .state('app.twitterpost', {
+            url: "/twitterpost",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/twitterpost.html",
+                    controller: 'TwitterpostCtrl'
+                }
+            }
+        })
+        .state('app.fbpost', {
+            url: "/fbpost",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/fbpost.html",
+                    controller: 'FbpostCtrl'
+                }
+            }
+        })
         /*Simple Pages*/
 
     .state('login', {

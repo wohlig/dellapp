@@ -87,6 +87,10 @@ angular.module('starter.controllers', [])
 
 .controller('TablefbCtrl', function ($scope, $stateParams) {})
 
+.controller('TwitterpostCtrl', function ($scope, $stateParams) {})
+
+.controller('FbpostCtrl', function ($scope, $stateParams) {})
+
 .controller('MenuCtrl', function ($scope, $stateParams) {
 
     $scope.changeopen1 = function () {

@@ -1838,6 +1838,7 @@ button.button.button-small.imgset {
 
 .postfb-cont {
     padding-bottom: 15px;
+    text-align: center;
 }
 
 .fbpost img {
@@ -2168,4 +2169,30 @@ button.button.back-button.buttons.header-item.green {
     font-weight: 500;
     font-size: 13px;
     padding: 4px 5px;
+}
+
+button.button.button-small.button-positive.history {
+    background: #fff;
+    border-color: #2280CA;
+    color: #2280CA;
+}
+
+button.button.button-small.button-positive.history:hover {
+    color: #fff;
+    border-color: #2280CA;
+    background: #2280CA;
+}
+
+.post-cont {
+    text-align: center;
+}
+
+.row.center-main {
+    text-align: center;
+}
+
+.postfb-cont .card h4 {
+    color: #5EA9DD;
+    line-height: 115%;
+    padding: 20px 0;
 }
