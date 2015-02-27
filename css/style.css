@@ -1586,7 +1586,7 @@ span.lead-score {
 
 .leader-brd {
     padding-bottom: 40px;
-    /* position: relative; */
+    position: relative;
 }
 
 .social-lead span {
