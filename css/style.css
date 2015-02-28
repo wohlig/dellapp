@@ -741,6 +741,10 @@ ion-view.bgprofile.pane {
 .profile-cont:before {
     content: "";
     position: absolute;
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
     transform: translate(-50%, 100%);
     left: 50%;
     bottom: 0px;
@@ -755,6 +759,10 @@ ion-view.bgprofile.pane {
 .profile-cont:after {
     content: "";
     position: absolute;
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
     transform: translate(-50%, 100%);
     left: 50%;
     bottom: 0px;
@@ -1330,6 +1338,9 @@ hr.dividhome {
     color: #fff;
     height: 0px;
     overflow: hidden;
+    -webkit-transition: all 100ms ease;
+    -moz-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
     transition: all 100ms ease;
 }
 
@@ -2173,5 +2184,8 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
 }
 
 .tri-grp {
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
