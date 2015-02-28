@@ -734,7 +734,7 @@ ion-view.bgprofile.pane {
     -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     z-index: 0;
-    height: 190px;
+    height: 225px;
     overflow: hidden;
     -webkit-transition: 200ms ease-in-out;
     -moz-transition: 200ms ease-in-out;
@@ -762,7 +762,7 @@ ion-view.bgprofile.pane {
     border-top: 16px solid #FF8419;
     position: absolute;
     left: 50%;
-    top: 173px;
+    top: 192px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -771,8 +771,8 @@ ion-view.bgprofile.pane {
     margin-top: 4px;
     z-index: 8;
     -webkit-transition: 100ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    -o-transition: 300ms ease-in-out;
+    -moz-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
     -webkit-transition-timing-function: linear;
     -moz-transition-timing-function: linear;
@@ -790,7 +790,7 @@ ion-view.bgprofile.pane {
     left: 50%;
     bottom: 1px;
     left: 50%;
-    top: 175px;
+    top: 195px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -798,9 +798,9 @@ ion-view.bgprofile.pane {
     transform: translatex(-50%);
     margin-top: 5px;
     z-index: 0;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    -o-transition: 300ms ease-in-out;
+    -webkit-transition: 100ms ease-in-out;
+    -moz-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
     -webkit-transition-timing-function: linear;
     -moz-transition-timing-function: linear;
@@ -816,7 +816,7 @@ ion-view.bgprofile.pane {
     border-top: 20px solid #FF8419;
     position: absolute;
     left: 50%;
-    top: 200px;
+    top: 225px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -824,9 +824,9 @@ ion-view.bgprofile.pane {
     transform: translatex(-50%);
     margin-top: -3px;
     z-index: 1;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    -o-transition: 300ms ease-in-out;
+    -webkit-transition: 100ms ease-in-out;
+    -moz-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
     -webkit-transition-timing-function: linear;
     -moz-transition-timing-function: linear;
@@ -842,7 +842,7 @@ ion-view.bgprofile.pane {
     border-top: 20px solid #fff;
     position: absolute;
     left: 50%;
-    top: 200px;
+    top: 225px;
     -webkit-transform: translatex(-50%);
     -moz-transform: translatex(-50%);
     -ms-transform: translatex(-50%);
@@ -860,7 +860,7 @@ ion-view.bgprofile.pane {
     -o-transform: rotate(180deg) translatex(-50%);
     transform: rotate(180deg) translatex(-50%);
     left: 50%;
-    bottom: 310px;
+    bottom: 289px;
 }
 
 .profile-cont.openprf .tri-grp1 {
@@ -871,7 +871,14 @@ ion-view.bgprofile.pane {
     -o-transform: rotate(180deg) translatex(-50%);
     transform: rotate(180deg) translatex(-50%);
     left: 50%;
-    bottom: 272px;
+    bottom: 246px;
+}
+
+.profile-cont.openprf .tri-grp1 {
+    -webkit-transition: 800ms ease;
+    -moz-transition: 800ms ease;
+    -o-transition: 800ms ease;
+    transition: 800ms ease;
 }
 
 .profile-cont.openprf .triangle2 {
@@ -1402,7 +1409,7 @@ hr.dividhome {
 }
 
 .profile-contmain {
-    padding: 20px 0;
+    padding: 26px 0;
     color: #fff;
 }
 
@@ -1585,7 +1592,7 @@ span.lead-score {
 }
 
 .leader-brd {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     position: relative;
 }
 
@@ -1596,9 +1603,9 @@ span.lead-score {
 .like-comnt.leader {
     padding: 0px 0 0px 0px;
     margin: 0 0 0px 0px;
-    height: 36px;
-    position: absolute;
-    bottom: -4px;
+    height: 35px;
+    position: relative;
+    bottom: 0px;
 }
 
 .bod-right {
@@ -1629,8 +1636,8 @@ button.button-clear.post-icon {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     color: #ff7701;
 }
 
@@ -1780,8 +1787,8 @@ button.button.menu-btncolor.green {
     border-radius: 100%;
     color: #ff7701;
     padding: 0px 7px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 
 button.button.menu-btncolor.green.blue {
@@ -2223,4 +2230,18 @@ button.button.button-small.button-positive.history:hover {
     color: #5EA9DD;
     line-height: 115%;
     padding: 20px 0;
+}
+
+button.button.button-icon.button-clear.ion-close.post-icon.blue {
+    padding: 0;
+}
+
+button.button.icon-left.ion-social-twitter.button-post:hover {
+    background: #2F87CD;
+    border: #2F87CD;
+    color: #fff;
+}
+
+.leader-contmain {
+    position: relative;
 }
