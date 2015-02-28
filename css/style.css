@@ -1700,6 +1700,17 @@ ion-item.mk-class.item {
     padding-top: 20px;
 }
 
+.bar .button.button-icon.brf:before,
+.bar .button .icon.brf:before,
+.bar .button.icon.brf:before,
+.bar .button.icon-left.brf:before,
+.bar .button.icon-right.brf:before {
+    padding-right: 0px;
+    font-size: 20px;
+    line-height: 6px;
+    padding-top: 12px;
+}
+/*
 .bar .button.button-icon:before,
 .bar .button .icon:before,
 .bar .button.icon:before,
@@ -1709,7 +1720,7 @@ ion-item.mk-class.item {
     font-size: 20px;
     line-height: 6px;
     padding-top: 12px;
-}
+}*/
 
 button.button.menu-btncolor.green {
     border: 2px solid #ff7701;
@@ -1955,7 +1966,6 @@ button.button.button-small.imgset {
 }
 
 .tables {
-    padding-top: 50px;
     text-align: center;
 }
 
@@ -2060,8 +2070,6 @@ button.button.button-icon.button-clear.ion-gear-a.menu-btncolor {
 
 button.button.back-button.header-item {
     color: #fff!important;
-    margin-top: -2px;
-    position: relative;
 }
 
 button.button.back-button i.icon.ion-ios7-arrow-back {
