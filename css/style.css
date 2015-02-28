@@ -491,7 +491,7 @@ span.ion-circle {
     padding-right: 0.5em;
     vertical-align: inherit;
     font-size: 20px;
-    line-height: 21px;
+    line-height: 20px;
     pointer-events: none;
 }
 
@@ -728,161 +728,77 @@ ion-view.bgprofile.pane {
     min-height: 200px;
     border-bottom: 2px solid #FFF;
     margin-top: 0px;
-    padding: 16px;
+    padding: 16px 0 0 0px;
     text-align: center;
-    -webkit-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 0 3px rgba(0, 0, 0, 0.25);
     z-index: 0;
-    height: 225px;
-    overflow: hidden;
-    -webkit-transition: 200ms ease-in-out;
-    -moz-transition: 200ms ease-in-out;
-    -o-transition: 200ms ease-in-out;
-    transition: 100ms ease-in-out;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-    -webkit-transition-property: height;
-    -moz-transition-property: height;
-    -o-transition-property: height;
-    transition-property: height;
+    position: relative;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    transition: 300ms ease;
+}
+
+.profile-cont:before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    bottom: 0px;
+    border-width: 28px 28px 0;
+    border-style: solid;
+    border-color: #FF8419 transparent;
+    display: block;
+    width: 0;
+    z-index: 2;
+}
+
+.profile-cont:after {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    bottom: 0px;
+    border-width: 32px 32px 0;
+    border-style: solid;
+    border-color: white transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.profile-cont.openprf .profile-contmain {
+    height: 110px;
+    padding: 10px;
 }
 
 .profile-cont.openprf {
-    height: 320px;
-}
-
-.triangle {
-    width: 0;
-    height: 0;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-top: 16px solid #FF8419;
-    position: absolute;
-    left: 50%;
-    top: 192px;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    margin-top: 4px;
-    z-index: 8;
-    -webkit-transition: 100ms ease-in-out;
-    -moz-transition: 100ms ease-in-out;
-    -o-transition: 100ms ease-in-out;
-    transition: 100ms ease-in-out;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-}
-
-.triangle1 {
-    width: 0;
-    height: 0;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-top: 16px solid #fff;
-    position: absolute;
-    left: 50%;
-    bottom: 1px;
-    left: 50%;
-    top: 195px;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    margin-top: 5px;
-    z-index: 0;
-    -webkit-transition: 100ms ease-in-out;
-    -moz-transition: 100ms ease-in-out;
-    -o-transition: 100ms ease-in-out;
-    transition: 100ms ease-in-out;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-}
-
-.triangle2 {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top: 20px solid #FF8419;
-    position: absolute;
-    left: 50%;
-    top: 225px;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    margin-top: -3px;
-    z-index: 1;
-    -webkit-transition: 100ms ease-in-out;
-    -moz-transition: 100ms ease-in-out;
-    -o-transition: 100ms ease-in-out;
-    transition: 100ms ease-in-out;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-}
-
-.triangle3 {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top: 20px solid #fff;
-    position: absolute;
-    left: 50%;
-    top: 225px;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    margin-top: 0px;
-    z-index: 0;
+    height: auto;
 }
 
 .profile-cont.openprf .tri-grp {
-    position: absolute;
-    -webkit-transform: rotate(180deg) translatex(-50%);
-    -moz-transform: rotate(180deg) translatex(-50%);
-    -ms-transform: rotate(180deg) translatex(-50%);
-    -o-transform: rotate(180deg) translatex(-50%);
-    transform: rotate(180deg) translatex(-50%);
-    left: 50%;
-    bottom: 289px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
-.profile-cont.openprf .tri-grp1 {
-    position: absolute;
-    -webkit-transform: rotate(180deg) translatex(-50%);
-    -moz-transform: rotate(180deg) translatex(-50%);
-    -ms-transform: rotate(180deg) translatex(-50%);
-    -o-transform: rotate(180deg) translatex(-50%);
-    transform: rotate(180deg) translatex(-50%);
-    left: 50%;
-    bottom: 246px;
-}
-
-.profile-cont.openprf .tri-grp1 {
+.tri-grp1 {
     -webkit-transition: 800ms ease;
     -moz-transition: 800ms ease;
     -o-transition: 800ms ease;
     transition: 800ms ease;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
 }
 
-.profile-cont.openprf .triangle2 {
-    border-top: 20px solid #3D5886;
+.profile-cont.openprf .tri-grp i {}
+
+.tri-grp i {
+    font-size: 34px;
+    color: #fff;
 }
 
 .profile-contmain1 {
@@ -948,6 +864,7 @@ hr.vertical {
 
 label.item.item-input.image-sugest {
     position: relative;
+    padding: 12px 26px;
 }
 
 .abc {
@@ -1409,8 +1326,11 @@ hr.dividhome {
 }
 
 .profile-contmain {
-    padding: 26px 0;
+    padding: 0px 0;
     color: #fff;
+    height: 0px;
+    overflow: hidden;
+    transition: all 100ms ease;
 }
 
 hr.vertical-title {
@@ -1843,7 +1763,7 @@ button.button.button-small.imgset {
 .button-postfb {
     color: #FFFFFF;
     background: #45699f;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .postfb-cont .card h3 {
@@ -2116,7 +2036,7 @@ button.button.back-button.buttons.button-clear.header-item {
 label.item.item-input {
     background: rgba(122, 184, 0, 0);
     border: 0px solid #ddd;
-    padding: 6px 27px;
+    padding: 6px 26px;
 }
 
 button.button.button-icon.button-clear.ion-gear-a.menu-btncolor {
@@ -2244,4 +2164,14 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
 
 .leader-contmain {
     position: relative;
+}
+
+.buttons.buttons-right.header-item {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.tri-grp {
+    transition: all 200ms ease;
 }
