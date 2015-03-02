@@ -867,7 +867,7 @@ hr.vertical {
 
 label.item.item-input.image-sugest {
     position: relative;
-    padding: 12px 26px;
+    padding: 12px 23px;
     font-weight: 500;
 }
 
@@ -1198,7 +1198,6 @@ label.item.item-input.fb-twt {
 
 label.item.item-input.fb-twt i {
     font-size: 25px;
-    padding-right: 20px;
 }
 
 label.item.item-input.image-sugest button {
@@ -1973,7 +1972,7 @@ button.button.button-small.imgset {
 
 label.item.item-input.image-sugest button {
     position: absolute;
-    right: 12px;
+    right: 20px;
 }
 
 .list .menumain.open .list {
@@ -2219,4 +2218,8 @@ button.button.button-icon.icon.edit-pro.brf {
     padding: 0;
     height: 32px;
     width: 32px;
+}
+
+label.item.item-input.fb-twt i.ion-social-facebook {
+    padding-right: 25px;
 }
