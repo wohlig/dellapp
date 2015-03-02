@@ -880,19 +880,12 @@ label.item.item-input.image-sugest {
     border-radius: 100%;
     vertical-align: middle;
     border: 3px solid #73d3f6;
-    position: absolute;
     cursor: pointer;
     overflow: hidden;
-    -webkit-transform: translatex(-50%);
-    -moz-transform: translatex(-50%);
-    -ms-transform: translatex(-50%);
-    -o-transform: translatex(-50%);
-    transform: translatex(-50%);
-    left: 50%;
 }
 
 .lockicon {
-    background: url('../img/lock.png') no-repeat;
+    background: url('../img/lock.png') no-repeat center;
 }
 
 .iicon {
@@ -907,7 +900,7 @@ label.item.item-input.image-sugest {
 }
 
 .editicon {
-    background: url('../img/edit.png') no-repeat;
+    background: url('../img/edit.png') no-repeat center;
     -webkit-background-size: 20px 20px;
     -moz-background-size: 20px 20px;
     -o-background-size: 20px 20px;
@@ -916,15 +909,16 @@ label.item.item-input.image-sugest {
 }
 
 .personicon {
-    background: url('../img/peopleedit.png') no-repeat;
+    background: url('../img/peopleedit.png') no-repeat center;
     -webkit-background-size: 20px 20px;
     -moz-background-size: 20px 20px;
     -o-background-size: 20px 20px;
     background-size: 20px 20px;
+    height: 22px;
 }
 
 .cardicon {
-    background: url('../img/postedit.png') no-repeat;
+    background: url('../img/postedit.png') no-repeat center;
     -webkit-background-size: 20px 20px;
     -moz-background-size: 20px 20px;
     -o-background-size: 20px 20px;
@@ -932,7 +926,7 @@ label.item.item-input.image-sugest {
 }
 
 .capicon {
-    background: url('../img/cap.png') no-repeat;
+    background: url('../img/cap.png') no-repeat center;
     -webkit-background-size: 25px 32px;
     -moz-background-size: 25px 32px;
     -o-background-size: 25px 32px;
@@ -941,7 +935,7 @@ label.item.item-input.image-sugest {
 }
 
 .contacticon {
-    background: url('../img/mobile.png') no-repeat;
+    background: url('../img/mobile.png') no-repeat center;
     -webkit-background-size: 18px 27px;
     -moz-background-size: 18px 27px;
     -o-background-size: 18px 27px;
@@ -950,7 +944,7 @@ label.item.item-input.image-sugest {
 }
 
 .cityicon {
-    background: url('../img/contact.png') no-repeat;
+    background: url('../img/contact.png') no-repeat center;
     -webkit-background-size: 22px 28px;
     -moz-background-size: 22px 28px;
     -o-background-size: 22px 28px;
@@ -959,7 +953,7 @@ label.item.item-input.image-sugest {
 }
 
 .bodicon {
-    background: url('../img/bod.png') no-repeat;
+    background: url('../img/bod.png') no-repeat center;
     -webkit-background-size: 25px 25px;
     -moz-background-size: 25px 25px;
     -o-background-size: 25px 25px;
@@ -1014,7 +1008,7 @@ li.chng-profile h5 {
 }
 
 ul.edit-dropdown {
-    padding: 0px 60px;
+    padding: 0px 40px;
 }
 
 ul li label.item.item-input {
@@ -1032,22 +1026,12 @@ ul.edit-dropdown li ul {
 }
 
 ul.edit-dropdown li ul.changesul {
-    height: 210px;
+    height: auto;
 }
 
 ul.edit-dropdown li ul.changesul1 {
-    height: 104px;
+    height: auto;
 }
-/*
-ul:hover li label.item.item-input {
-    height: 50px;
-    padding: 0px;
-    -webkit-transition: 300ms ease;
-    -moz-transition: 300ms ease;
-    -o-transition: 300ms ease;
-    transition: 300ms ease;
-}
-*/
 
 ul.edit-dropdown li h5 i.ion-chevron-down.changesi {
     -ms-transform: rotate(180deg);
@@ -2031,7 +2015,7 @@ label.item.item-input.image-sugest button {
 
 ul.edit-chgn li .list label i,
 ul.pswd-chgn li label i {
-    padding-right: 35px;
+    padding: 5px 10px 5px 20px;
 }
 
 .abc img {
@@ -2207,12 +2191,12 @@ button.button.button-icon.ion-close.post-icon.blue:before {
 }
 
 .edit-cont {
-    padding-top: 110px;
+    padding-top: 15px;
 }
 
 ul li ul input {
     border: 0;
-    padding: 8px 0px;
+    padding: 8px 5px;
 }
 
 ion-list.cls-margin .list {
