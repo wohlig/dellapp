@@ -434,7 +434,7 @@ span.ion-record.ion-circle2 {
 }
 
 .bgtrans {
-    background: transparent;
+    background: transparent!important;
     border: 0px;
 }
 
@@ -711,11 +711,6 @@ ion-view.bgprofile.pane {
     border-radius: 100%;
 }
 
-.img-profile {
-    margin: auto;
-    text-align: center;
-}
-
 .profile-cont1 {
     background: rgba(40, 70, 121, 0.9);
     min-height: 470px;
@@ -884,9 +879,11 @@ label.item.item-input.image-sugest {
     border-radius: 100%;
     vertical-align: middle;
     border: 3px solid #73d3f6;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     overflow: hidden;
+    transform: translatex(-50%);
+    left: 50%;
 }
 
 .lockicon {
@@ -1079,7 +1076,7 @@ ul.edit-dropdown li {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    padding: 5px 0px 5px 9px;
+    padding: 6px 0px 5px 9px;
     margin: 10px 0 0 15px;
 }
 
@@ -1183,8 +1180,9 @@ ul.edit-dropdown li ul li label input::-webkit-input-placeholder {
     color: #fff;
     font-size: 20px;
     padding: 0px 0 0px 0px;
-    height: 35px;
+    height: 36px;
     width: 100%;
+    margin-top: 2px;
 }
 
 .tab-items1 {
@@ -1420,7 +1418,7 @@ span.dob-prf {
     text-transform: uppercase;
     color: #0f88c5;
     padding-top: 14px;
-    background: #FFF;
+    background: transparent;
 }
 
 hr.verticalup {
@@ -1563,8 +1561,8 @@ button.button-clear.post-icon {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 30px;
-    width: 30px;
+    height: 33px;
+    width: 33px;
     color: #ff7701;
 }
 
@@ -1670,7 +1668,7 @@ ion-item.mk-class.item {
 
 .crete-btn {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 12px;
 }
 
 .crete-btn p,
@@ -1680,11 +1678,11 @@ ion-item.mk-class.item {
 }
 
 .crete-btn1 {
-    padding-top: 20px;
+    padding-top: 14px;
 }
 
 .crete-icon {
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .crete-btn1 button {
@@ -1706,17 +1704,6 @@ ion-item.mk-class.item {
     line-height: 6px;
     padding-top: 12px;
 }
-/*
-.bar .button.button-icon:before,
-.bar .button .icon:before,
-.bar .button.icon:before,
-.bar .button.icon-left:before,
-.bar .button.icon-right:before {
-    padding-right: 0px;
-    font-size: 20px;
-    line-height: 6px;
-    padding-top: 12px;
-}*/
 
 button.button.menu-btncolor.green {
     border: 2px solid #ff7701;
@@ -1725,8 +1712,8 @@ button.button.menu-btncolor.green {
     border-radius: 100%;
     color: #ff7701;
     padding: 0px 7px;
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
 }
 
 button.button.menu-btncolor.green.blue {
@@ -1951,8 +1938,8 @@ button.button.button-small.imgset {
 }
 
 .tbl-items h5 {
-    color: #73d3f6;
-    font-weight: 300;
+    color: #25B0E2;
+    font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
 }
@@ -2068,11 +2055,6 @@ button.button.back-button.header-item {
     color: #fff!important;
 }
 
-button.button.back-button i.icon.ion-ios7-arrow-back {
-    top: -15px!important;
-    position: relative;
-}
-
 button.button.back-button.buttons.header-item.blue {
     color: #FF7701!important;
 }
@@ -2147,7 +2129,7 @@ button.button.button-small.button-positive.history {
     color: #2280CA;
 }
 
-button.button.button-small.button-positive.history:hover {
+button.button.button-small.button-positive.history.activated {
     color: #fff;
     border-color: #2280CA;
     background: #2280CA;
@@ -2192,4 +2174,40 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
     -moz-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
+}
+
+.head-lead i {
+    color: #fff;
+    background: #0F88C5;
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    font-size: 23px;
+    padding: 5px 0px 0px 2px;
+}
+
+button.button.button-icon.ion-close.post-icon.blue:before {
+    padding-top: 13px;
+}
+
+.head-lead1 {
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #0f88c5;
+    padding-top: 14px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.edit-cont {
+    padding-top: 110px;
+}
+
+ul li ul input {
+    border: 0;
+    padding: 8px 0px;
+}
+
+ion-list.cls-margin .list {
+    padding: 0px;
 }

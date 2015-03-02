@@ -11,9 +11,14 @@
         <ion-header-bar class="bar-positive bg-menu">
             <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
         </ion-header-bar>
+
         <ion-content class="main-menu">
             <ion-list>
-                <ion-item nav-clear menu-close href="#/app/home" class="menumain">
+                <ion-header-bar class="bar-positive bg-menu">
+                    <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
+                </ion-header-bar>
+
+                <ion-item nav-clear menu-close href="#/app/home" class="menumain" ng-class="navigation.homeclass">
                     <span class="ion-home tac" title="home" aria-hidden="true"></span>
                     <div class="head-text">Dashboard</div>
                 </ion-item>
@@ -22,15 +27,15 @@
                     <div class="head-text">Profile</div>
                     <i class="icon ion-chevron-up"></i>
                     <ion-list class="cls-margin" class="menu-margin">
-                        <ion-item nav-clear menu-close href="#/app/profile" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/profile" class="menumain" ng-class="navigation.profileclass">
                             <span class="ion-information tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Information</div>
                         </ion-item>
-                        <ion-item nav-clear menu-close href="#/app/tablefb" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/tablefb" class="menumain" ng-class="navigation.tablefbclass">
                             <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Facebook</div>
                         </ion-item>
-                        <ion-item nav-clear menu-close href="#/app/table" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/table" class="menumain" ng-class="navigation.tabletwitclass">
                             <span class="ion-social-twitter tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Twitter</div>
                         </ion-item>
@@ -42,21 +47,21 @@
                     </div>
                     <i class="icon ion-chevron-up"></i>
                     <ion-list class="cls-margin submenu-list">
-                        <ion-item nav-clear menu-close href="#/app/fbpost" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/fbpost" class="menumain" ng-class="navigation.fbpostclass">
                             <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Facebook</div>
                         </ion-item>
-                        <ion-item nav-clear menu-close href="#/app/twitterpost" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/twitterpost" class="menumain" ng-class="navigation.twitpostclass">
                             <span class="ion-social-twitter tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Twitter</div>
                         </ion-item>
-                        <ion-item nav-clear menu-close href="#/app/suggestedpost" class="menumain">
+                        <ion-item nav-clear menu-close href="#/app/suggestedpost" class="menumain" ng-class="navigation.createpostclass">
                             <span class="ion-ios7-paper tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Co-Create</div>
                         </ion-item>
                     </ion-list>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/leaderboard" class="menumain">
+                <ion-item nav-clear menu-close href="#/app/leaderboard" class="menumain" ng-class="navigation.leaderclass">
                     <span class="ion-trophy tac" title="leaderboard" aria-hidden="true"></span>
                     <div class="head-text">Leader Board</div>
                 </ion-item>

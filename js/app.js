@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod'])
 
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -162,15 +162,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         /*Simple Pages*/
 
     .state('login', {
-            url: "/login",
-            templateUrl: "templates/login.html",
-            controller: 'LoginCtrl'
-        })
-        .state('login1', {
-            url: "/login1",
-            templateUrl: "templates/login1.html",
-            controller: 'Login1Ctrl'
-        })
+        url: "/login",
+        templateUrl: "templates/login.html",
+        controller: 'LoginCtrl'
+    })
 
     .state('welcome', {
         url: "/welcome",
@@ -178,16 +173,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'WelcomeCtrl'
     })
 
-    .state('landing', {
-            url: "/landing",
-            templateUrl: "templates/landing.html",
-            controller: 'LandingCtrl'
-        })
-        .state('editprofile', {
-            url: "/editprofile",
-            templateUrl: "templates/editprofile.html",
-            controller: 'EditprofileCtrl'
-        });
+    .state('editprofile', {
+        url: "/editprofile",
+        templateUrl: "templates/editprofile.html",
+        controller: 'EditprofileCtrl'
+    });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/login');
 });

@@ -1,12 +1,13 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['templateservicemod'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-.controller('HomeCtrl', function ($scope, $stateParams) {})
+.controller('HomeCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.homeclass = "active";
+})
 
 .controller('LoginCtrl', function ($scope, $stateParams) {})
-
-.controller('Login1Ctrl', function ($scope, $stateParams) {})
 
 .controller('WelcomeCtrl', function ($scope, $stateParams, $ionicModal) {
 
@@ -27,9 +28,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('LandingCtrl', function ($scope, $stateParams) {})
-
-.controller('ProfileCtrl', function ($scope, $stateParams) {
+.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.homeclass = "active";
     $scope.mkopen = function () {
         console.log("cbd");
         if ($scope.shldopens == "openprf") {
@@ -39,6 +40,23 @@ angular.module('starter.controllers', [])
         }
     };
 
+    $ionicModal.fromTemplateUrl('templates/editprofile.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openedit = function () {
+        $scope.modal.show();
+    }
+
+    $scope.closeModal = function () {
+        $scope.modal.hide();
+    };
+
+    TemplateService.noactive();
+    TemplateService.profileclass = "active";
 })
 
 .controller('EditprofileCtrl', function ($scope, $stateParams) {
@@ -71,7 +89,11 @@ angular.module('starter.controllers', [])
 
 .controller('SuggestpostCtrl', function ($scope, $stateParams) {})
 
-.controller('LeaderboardCtrl', function ($scope, $stateParams) {})
+.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.leaderclass = "active";
+
+})
 
 .controller('PostCtrl', function ($scope, $stateParams) {})
 
@@ -81,18 +103,33 @@ angular.module('starter.controllers', [])
 
 .controller('PostinfofbCtrl', function ($scope, $stateParams) {})
 
-.controller('SuggestedpostCtrl', function ($scope, $stateParams) {})
+.controller('SuggestedpostCtrl', function ($scope, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.createpostclass = "active";
+})
 
-.controller('TableCtrl', function ($scope, $stateParams) {})
+.controller('TableCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.tabletwitclass = "active";
+})
 
-.controller('TablefbCtrl', function ($scope, $stateParams) {})
+.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.tablefbclass = "active";
+})
 
-.controller('TwitterpostCtrl', function ($scope, $stateParams) {})
+.controller('TwitterpostCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.twitpostclass = "active";
 
-.controller('FbpostCtrl', function ($scope, $stateParams) {})
+})
 
-.controller('MenuCtrl', function ($scope, $stateParams) {
+.controller('FbpostCtrl', function ($scope, $stateParams, TemplateService) {
+    TemplateService.noactive();
+    TemplateService.fbpostclass = "active";
+})
 
+.controller('MenuCtrl', function ($scope, $stateParams, TemplateService) {
     $scope.changeopen1 = function () {
         if ($scope.shouldopen1 == "open") {
             $scope.shouldopen1 = "";
@@ -100,6 +137,8 @@ angular.module('starter.controllers', [])
             $scope.shouldopen1 = "open";
         }
     };
+
+    $scope.navigation = TemplateService;
 
     $scope.changeopen2 = function () {
         if ($scope.shouldopen2 == "open") {

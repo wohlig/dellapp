@@ -1,75 +1,73 @@
-<ion-view>
+<ion-view class="bckgrnd">
     <ion-content>
         <div class="edit-header">
-            <button class="button button-icon icon ion-close-round brf"></button>
-            <button class="button button-icon icon ion-checkmark brf"></button>
+            <button class="button button-icon icon ion-close-round brf" ng-click="closeModal();"></button>
+            <button class=" button button-icon icon ion-checkmark brf "></button>
         </div>
-        <div class="img-profile">
-            <div class="pic-edit">
-                <div class="abc">
-                    <img src="img/profilepic.jpg">
-                    <div class="picsupload"><a href="#">Upload Picture</a>
-                    </div>
+        <div class="pic-edit ">
+            <div class="abc ">
+                <img src="img/profilepic.jpg ">
+                <div class="picsupload "><a href="# ">Upload Picture</a>
                 </div>
             </div>
         </div>
-        <div class="edit-cont">
-            <ul class="edit-dropdown">
-                <li class="chng-paswd" ng-click="mkopen2();">
+        <div class="edit-cont ">
+            <ul class="edit-dropdown ">
+                <li class="chng-paswd " ng-click="mkopen2(); ">
                     <h5> 
-                    <i class="lockicon iicon"></i>
+                    <i class="lockicon iicon "></i>
                     Change Password
-                    <i class="ion-chevron-down" ng-class="shldopens4"></i>
+                    <i class="ion-chevron-down " ng-class="shldopens4 "></i>
                     </h5>
-                    <ul class="pswd-chgn" ng-class="shldopens3">
+                    <ul class="pswd-chgn " ng-class="shldopens3 ">
                         <li>
-                            <label class="item item-input">
-                                <i class="lockicon iicon"></i>
-                                <input type="password" placeholder="Current Password ">
+                            <label class="item item-input ">
+                                <i class="lockicon iicon "></i>
+                                <input type="password " placeholder="Current Password ">
                             </label>
-                            <label class="item item-input">
-                                <i class="lockicon iicon"></i>
-                                <input type="password" placeholder="New Password">
+                            <label class="item item-input ">
+                                <i class="lockicon iicon "></i>
+                                <input type="password " placeholder="New Password ">
                             </label>
-                            <label class="item item-input">
-                                <i class="lockicon iicon"></i>
-                                <input type="password" placeholder="Conform Password">
+                            <label class="item item-input ">
+                                <i class="lockicon iicon "></i>
+                                <input type="password " placeholder="Conform Password ">
                             </label>
                         </li>
                     </ul>
                 </li>
-                <li class="chng-profile" ng-click="mkopen1();">
+                <li class="chng-profile " ng-click="mkopen1(); ">
                     <h5>
-                    <i class="editicon iicon"></i> 
+                    <i class="editicon iicon "></i> 
                     Edit Profile 
-                    <i class="ion-chevron-down" ng-class="shldopens2"></i>
+                    <i class="ion-chevron-down " ng-class="shldopens2 "></i>
                     </h5>
-                    <ul class="edit-chgn" ng-class="shldopens1">
+                    <ul class="edit-chgn " ng-class="shldopens1 ">
                         <li>
-                            <div class="list">
-                                <label class="item item-input">
-                                    <i class="personicon iicon"></i>
-                                    <input type="text" placeholder="Name">
+                            <div class="list ">
+                                <label class="item item-input ">
+                                    <i class="personicon iicon "></i>
+                                    <input type="text " placeholder="Name ">
                                 </label>
-                                <label class="item item-input">
-                                    <i class="cardicon iicon"></i>
-                                    <input type="text" placeholder="Username">
+                                <label class="item item-input ">
+                                    <i class="cardicon iicon "></i>
+                                    <input type="text " placeholder="Username ">
                                 </label>
-                                <label class="item item-input">
-                                    <i class="capicon iicon"></i>
-                                    <input type="text" placeholder="College">
+                                <label class="item item-input ">
+                                    <i class="capicon iicon "></i>
+                                    <input type="text " placeholder="College ">
                                 </label>
-                                <label class="item item-input">
-                                    <i class="contacticon iicon"></i>
-                                    <input type="text" placeholder="Contact">
+                                <label class="item item-input ">
+                                    <i class="contacticon iicon "></i>
+                                    <input type="text " placeholder="Contact ">
                                 </label>
-                                <label class="item item-input">
-                                    <i class="cityicon iicon"></i>
-                                    <input type="text" placeholder="City">
+                                <label class="item item-input ">
+                                    <i class="cityicon iicon "></i>
+                                    <input type="text " placeholder="City ">
                                 </label>
-                                <label class="item item-input">
-                                    <i class="bodicon iicon"></i>
-                                    <input type="text" placeholder="Birth of Date">
+                                <label class="item item-input ">
+                                    <i class="bodicon iicon "></i>
+                                    <input type="text " placeholder="Birth of Date ">
                                 </label>
                             </div>
                         </li>
