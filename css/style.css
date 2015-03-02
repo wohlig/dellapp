@@ -868,6 +868,7 @@ hr.vertical {
 label.item.item-input.image-sugest {
     position: relative;
     padding: 12px 26px;
+    font-weight: 500;
 }
 
 .abc {
@@ -882,6 +883,10 @@ label.item.item-input.image-sugest {
     position: absolute;
     cursor: pointer;
     overflow: hidden;
+    -webkit-transform: translatex(-50%);
+    -moz-transform: translatex(-50%);
+    -ms-transform: translatex(-50%);
+    -o-transform: translatex(-50%);
     transform: translatex(-50%);
     left: 50%;
 }
@@ -2181,6 +2186,8 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
     background: #0F88C5;
     height: 32px;
     width: 32px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     font-size: 23px;
     padding: 5px 0px 0px 2px;
