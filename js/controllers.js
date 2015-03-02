@@ -54,12 +54,6 @@ angular.module('starter.controllers', ['templateservicemod'])
     $scope.closeModal = function () {
         $scope.modal.hide();
     };
-
-    TemplateService.noactive();
-    TemplateService.profileclass = "active";
-})
-
-.controller('EditprofileCtrl', function ($scope, $stateParams) {
     $scope.mkopen1 = function () {
         console.log("cbd");
         if ($scope.shldopens1 == "changesul" &&
@@ -83,7 +77,12 @@ angular.module('starter.controllers', ['templateservicemod'])
             $scope.shldopens4 = "changesi";
         }
     };
+
+    TemplateService.noactive();
+    TemplateService.profileclass = "active";
 })
+
+.controller('EditprofileCtrl', function ($scope, $stateParams) {})
 
 .controller('PostinfoCtrl', function ($scope, $stateParams) {})
 

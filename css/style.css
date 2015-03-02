@@ -1027,7 +1027,7 @@ ul.edit-dropdown li ul {
 }
 
 ul.edit-dropdown li ul.changesul {
-    height: 207px;
+    height: 210px;
 }
 
 ul.edit-dropdown li ul.changesul1 {
@@ -2210,4 +2210,22 @@ ul li ul input {
 
 ion-list.cls-margin .list {
     padding: 0px;
+}
+
+button.button.edit-pro:before {
+    padding: 3px 6px 1px 6px;
+    margin: 0;
+    height: 0;
+    line-height: 1;
+    font-size: 15px;
+}
+
+button.button.button-icon.icon.edit-pro.brf {
+    padding: 0;
+}
+
+button.button.button-icon.icon.edit-pro.brf {
+    padding: 0;
+    height: 32px;
+    width: 32px;
 }
