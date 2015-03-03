@@ -21,7 +21,6 @@ templateservicemod.service('TemplateService', function () {
         this.fbpostclass = "";
         this.twitpostclass = "";
         this.createpostclass = "";
-        this.createpostclass = "";
         this.leaderclass = "";
     };
 

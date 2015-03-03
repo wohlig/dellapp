@@ -1587,7 +1587,7 @@ button.button.icon-left.ion-social-twitter.button-post {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
-button.button.ion-edit.post-icon {
+a.button.ion-edit.post-icon {
     background: #ff7701;
     color: #fff;
     border: 1px solid #ff7701;
@@ -1595,6 +1595,8 @@ button.button.ion-edit.post-icon {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
+    height: 30px;
+    width: 30px;
 }
 
 .button-post.button.icon-left:before {
@@ -1694,6 +1696,17 @@ ion-item.mk-class.item {
 }
 
 button.button.menu-btncolor.green {
+    border: 2px solid #ff7701;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    color: #ff7701;
+    padding: 0px 7px;
+    width: 30px;
+    height: 25px;
+}
+
+a.button.menu-btncolor.green {
     border: 2px solid #ff7701;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
