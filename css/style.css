@@ -682,8 +682,8 @@ button.button.button-icon.button-clear.ion-navicon.menu-btncolor {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 25px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
     padding: 0px 7px 8px 0px;
 }
 
@@ -1550,8 +1550,8 @@ button.button-clear.post-icon {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 25px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
     color: #ff7701;
 }
 
@@ -1591,12 +1591,12 @@ a.button.ion-edit.post-icon {
     background: #ff7701;
     color: #fff;
     border: 1px solid #ff7701;
-    padding: 0px 2px 0px 0px;
+    padding: 0px 2px 0px 2px;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    height: 30px;
-    width: 32px;
+    height: 32px;
+    width: 33px;
     display: inline-table;
     margin-right: 5px;
 }
@@ -1693,7 +1693,7 @@ ion-item.mk-class.item {
 .bar .button.icon-right.brf:before {
     padding-right: 0px;
     font-size: 20px;
-    line-height: 6px;
+    line-height: 8px;
     padding-top: 11px;
 }
 
@@ -1714,9 +1714,9 @@ a.button.menu-btncolor.green {
     -moz-border-radius: 100%;
     border-radius: 100%;
     color: #ff7701;
-    padding: 0px 6px 0 6px;
-    width: 26px;
-    height: 26px;
+    padding: 0px 7px 0 7px;
+    width: 32px;
+    height: 32px;
     display: inline-table;
 }
 
@@ -2194,7 +2194,7 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
 }
 
 button.button.button-icon.ion-close.post-icon.blue:before {
-    padding-top: 12px;
+    padding-top: 11px;
 }
 
 .head-lead1 {
@@ -2202,8 +2202,8 @@ button.button.button-icon.ion-close.post-icon.blue:before {
     font-size: 16px;
     text-transform: uppercase;
     color: #0f88c5;
-    padding-top: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    padding-top: 14px;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .edit-cont {
