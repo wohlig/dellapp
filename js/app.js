@@ -20,8 +20,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod']
     });
 })
 
-.config(function ($stateProvider, $urlRouterProvider) {
-
+.config(function ($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+$ionicConfigProvider.views.maxCache(0);
     $stateProvider
 
         .state('app', {
@@ -165,6 +165,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod']
         url: "/login",
         templateUrl: "templates/login.html",
         controller: 'LoginCtrl'
+    })
+
+    .state('logout', {
+        url: "/logout",
+        templateUrl: "templates/login.html",
+        controller: 'LogoutCtrl'
     })
 
     .state('welcome', {

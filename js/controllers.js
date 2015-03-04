@@ -1,13 +1,76 @@
-angular.module('starter.controllers', ['templateservicemod'])
+angular.module('starter.controllers', ['templateservicemod','myservices'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-.controller('HomeCtrl', function ($scope, $stateParams, TemplateService) {
-    TemplateService.noactive();
-    TemplateService.homeclass = "active";
+.controller('LogoutCtrl', function ($scope, $ionicModal, $timeout, MyServices) {
+    
+    var logoutsuccess = function (data, status){
+        console.log(data);
+    }
+    MyServices.logout().success(logoutsuccess);
+    
 })
 
-.controller('LoginCtrl', function ($scope, $stateParams) {})
+.controller('HomeCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
+    TemplateService.noactive();
+    TemplateService.homeclass = "active";
+    $scope.user = [];
+    
+    
+    //  AUTHENTICATE
+    var usersuccess = function (data, status) {
+        console.log(data);
+        $scope.user = data;
+    }
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+            MyServices.getuser(data).success(usersuccess);
+        }
+    }
+    MyServices.authenticate().success(authenticatesuccess);
+    
+    // GET USER DATA
+    
+})
+
+.controller('LoginCtrl', function ($scope, $stateParams, MyServices, $location, $ionicPopup,$ionicSlideBoxDelegate) {
+
+    //  AUTHENTICATE
+    var authenticatesuccess = function (data, status) {
+        console.log(data);
+        if(data!="false")
+        {
+            $location.url("app/home");
+        }
+    }
+    MyServices.authenticate().success(authenticatesuccess);
+    
+    
+    $scope.changetologin=function() {
+        $ionicSlideBoxDelegate.slide(1);
+    };
+    
+    //  ON LOGIN CLICK
+    var loginsuccess = function (data, status) {
+        console.log(data);
+        if(data=="false"){
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login',
+                template: 'Invalide Username Or Password'
+            });
+        }else{
+            $location.url("app/home");
+        }
+    }
+    
+    $scope.normallogin = function (login){
+        MyServices.normallogin(login).success(loginsuccess);
+    }
+
+})
 
 .controller('WelcomeCtrl', function ($scope, $stateParams, $ionicModal) {
 
@@ -28,9 +91,30 @@ angular.module('starter.controllers', ['templateservicemod'])
 
 })
 
-.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService) {
+.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.homeclass = "active";
+    
+    
+    $scope.user = [];
+    
+    
+    //  AUTHENTICATE
+    var usersuccess = function (data, status) {
+        console.log(data);
+        $scope.user = data;
+    }
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+            MyServices.getuser(data).success(usersuccess);
+        }
+    }
+    MyServices.authenticate().success(authenticatesuccess);
+    
+    
     $scope.mkopen = function () {
         console.log("cbd");
         if ($scope.shldopens == "openprf") {
@@ -82,7 +166,28 @@ angular.module('starter.controllers', ['templateservicemod'])
     TemplateService.profileclass = "active";
 })
 
-.controller('EditprofileCtrl', function ($scope, $stateParams) {})
+.controller('EditprofileCtrl', function ($scope, $stateParams, MyServices, $location) {
+
+    
+    $scope.user = [];
+    
+    
+    //  AUTHENTICATE
+    var usersuccess = function (data, status) {
+        console.log(data);
+        $scope.user = data;
+    }
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+            MyServices.getuser(data).success(usersuccess);
+        }
+    }
+    MyServices.authenticate().success(authenticatesuccess);
+
+})
 
 .controller('PostinfoCtrl', function ($scope, $stateParams) {})
 
@@ -128,7 +233,21 @@ angular.module('starter.controllers', ['templateservicemod'])
     TemplateService.fbpostclass = "active";
 })
 
-.controller('MenuCtrl', function ($scope, $stateParams, TemplateService) {
+.controller('MenuCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
+    
+    // DEVELOPMENT
+    var logoutsuccess = function(data, status) {
+        console.log(data);
+        $location.url("/login");
+    }
+    $scope.logoutapp = function () {
+        
+        MyServices.logout().success(logoutsuccess);
+        
+    }
+    
+    
+    // DESIGN
     $scope.changeopen1 = function () {
         if ($scope.shouldopen1 == "open") {
             $scope.shouldopen1 = "";

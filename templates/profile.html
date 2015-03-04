@@ -19,29 +19,29 @@
                     <hr class="vertical-title">
                 </div>
                 <div class="profile-name">
-                    <p>Lauren Paul</p>
+                    <p>{{user.name}}</p>
                 </div>
                 <div class="img-profile">
                     <div class="profile-pic">
-                        <img src="img/profilepic.jpg">
+                        <img src="{{user.image}}">
                     </div>
                 </div>
                 <div class="profile-contmain">
 
                     <div class="profile-contmain1">
                         <p class="rank-score">
-                            <span class="ranks">Rank <span class="score"> 1 </span></span>
-                            <span class="scores"> Score : <span class="score">105</span></span>
+                            <span class="ranks">Rank <span class="score"> {{user.rank}} </span></span>
+                            <span class="scores"> Score : <span class="score">{{user.score}}</span></span>
                         </p>
                         <p class="email-gen">
-                            <span class="email-prf">lauren.paul@gmail.com | 
+                            <span class="email-prf">{{user.email}} | 
                     </span>
-                            <span class="gend"> female</span>
+                            <span class="gend"> {{user.sex}}</span>
                         </p>
                         <p class="dob-std">
                             <span class="dob-prf">dob:</span>
-                            <span class="dob-title">28/04/1987 |</span>
-                            <span class="std"> Studied at IBSR, Mumbai</span>
+                            <span class="dob-title">{{user.dob}} |</span>
+                            <span class="std"> Studied at IBSR, {{user.city}}</span>
                         </p>
 
                     </div>

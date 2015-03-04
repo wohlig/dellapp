@@ -12,11 +12,9 @@
                 </a>
             </div>
             <div class="button-ticktwit">
-                <a href="#/welcome">
-                    <button class="button button-small button-light bgtrans">
-                        Login
-                    </button>
-                </a>
+                <button class="button button-small button-light bgtrans" ng-click="changetologin();">
+                    Login
+                </button>
             </div>
         </div>
         <!--                   box slider-->
@@ -48,15 +46,15 @@
                             <div class="signnow">
                                 <div class="list input bgtrans">
                                     <label class="item item-input bgtrans">
-                                        <input type="text" placeholder="Username" class="bgtrans">
+                                        <input type="email" placeholder="User Email" class="bgtrans" ng-model="login.email">
                                     </label>
                                     <label class="item item-input bgtrans">
-                                        <input type="password" placeholder="Password" class="bgtrans">
+                                        <input type="password" placeholder="Password" class="bgtrans" ng-model="login.password">
                                     </label>
                                 </div>
                                 <div class="button-login1">
                                     <div class="button-sidelog">
-                                        <button class="button button-small button-signin">
+                                        <button class="button button-small button-signin" ng-click="normallogin(login)">
                                             Sign In Now
                                         </button>
                                     </div>
