@@ -13,8 +13,8 @@
         </div>
         <div class="edit-cont ">
             <ul class="edit-dropdown ">
-                <li class="chng-paswd " ng-click="mkopen2(); ">
-                    <h5> 
+                <li class="chng-paswd " >
+                    <h5 ng-click="mkopen2(); "> 
                     <i class="lockicon iicon "></i>
                     Change Password
                     <i class="ion-chevron-down " ng-class="shldopens4 "></i>
@@ -23,21 +23,26 @@
                         <li>
                             <label class="item item-input ">
                                 <i class="lockicon iicon "></i>
-                                <input type="password " placeholder="Current Password ">
+                                <input type="password " placeholder="Current Password " ng-model="password.currentpassword">
                             </label>
                             <label class="item item-input ">
                                 <i class="lockicon iicon "></i>
-                                <input type="password " placeholder="New Password ">
+                                <input type="password " placeholder="New Password " ng-model="password.password">
                             </label>
                             <label class="item item-input ">
                                 <i class="lockicon iicon "></i>
-                                <input type="password " placeholder="Conform Password ">
+                                <input type="password " placeholder="Conform Password " ng-model="password.confirmpassword">
                             </label>
+							<div class="btn-save">
+								<button class="button button-small button-positive savebtn" ng-click="savepassword(password)">
+									Save
+								</button>
+							</div>
                         </li>
                     </ul>
                 </li>
-                <li class="chng-profile " ng-click="mkopen1(); ">
-                    <h5>
+                <li class="chng-profile " >
+                    <h5 ng-click="mkopen1(); ">
                     <i class="editicon iicon "></i> 
                     Edit Profile 
                     <i class="ion-chevron-down " ng-class="shldopens2 "></i>
@@ -47,28 +52,25 @@
                             <div class="list ">
                                 <label class="item item-input ">
                                     <i class="personicon iicon "></i>
-                                    <input type="text " placeholder="Name ">
-                                </label>
-                                <label class="item item-input ">
-                                    <i class="cardicon iicon "></i>
-                                    <input type="text " placeholder="Username ">
-                                </label>
-                                <label class="item item-input ">
-                                    <i class="capicon iicon "></i>
-                                    <input type="text " placeholder="College ">
+                                    <input type="text " placeholder="Name " ng-model="profile.name">
                                 </label>
                                 <label class="item item-input ">
                                     <i class="contacticon iicon "></i>
-                                    <input type="text " placeholder="Contact ">
+                                    <input type="text " placeholder="Contact " ng-model="profile.contact">
                                 </label>
                                 <label class="item item-input ">
                                     <i class="cityicon iicon "></i>
-                                    <input type="text " placeholder="City ">
+                                    <input type="text " placeholder="City " ng-model="profile.city">
                                 </label>
                                 <label class="item item-input ">
                                     <i class="bodicon iicon "></i>
-                                    <input type="text " placeholder="Birth of Date ">
+                                    <input type="text " placeholder="Birth of Date " ng-model="profile.dob">
                                 </label>
+                                <div class="btn-save">
+								<button class="button button-small button-positive savebtn" ng-click="saveprofile(proile)">
+									Save
+								</button>
+								</div>
                             </div>
                         </li>
                     </ul>

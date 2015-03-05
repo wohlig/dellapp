@@ -97,19 +97,24 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
     
     
     $scope.user = [];
-    
+    $scope.profile = [];
     
     //  AUTHENTICATE
     var usersuccess = function (data, status) {
         console.log(data);
         $scope.user = data;
     }
+	var profilesuccess = function (data, status) {
+		console.log(data);
+		$scope.profile = data;
+	}
     var authenticatesuccess = function (data, status) {
         if(data=="false")
         {
             $location.url("/login");
         }else{
             MyServices.getuser(data).success(usersuccess);
+			MyServices.editprofilebefore().success(profilesuccess);
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
@@ -162,30 +167,66 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
         }
     };
 
+	$scope.savepassword = function () {
+		$scope.shldopens3 = "changesul1";
+		$scope.shldopens4 = "changesi";
+	}
+	
     TemplateService.noactive();
     TemplateService.profileclass = "active";
+	
+	
+	// CHANGE PASSWORD
+	
+	var passwordsuccess = function (data, status) {
+		console.log(data);
+		if(data=="false")
+			console.log("srry");
+		else
+			console.log("thank");
+	}
+	$scope.savepassword = function (password) {
+		console.log(password);
+		MyServices.changepassword(password).success(passwordsuccess);
+	}
+	
+	// CHANGE PROFILE
+	
+	var changeprofilesuccess = function (data, status) {
+		console.log(data);
+	}
+	$scope.saveprofile = function (profile) {
+		console.log(profile);
+		MyServices.changeprofile(profile).success(changeprofilesuccess);
+	}
+	
 })
 
 .controller('EditprofileCtrl', function ($scope, $stateParams, MyServices, $location) {
 
     
-    $scope.user = [];
+    $scope.user = 0;
     
     
     //  AUTHENTICATE
-    var usersuccess = function (data, status) {
-        console.log(data);
-        $scope.user = data;
-    }
     var authenticatesuccess = function (data, status) {
         if(data=="false")
         {
             $location.url("/login");
         }else{
-            MyServices.getuser(data).success(usersuccess);
-        }
+			$scope.user = data;
+		}
     }
     MyServices.authenticate().success(authenticatesuccess);
+	
+	// CHANGE PASSWORD
+	var passwordsuccess = function (data, status) {
+		console.log(data);
+	}
+	$scope.savepassword = function (password) {
+		console.log(password);
+		MyServices.changepassword(password).success(passwordsuccess);
+	}
 
 })
 

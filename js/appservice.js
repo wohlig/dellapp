@@ -17,6 +17,32 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
+		changepassword: function (password) {
+            return $http({
+                url: adminurl + 'changepasswordsubmit',
+                method: "POST",
+                data: {
+                    'password': password.password,
+                    'currentpassword': password.currentpassword,
+                    'confirmpassword': password.confirmpassword
+                }
+            });
+        },
+		changeprofile: function (profile) {
+            return $http({
+                url: adminurl + 'edituserprofile',
+                method: "POST",
+                data: {
+                    'name': profile.name,
+                    'contact': profile.contact,
+                    'dob': profile.dob,
+					'city': profile.city
+                }
+            });
+        },
+        editprofilebefore: function (){
+            return $http.get(adminurl + "editprofilebefore", {});
+        },
         authenticate: function (){
             return $http.get(adminurl + "authenticate", {});
         },
