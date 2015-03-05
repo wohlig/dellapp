@@ -25,6 +25,9 @@ var myservices = angular.module('myservices', [])
         },
         getuser: function (id){
             return $http.get(adminurl + "usersdetail?id=" + id , {});
+        },
+        getleaderboard: function (){
+            return $http.get(adminurl + "viewleaderboardjson" , {});
         }
     }
 });

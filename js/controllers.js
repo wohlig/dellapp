@@ -193,9 +193,27 @@ angular.module('starter.controllers', ['templateservicemod','myservices'])
 
 .controller('SuggestpostCtrl', function ($scope, $stateParams) {})
 
-.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService) {
+.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.leaderclass = "active";
+	
+    $scope.user = [];
+    
+    
+    //  AUTHENTICATE
+    var leaderboardsuccess = function (data, status) {
+        console.log(data);
+        $scope.leaderboard = data.queryresult;
+    }
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+            MyServices.getleaderboard().success(leaderboardsuccess);
+        }
+    }
+    MyServices.authenticate().success(authenticatesuccess);
 
 })
 

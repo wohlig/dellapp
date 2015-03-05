@@ -51,123 +51,27 @@
             </div>
             <hr class="vertical-blue">
             <div class="leader-brd">
-                <div class="row">
+                <div class="row" ng-repeat="leader in leaderboard">
                     <div class="col col-10">
                         <div class="rank-lead">
-                            #4
+                            #{{leader.rank}}
                         </div>
                     </div>
                     <div class="col col-20">
                         <div class="pic-lead">
-                            <img src="img/score.jpg" alt="">
+                            <img src="{{leader.image}}" alt="">
                         </div>
                     </div>
                     <div class="col col-50">
                         <div class="social-lead">
-                            <h4 class="name">Lorem Ipsum</h4>
-                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">240</span></span>
-                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">240</span></span>
+                            <h4 class="name">{{leader.name}}</h4>
+                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">{{leader.facebook}}</span></span>
+                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">{{leader.twitter}}</span></span>
                         </div>
                     </div>
                     <div class="col col-20">
                         <div class="score-lead">
-                            480
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-10">
-                        <div class="rank-lead">
-                            #5
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="pic-lead">
-                            <img src="img/score.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col col-50">
-                        <div class="social-lead">
-                            <h4 class="name">Lorem Ipsum</h4>
-                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">240</span></span>
-                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">240</span></span>
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="score-lead">
-                            480
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-10">
-                        <div class="rank-lead">
-                            #6
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="pic-lead">
-                            <img src="img/score.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col col-50">
-                        <div class="social-lead">
-                            <h4 class="name">Lorem Ipsum</h4>
-                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">240</span></span>
-                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">240</span></span>
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="score-lead">
-                            480
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-10">
-                        <div class="rank-lead">
-                            #7
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="pic-lead">
-                            <img src="img/score.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col col-50">
-                        <div class="social-lead">
-                            <h4 class="name">Lorem Ipsum</h4>
-                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">240</span></span>
-                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">240</span></span>
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="score-lead">
-                            200
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-10">
-                        <div class="rank-lead">
-                            #7
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="pic-lead">
-                            <img src="img/score.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col col-50">
-                        <div class="social-lead">
-                            <h4 class="name">Lorem Ipsum</h4>
-                            <span class="fb-score"><i class="iicon ion-fb1"></i> <span class="lead-score">240</span></span>
-                            <span class="twit-score"><i class="iicon ion-twit"></i> <span class="lead-score">240</span></span>
-                        </div>
-                    </div>
-                    <div class="col col-20">
-                        <div class="score-lead">
-                            100
+							{{leader.score}}
                         </div>
                     </div>
                 </div>
