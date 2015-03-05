@@ -30,7 +30,7 @@ var myservices = angular.module('myservices', [])
         },
 		changeprofile: function (profile) {
             return $http({
-                url: adminurl + 'edituserprofile',
+                url: adminurl + 'editprofilesubmit',
                 method: "POST",
                 data: {
                     'name': profile.name,

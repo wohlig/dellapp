@@ -94,7 +94,7 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
 
 })
 
-.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location) {
+.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup) {
     TemplateService.noactive();
     TemplateService.homeclass = "active";
     
@@ -183,10 +183,17 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
 	
 	var passwordsuccess = function (data, status) {
 		console.log(data);
-		if(data=="false")
-			console.log("srry");
-		else
-			console.log("thank");
+		if(data=="false"){
+			var alertPopup = $ionicPopup.alert({
+                title: 'Change Password',
+                template: 'Error In Update'
+            });
+		}else{
+			var alertPopup = $ionicPopup.alert({
+                title: 'Change Password',
+                template: 'Password Updated Successfully'
+            });
+		}
 	}
 	$scope.savepassword = function (password) {
 		console.log(password);
@@ -197,6 +204,17 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
 	
 	var changeprofilesuccess = function (data, status) {
 		console.log(data);
+		if(data==false){
+			var alertPopup = $ionicPopup.alert({
+                title: 'Change Profile',
+                template: 'Error In Update'
+            });
+		}else{
+			var alertPopup = $ionicPopup.alert({
+                title: 'Change Profile',
+                template: 'Profile Updated successfully'
+            });
+		}
 	}
 	$scope.saveprofile = function (profile) {
 		console.log(profile);
