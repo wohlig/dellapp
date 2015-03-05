@@ -2261,3 +2261,29 @@ button.button.ion-gear-a.menu-btncolor.brf:before {
     margin-left: 5px;
     display: table;
 }
+
+label.search-cont {
+    border-left: 1px solid #ff7701!important;
+    border-top: 1px solid #ff7701!important;
+    border-bottom: 1px solid #ff7701!important;
+    margin: 15px 25px;
+    padding: 0px 8px!important;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    height: 25px;
+}
+
+button.ion-close.circle {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 1px solid orange;
+    height: 25px;
+    width: 25px;
+    padding: 2px 0 0 1px;
+    color: #ff7701;
+    position: absolute;
+    right: 21px;
+    top: 0px;
+}
