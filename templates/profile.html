@@ -65,14 +65,14 @@
                     <a href="#/app/fbpost">
                         <div class="profile-remain">
                             <p>Action Remaining</p>
-                            <p class="score">0</p>
+                            <p class="score">{{user.remaining}}</p>
                         </div>
                     </a>
                     <div class="vertical-line"></div>
                     <a href="#/app/fbpost">
                         <div class="social-fb">
                             <i class="iicon ion-fb"></i>
-                            <p>Likes : <span class="like score"> 20 </span>| Comment:<span class="comment score"> 5 </span>
+                            <p>Likes : <span class="like score"> {{user.totallikes}} </span>| Comment:<span class="comment score"> {{user.totalcomment}} </span>
                             </p>
                         </div>
                     </a>
@@ -80,7 +80,7 @@
                     <a href="#/app/twitterpost">
                         <div class="social-twit">
                             <i class="iicon ion-twit"></i>
-                            <p>Favourites : <span class="favourites score"> 7 </span>| Retweet : <span class="Retweet score"> 5 </span>
+                            <p>Favourites : <span class="favourites score"> {{user.totalfavourites}} </span>| Retweet : <span class="Retweet score"> {{user.totalretweet}} </span>
                             </p>
                         </div>
                     </a>
