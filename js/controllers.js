@@ -32,6 +32,9 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
     }
     MyServices.authenticate().success(authenticatesuccess);
     
+    $scope.facebooklogin = function() {
+        window.open('http://dellcampassador.com/index.php/hauth/login/Facebook', '_blank', 'location=yes');
+    };
     // GET USER DATA
     
 })
