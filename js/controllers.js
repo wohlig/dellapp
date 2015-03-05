@@ -321,14 +321,53 @@ angular.module('starter.controllers', ['ionic','templateservicemod','myservices'
     TemplateService.createpostclass = "active";
 })
 
-.controller('TableCtrl', function ($scope, $stateParams, TemplateService) {
+.controller('TableCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.tabletwitclass = "active";
+	
+    $scope.user = 0;
+	$scope.twitter = [];
+    
+    //  AUTHENTICATE
+	var twittersuccess = function (data, status) {
+		console.log(data);
+		$scope.twitter = data;
+	}
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+			$scope.user = data;
+			MyServices.gettwitterposts().success(twittersuccess);
+		}
+    }
+    MyServices.authenticate().success(authenticatesuccess);
 })
 
-.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService) {
+.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.tablefbclass = "active";
+	
+    $scope.user = 0;
+	$scope.facebook = [];
+    
+    //  AUTHENTICATE
+	var facebooksuccess = function (data, status) {
+		console.log(data);
+		$scope.facebook = data;
+	}
+    var authenticatesuccess = function (data, status) {
+        if(data=="false")
+        {
+            $location.url("/login");
+        }else{
+			$scope.user = data;
+			MyServices.getfacebookposts().success(facebooksuccess);
+		}
+    }
+    MyServices.authenticate().success(authenticatesuccess);
+	
 })
 
 .controller('TwitterpostCtrl', function ($scope, $stateParams, TemplateService) {

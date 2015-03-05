@@ -29,7 +29,7 @@
                              </h5>
                             <i class="icons ion-ticks"></i>
                             <h5>  
-                   10
+								{{facebook.stats.actiondone}}
                     </h5>
                         </div>
                     </a>
@@ -42,7 +42,7 @@
                     </h5>
                             <i class="icons ion-circle"></i>
                             <h5>  
-                   2
+                   {{facebook.stats.remaining}}
                     </h5>
                         </div>
                     </a>
@@ -55,7 +55,7 @@
                     </h5>
                             <i class="icons ion-reach"></i>
                             <h5>  
-                   50
+                   {{facebook.stats.totalpost}}
                     </h5>
                         </div>
                     </a>
@@ -80,11 +80,11 @@
             </div>
         </div>
         <div class="table-cont">
-            <div class="row">
+            <div class="row" ng-repeat="post in facebook.posts">
                 <div class="col">
                     <div class="tlb-item">
                         <h5>
-                            My Dell Rewards
+							{{post.posttext | cut:true:20:' ...'}}
                         </h5>
                     </div>
                 </div>
@@ -95,113 +95,13 @@
                 </div>
                 <div class="col">
                     <div class="tlb-item">
-                        2015-01-12
+						{{post.timestamp}}
                     </div>
                 </div>
                 <div class="col">
                     <div class="tlb-item">
-                        <p> Likes:2</p>
-                        <p>Comments:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <img src="img/dellpost.png">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Likes:2</p>
-                        <p>Comments:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <img src="img/dellpost.png">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Likes:2</p>
-                        <p>Comments:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <img src="img/dellpost.png">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Likes:2</p>
-                        <p>Comments:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <img src="img/dellpost.png">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Likes:2</p>
-                        <p>Comments:0</p>
+                        <p> Likes:{{post.likes}}</p>
+                        <p>Comments:{{post.comment}}</p>
                     </div>
                 </div>
             </div>

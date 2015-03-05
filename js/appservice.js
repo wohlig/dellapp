@@ -40,6 +40,12 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
+        gettwitterposts: function (){
+            return $http.get(adminurl + "gettwitterposts", {});
+        },
+        getfacebookposts: function (){
+            return $http.get(adminurl + "getfacebookposts", {});
+        },
         editprofilebefore: function (){
             return $http.get(adminurl + "editprofilebefore", {});
         },

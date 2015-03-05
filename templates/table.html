@@ -29,7 +29,7 @@
                              </h5>
                             <i class="icons ion-ticks"></i>
                             <h5>  
-                   10
+								{{twitter.stats.actiondone}}
                     </h5>
                     </a>
                     </div>
@@ -42,7 +42,7 @@
                     </h5>
                             <i class="icons ion-circle"></i>
                             <h5>  
-                   2
+								{{twitter.stats.remaining}}
                     </h5>
                         </div>
                     </a>
@@ -55,7 +55,7 @@
                     </h5>
                             <i class="icons ion-reach"></i>
                             <h5>  
-                   50
+								{{twitter.stats.totalpost}}
                     </h5>
                         </div>
                     </a>
@@ -80,11 +80,11 @@
             </div>
         </div>
         <div class="table-cont">
-            <div class="row">
+            <div class="row" ng-repeat="posts in twitter.posts">
                 <div class="col">
                     <div class="tlb-item">
                         <h5>
-                            My Dell Rewards
+                            {{posts.posttext | cut:true:20:' ...'}}
                         </h5>
                     </div>
                 </div>
@@ -95,138 +95,13 @@
                 </div>
                 <div class="col">
                     <div class="tlb-item">
-                        2015-01-12
+						{{posts.timestamp}}
                     </div>
                 </div>
                 <div class="col">
                     <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
-                            My Dell Rewards
-                        </h5>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        2015-01-12
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:2</p>
-                        <p>Favourites:0</p>
+                        <p> Retweetes:{{posts.retweet}}</p>
+                        <p>Favourites:{{posts.favourites}}</p>
                     </div>
                 </div>
             </div>
