@@ -20,31 +20,31 @@
             <div class="row">
                 <div class="col col-33">
                     <div class="lead2">
-                        <img src="img/profilepic.jpg" alt="">
+                        <img src="{{rankuser[1].image}}" alt="">
                         <div class="lead12">
-                            <p> #2</p>
-                            <h4> Sharonn J </h4>
-                            <h3>  600</h3>
+                            <p> #{{rankuser[1].rank}}</p>
+                            <h4> {{rankuser[1].name}} </h4>
+                            <h3>  {{rankuser[1].score}}</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col col-33">
                     <div class="lead1">
-                        <img src="img/lead1.jpg" alt="">
+                        <img src="{{rankuser[0].image}}" alt="">
                         <div class="lead11">
-                            <p> #1</p>
-                            <h4> Lauren P </h4>
-                            <h3>  850</h3>
+                            <p> #{{rankuser[0].rank}}</p>
+                            <h4> {{rankuser[0].name}} </h4>
+                            <h3>  {{rankuser[0].score}}</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col col-33">
                     <div class="lead3">
-                        <img src="img/lead2.jpg" alt="">
+                        <img src="{{rankuser[2].image}}" alt="">
                         <div class="lead13">
-                            <p> #3</p>
-                            <h4> Jack D </h4>
-                            <h3>  490</h3>
+                            <p> #{{rankuser[2].rank}}</p>
+                            <h4> {{rankuser[2].name}} </h4>
+                            <h3>  {{rankuser[2].score}}</h3>
                         </div>
                     </div>
                 </div>
@@ -75,6 +75,7 @@
                         </div>
                     </div>
                 </div>
+                <ion-infinite-scroll icon="ion-loading-c" on-infinite="loadMore()"></ion-infinite-scroll>
             </div>
         </div>
     </ion-content>
@@ -83,18 +84,18 @@
             <div class="row like-comnt leader" id="like-comnts">
                 <div class="col col-33 bod-right">
                     <h5>
-                 #1
+                 #{{user.rank}}
                 </h5>
                 </div>
                 <div class="col col-33 bod-right">
                     <h5>
-                Lauren Paul
+						{{user.name}}
                 </h5>
                 </div>
                 <div class="col col-33 bod-right">
                     <h5 class="score-tot">
                         <i class="icon-star icon-str"></i>
-                850
+                {{user.score}}
                 </h5>
                 </div>
             </div>

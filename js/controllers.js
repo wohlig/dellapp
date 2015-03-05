@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['templateservicemod','myservices'])
+angular.module('starter.controllers', ['ionic','templateservicemod','myservices'])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
@@ -193,27 +193,56 @@ angular.module('starter.controllers', ['templateservicemod','myservices'])
 
 .controller('SuggestpostCtrl', function ($scope, $stateParams) {})
 
-.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
+.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
     TemplateService.noactive();
     TemplateService.leaderclass = "active";
 	
-    $scope.user = [];
+    $scope.leaderboard = [];
+	$scope.rankuser = [];
+	$scope.user = [];
+	$scope.pageno = 1;
+	$scope.totallength = 0;
     
     
     //  AUTHENTICATE
+	var usersuccess = function (data, status) {
+		$scope.user = data;
+	}
     var leaderboardsuccess = function (data, status) {
-        console.log(data);
-        $scope.leaderboard = data.queryresult;
+		$scope.totallength = data.totalvalues-3;
+		$scope.rankuser = data.queryresult.slice(0,3);
+        $scope.leaderboard = data.queryresult.splice(3);
+		$scope.$broadcast('scroll.infiniteScrollComplete');
     }
+	var leaderboardsuccesspush = function (data, status) {
+		for (var i = 0; i < data.queryresult.length; i++) {
+            $scope.leaderboard.push(data.queryresult[i]);
+        }
+		$scope.$broadcast('scroll.infiniteScrollComplete');
+	}
     var authenticatesuccess = function (data, status) {
         if(data=="false")
         {
             $location.url("/login");
         }else{
-            MyServices.getleaderboard().success(leaderboardsuccess);
+            MyServices.getleaderboard($scope.pageno).success(leaderboardsuccess);
+			MyServices.getuser(data).success(usersuccess);
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
+	
+	$scope.loadMore = function () {
+		console.log("loading.....");
+		console.log($scope.leaderboard.length);
+		console.log($scope.totallength);
+        
+		
+        if ($scope.leaderboard.length != $scope.totallength) {
+            $scope.pageno = $scope.pageno + 1;
+            MyServices.getleaderboard($scope.pageno).success(leaderboardsuccesspush);
+        }
+		
+	}
 
 })
 
