@@ -65,21 +65,40 @@
         </div>
         <div class="row center-main">
             <div class="col">
-                <a href="#/app/twitterpost">
+                <a ng-click="changetab('newpost')">
                     <button class="button button-small button-positive history">
                         New Post
                     </button>
                 </a>
             </div>
             <div class="col">
-                <a href="#">
+                <a ng-click="changetab('history')">
                     <button class="button button-small button-positive history activated">
                         History
                     </button>
                 </a>
             </div>
         </div>
-        <div class="table-cont">
+        
+        
+        <div class="box-slider" ng-show="tab=='newpost'">
+            <div class="box">
+                <div class="post-cont">
+                    <div class="card">
+                        <div class="item item-text-wrap">
+                            <h4>{{twitterpost.text}}</a></h4>
+                        </div>
+                    </div>
+                    <button class="button icon-left ion-social-twitter button-post">Tweet</button>
+                </div>
+            </div>
+            <div class="previous">
+                <img src="img/arrowleft.png" class="next" ng-click="prevoiuspost()">
+                <img src="img/arrowright.png" class="prevoius" ng-click="nextpost()">
+            </div>
+        </div>
+        
+        <div class="table-cont" ng-show="tab=='history'">
             <div class="row" ng-repeat="posts in twitter.posts">
                 <div class="col">
                     <div class="tlb-item">

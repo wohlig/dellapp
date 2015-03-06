@@ -49,11 +49,17 @@ var myservices = angular.module('myservices', [])
         editprofilebefore: function (){
             return $http.get(adminurl + "editprofilebefore", {});
         },
+        gettwitternextpost: function (id){
+            return $http.get(adminurl + "gettwitternextpost?id=" + id, {});
+        },
         getfacebooknextpost: function (id){
             return $http.get(adminurl + "getfacebooknextpost?id=" + id, {});
         },
         getfacebookprevpost: function (id){
             return $http.get(adminurl + "getfacebookprevpost?id=" + id, {});
+        },
+        gettwitterprevpost: function (id){
+            return $http.get(adminurl + "gettwitterprevpost?id=" + id, {});
         },
         authenticate: function (){
             return $http.get(adminurl + "authenticate", {});

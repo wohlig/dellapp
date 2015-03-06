@@ -326,6 +326,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     $scope.user = 0;
     $scope.twitter = [];
+    $scope.tab = "history";
+    $scope.historyclass = "activated";
+    $scope.newpostclass = "";
+    $scope.lastid = "";
+    $scope.twitterpost = [];
 
     //  AUTHENTICATE
     var twittersuccess = function(data, status) {
@@ -341,6 +346,43 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
+    
+    
+    
+    
+    //  ON TAB CHANGE
+    
+    var postsuccess = function (data, status) {
+        console.log(data);
+        $scope.twitterpost = data;
+        $scope.lastid = data.id;
+    }
+    
+    $scope.changetab = function (tab) {
+        console.log(tab);
+        if(tab == "newpost"){
+            $scope.tab = "newpost";
+            $scope.newpostclass = "activated";
+            $scope.historyclass = "";
+            MyServices.gettwitternextpost($scope.lastid).success(postsuccess);
+            
+        }else{
+            $scope.tab = "history";
+            $scope.historyclass = "activated";
+            $scope.newpostclass = "";
+        }
+    }
+    
+    // NEXT POST
+    $scope.nextpost = function (){
+        MyServices.gettwitternextpost($scope.lastid).success(postsuccess);
+    }
+    
+    //  PREVIOUS POST
+    $scope.prevoiuspost = function () {
+        MyServices.gettwitterprevpost($scope.lastid).success(postsuccess);
+    }
+
 })
 
 .controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
