@@ -37,11 +37,42 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('LoginCtrl', function($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate) {
 
+    $scope.facebooktwitter = false;
+    $scope.logindiv = true;
+    $scope.user = [];
+    $scope.facebooktik = false;
+    $scope.twittertik = false;
+    
+    
     //  AUTHENTICATE
-    var authenticatesuccess = function(data, status) {
+    var usersuccess = function (data, status) {
         console.log(data);
-        if (data != "false") {
+        $scope.user = data;
+        
+        if($scope.user.facebookid == "0" || $scope.user.facebookid == '' && $scope.user.twitterid == "0" || $scope.user.twitterid == ''){
+            $scope.facebooktwitter = true;
+            $scope.logindiv = false;
+            if($scope.user.facebookid == ''){
+                $scope.facebooktik = false;
+            }else{
+                console.log($scope.user.facebookid);
+                $scope.facebooktik = true;
+            }
+            if($scope.user.twitterid == ''){
+                $scope.twittertik = false;
+            }else{
+                console.log($scope.user.twitterid);
+                $scope.twittertik = true;
+            }
+        }else{
             $location.url("app/home");
+        }
+    }
+    
+    var authenticatesuccess = function(data, status) {
+        if (data != "false") {
+            
+//            $location.url("app/home");
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
@@ -60,7 +91,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                 template: 'Invalide Username Or Password'
             });
         } else {
-            $location.url("app/home");
+            MyServices.editprofilebefore().success(usersuccess);
+//            $location.url("app/home");
         }
     }
 
@@ -74,6 +106,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter', '_blank', 'location=yes');
     };
     // GET USER DATA
+    
+    
+    // FACEBOOK TWITTER SHOW
 
 })
 
