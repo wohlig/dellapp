@@ -68,7 +68,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         MyServices.normallogin(login).success(loginsuccess);
     }
     $scope.facebooklogin = function() {
-        window.open('http://dellcampassador.com/index.php/hauth/login/Facebook', '_blank', 'location=yes');
+        window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook', '_blank', 'location=yes');
+    };
+    $scope.twitterlogin = function() {
+        window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter', '_blank', 'location=yes');
     };
     // GET USER DATA
 
