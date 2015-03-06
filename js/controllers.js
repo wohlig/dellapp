@@ -49,7 +49,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(data);
         $scope.user = data;
         
-        if($scope.user.facebookid == "0" || $scope.user.facebookid == '' && $scope.user.twitterid == "0" || $scope.user.twitterid == ''){
+        if($scope.user.facebookid == "" || $scope.user.twitterid == ""){
             $scope.facebooktwitter = true;
             $scope.logindiv = false;
             if($scope.user.facebookid == ''){
@@ -71,7 +71,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     
     var authenticatesuccess = function(data, status) {
         if (data != "false") {
-            
+            MyServices.editprofilebefore().success(usersuccess);
 //            $location.url("app/home");
         }
     }
@@ -84,7 +84,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     //  ON LOGIN CLICK
     var loginsuccess = function(data, status) {
-        console.log(data);
         if (data == "false") {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login',
