@@ -349,6 +349,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     $scope.user = 0;
     $scope.facebook = [];
+    $scope.tab = "history";
+    $scope.historyclass = "activated";
+    $scope.newpostclass = "";
+    $scope.lastid = "";
+    $scope.facebookpost = [];
 
     //  AUTHENTICATE
     var facebooksuccess = function(data, status) {
@@ -364,6 +369,40 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
+    
+    
+    //  ON TAB CHANGE
+    
+    var postsuccess = function (data, status) {
+        console.log(data);
+        $scope.facebookpost = data;
+        $scope.lastid = data.id;
+    }
+    
+    $scope.changetab = function (tab) {
+        console.log(tab);
+        if(tab == "newpost"){
+            $scope.tab = "newpost";
+            $scope.newpostclass = "activated";
+            $scope.historyclass = "";
+            MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
+            
+        }else{
+            $scope.tab = "history";
+            $scope.historyclass = "activated";
+            $scope.newpostclass = "";
+        }
+    }
+    
+    // NEXT POST
+    $scope.nextpost = function (){
+        MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
+    }
+    
+    //  PREVIOUS POST
+    $scope.prevoiuspost = function () {
+        MyServices.getfacebookprevpost($scope.lastid).success(postsuccess);
+    }
 
 })
 

@@ -187,6 +187,7 @@ $ionicConfigProvider.views.maxCache(0);
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 })
+
 .filter('cut', function () {
         return function (value, wordwise, max, tail) {
             if (!value) return '';
@@ -205,4 +206,16 @@ $ionicConfigProvider.views.maxCache(0);
 
             return value + (tail || ' …');
         };
-    });
+    })
+
+.filter('imagepath', function() {
+    return function(input) {
+        if (input == "") {
+            return "http://localhost/dellbackend1.0/assets/images/campassador.png";
+            //                            return "http://localhost/sergybackend/assets/img/default.jpg";
+        } else {
+            return "http://localhost/dellbackend1.0/assets/uploads/" + input;
+            //                        return "http://localhost/sergybackend/uploads/" + input;
+        }
+    };
+});
