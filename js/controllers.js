@@ -102,13 +102,14 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	
 	var stopinterval=0;
 	var checkfb = function (data, status) {
+		console.log(data);
         if(data.facebookid=="")
 		{
 			console.log("Do nothing");
 		}
 		else
 		{
-			ref.close();
+			//ref.close();
 			$interval.cancel(stopinterval);
 		}
     }
@@ -132,6 +133,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		stopinterval=$interval(callAtIntervalfb, 5000);
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
+			$interval.cancel(stopinterval);
         });
     };
     $scope.twitterlogin = function() {
@@ -140,6 +142,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
+			$interval.cancel(stopinterval);
         });
     };
     // GET USER DATA
