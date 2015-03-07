@@ -109,7 +109,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		}
 		else
 		{
-			//ref.close();
+			ref.close();
 			$interval.cancel(stopinterval);
 		}
     }
