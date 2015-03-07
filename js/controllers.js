@@ -23,7 +23,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.user = data;
     }
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             MyServices.getuser(data).success(usersuccess);
@@ -70,7 +70,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     }
     
     var authenticatesuccess = function(data, status) {
-        if (data != false) {
+        if (data != "false") {
             MyServices.editprofilebefore().success(usersuccess);
         }
     }
@@ -87,7 +87,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     //  ON LOGIN CLICK
     var loginsuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login',
                 template: 'Invalide Username Or Password'
@@ -162,7 +162,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.profile = data;
     }
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             MyServices.getuser(data).success(usersuccess);
@@ -232,7 +232,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     var passwordsuccess = function(data, status) {
         console.log(data);
-        if (data == false) {
+        if (data == "false") {
             var alertPopup = $ionicPopup.alert({
                 title: 'Change Password',
                 template: 'Error In Update'
@@ -280,7 +280,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     //  AUTHENTICATE
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             $scope.user = data;
@@ -331,7 +331,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.$broadcast('scroll.infiniteScrollComplete');
     }
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             MyServices.getleaderboard($scope.pageno).success(leaderboardsuccess);
@@ -386,7 +386,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.twitter = data;
     }
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             $scope.user = data;
@@ -451,7 +451,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.facebook = data;
     }
     var authenticatesuccess = function(data, status) {
-        if (data == false) {
+        if (data == "false") {
             $location.url("/login");
         } else {
             $scope.user = data;
