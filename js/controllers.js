@@ -81,6 +81,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.changetologin = function() {
         $ionicSlideBoxDelegate.slide(1);
     };
+	
+    $scope.changetoinformation = function() {
+        $ionicSlideBoxDelegate.slide(0);
+    };
 
     //  ON LOGIN CLICK
     var loginsuccess = function(data, status) {
