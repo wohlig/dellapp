@@ -72,7 +72,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     var authenticatesuccess = function(data, status) {
         if (data != "false") {
             MyServices.editprofilebefore().success(usersuccess);
-//            $location.url("app/home");
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
@@ -103,10 +102,15 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         MyServices.normallogin(login).success(loginsuccess);
     }
     $scope.facebooklogin = function() {
-        window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook', '_blank', 'location=yes');
+        console.log(window.location);
+        var abc=window.location.origin+window.location.pathname+"success.html";
+        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=no');
+        ref.addEventListener('exit', function(event) { console.log("Check jStorage Facebook Login"); console.log($.jStorage.get("facebooklogin"));});
     };
     $scope.twitterlogin = function() {
-        window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter', '_blank', 'location=yes');
+        console.log(window.location);
+        var abc=window.location.origin+window.location.pathname+"success.html";
+        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
     };
     // GET USER DATA
     
