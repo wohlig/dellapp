@@ -1,4 +1,4 @@
-var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
+
 
 var templateservicemod = angular.module('templateservicemod', []);
 templateservicemod.service('TemplateService', function () {
