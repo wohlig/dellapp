@@ -14,73 +14,71 @@
         </ion-nav-buttons>
     </ion-nav-bar>
     <ion-content>
-        <div class="head-lead">
-            <i class="icons ion-social-twitter"></i>
-            <h4>Twitter</h4>
-            <hr class="verticalup">
-        </div>
-        <div class="tables">
-            <div class="row">
-                <div class="col">
-                    <a href="#">
-                        <div class="tbl-items">
-                            <h5 class="tot-title">      
+        <div class="header-fixed">
+            <div class="head-lead">
+                <i class="icons ion-social-twitter"></i>
+                <h4>Twitter</h4>
+                <hr class="verticalup">
+            </div>
+            <div class="tables">
+                <div class="row">
+                    <div class="col">
+                        <a href="#">
+                            <div class="tbl-items">
+                                <h5 class="tot-title">      
                              Action Done
                              </h5>
-                            <i class="icons ion-ticks"></i>
-                            <h5>  
+                                <i class="icons ion-ticks"></i>
+                                <h5>  
 								{{twitter.stats.actiondone}}
                     </h5>
-                    </a>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col">
-                    <a href="#/app/twitterpost">
-                        <div class="tbl-items">
-                            <h5 class="tot-title">  
+                    <div class="col">
+                        <a href="#/app/twitterpost">
+                            <div class="tbl-items">
+                                <h5 class="tot-title">  
                     Actions Remaining
                     </h5>
-                            <i class="icons ion-circle"></i>
-                            <h5>  
+                                <i class="icons ion-circle"></i>
+                                <h5>  
 								{{twitter.stats.remaining}}
                     </h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="tbl-items">
-                            <h5 class="tot-title">  
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#">
+                            <div class="tbl-items">
+                                <h5 class="tot-title">  
                     Total Reach
                     </h5>
-                            <i class="icons ion-reach"></i>
-                            <h5>  
+                                <i class="icons ion-reach"></i>
+                                <h5>  
 								{{twitter.stats.totalpost}}
                     </h5>
-                        </div>
-                    </a>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+                <hr class="vertical-blue">
             </div>
-            <hr class="vertical-blue">
         </div>
         <div class="row center-main">
             <div class="col">
-                <a ng-click="changetab('newpost')">
-                    <button class="button button-small button-positive history">
+                <a class="button button-small button-positive history" ng-click="changetab('newpost')">
                         New Post
-                    </button>
                 </a>
             </div>
             <div class="col">
-                <a ng-click="changetab('history')">
-                    <button class="button button-small button-positive history activated">
+                <a class="button button-small button-positive history activated" ng-click="changetab('history')">
                         History
-                    </button>
-                </a>
+                    </a>
             </div>
         </div>
-        
-        
+
+
         <div class="box-slider" ng-show="tab=='newpost'">
             <div class="box">
                 <div class="post-cont">
@@ -97,33 +95,35 @@
                 <img src="img/arrowright.png" class="prevoius" ng-click="nextpost()">
             </div>
         </div>
-        
+
         <div class="table-cont" ng-show="tab=='history'">
-            <div class="row" ng-repeat="posts in twitter.posts">
-                <div class="col">
-                    <div class="tlb-item">
-                        <h5>
+            <a href="#/app/postinfo">
+                <div class="row" ng-repeat="posts in twitter.posts">
+                    <div class="col">
+                        <div class="tlb-item">
+                            <h5>
                             {{posts.posttext | cut:true:20:' ...'}}
                         </h5>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="tlb-item">
+                            -
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="tlb-item">
+                            {{posts.timestamp}}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="tlb-item">
+                            <p> Retweetes:{{posts.retweet}}</p>
+                            <p>Favourites:{{posts.favourites}}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        -
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-						{{posts.timestamp}}
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tlb-item">
-                        <p> Retweetes:{{posts.retweet}}</p>
-                        <p>Favourites:{{posts.favourites}}</p>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
     </ion-content>
 </ion-view>

@@ -721,9 +721,8 @@ ion-view.bgprofile.pane {
 .profile-cont {
     background: rgba(255, 119, 1, 0.9);
     min-height: 200px;
-    border-bottom: 2px solid #FFF;
     margin-top: 0px;
-    padding: 16px 0 0 0px;
+    padding: 16px 0 10px 0px;
     text-align: center;
     z-index: 0;
     position: relative;
@@ -734,45 +733,18 @@ ion-view.bgprofile.pane {
     z-index: 2;
 }
 
-.profile-cont:before {
-    content: "";
-    position: absolute;
-    -webkit-transform: translate(-50%, 100%);
-    -moz-transform: translate(-50%, 100%);
-    -ms-transform: translate(-50%, 100%);
-    -o-transform: translate(-50%, 100%);
-    transform: translate(-50%, 100%);
-    left: 50%;
-    bottom: 0px;
-    border-width: 28px 28px 0;
-    border-style: solid;
-    border-color: #FF8419 transparent;
-    display: block;
-    width: 0;
-    z-index: 2;
-}
-
-.profile-cont:after {
-    content: "";
-    position: absolute;
-    -webkit-transform: translate(-50%, 100%);
-    -moz-transform: translate(-50%, 100%);
-    -ms-transform: translate(-50%, 100%);
-    -o-transform: translate(-50%, 100%);
-    transform: translate(-50%, 100%);
-    left: 50%;
-    bottom: 0px;
-    border-width: 32px 32px 0;
-    border-style: solid;
-    border-color: white transparent;
-    display: block;
-    width: 0;
-    z-index: 1;
+a.button.button-light.bgtrans:hover {
+    color: #0085c3!important;
 }
 
 .profile-cont.openprf .profile-contmain {
     height: 110px;
     padding: 10px;
+}
+
+.button.loginactive {
+    background: #0085c3 !important;
+    color: #fff;
 }
 
 .profile-cont.openprf {
@@ -787,6 +759,13 @@ ion-view.bgprofile.pane {
     transform: rotate(180deg);
 }
 
+textarea {
+    background: transparent;
+    width: 100%;
+    color: #0084C4;
+    text-align: center;
+}
+
 .tri-grp1 {
     -webkit-transition: 800ms ease;
     -moz-transition: 800ms ease;
@@ -797,8 +776,6 @@ ion-view.bgprofile.pane {
     -o-transition-timing-function: linear;
     transition-timing-function: linear;
 }
-
-.profile-cont.openprf .tri-grp i {}
 
 .tri-grp i {
     font-size: 34px;
@@ -1601,6 +1578,10 @@ a.button.ion-edit.post-icon {
     margin-right: 5px;
 }
 
+.logout {
+    margin: 10px 0;
+}
+
 .button-post.button.icon-left:before {
     padding-right: 2px;
 }
@@ -2119,7 +2100,7 @@ button.button.back-button.buttons.header-item.green {
     color: #0084c4;
 }
 
-.modal-button button {
+.modal-button a {
     background-color: #0084c4!important;
     border-color: #0084c4!important;
     text-transform: uppercase;
@@ -2128,13 +2109,13 @@ button.button.back-button.buttons.header-item.green {
     padding: 4px 5px;
 }
 
-button.button.button-small.button-positive.history {
+a.button.button-small.button-positive.history {
     background: #fff;
     border-color: #2280CA;
     color: #2280CA;
 }
 
-button.button.button-small.button-positive.history.activated {
+a.button.button-small.button-positive.history.activated {
     color: #fff;
     border-color: #2280CA;
     background: #2280CA;
@@ -2173,13 +2154,14 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
     top: 5px;
     right: 5px;
 }
-
+/*
 .tri-grp {
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
+*/
 
 .head-lead i {
     color: #fff;
@@ -2284,7 +2266,7 @@ button.ion-close.circle {
     padding: 2px 0 0 1px;
     color: #ff7701;
     position: absolute;
-    right: 21px;
+    right: 20px;
     top: 0px;
 }
 
@@ -2324,4 +2306,8 @@ img.prevoius {
 
 .box-slider {
     position: relative;
+}
+
+a.button.loginactive:hover {
+    color: #fff;
 }
