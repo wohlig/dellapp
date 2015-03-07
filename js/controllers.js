@@ -1,4 +1,3 @@
-var ref="";
 angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
@@ -106,7 +105,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(window.location);
         var abc=window.location.href;
         abc.replace("index.html", "success.html");
-        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
+        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
         });
@@ -114,7 +113,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.twitterlogin = function() {
         console.log(window.location);
         var abc=window.location.origin+window.location.pathname+"success.html";
-        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
+        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
         });
