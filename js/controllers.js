@@ -1,3 +1,4 @@
+var ref=0;
 angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
@@ -35,7 +36,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('LoginCtrl', function($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate) {
+.controller('LoginCtrl', function($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate, $interval) {
 
     $scope.facebooktwitter = false;
     $scope.logindiv = true;
@@ -97,7 +98,29 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 //            $location.url("app/home");
         }
     }
+	
+	
+	var stopinterval=0;
+	var checkfb = function (data, status) {
+        if(data.facebookid=="")
+		{
+			console.log("Do nothing");
+		}
+		else
+		{
+			ref.close();
+			$interval.cancel(stopinterval);
+		}
+    }
 
+	var callAtIntervalfb=function () {
+		MyServices.editprofilebefore().success(checkfb);
+	};
+	
+	
+	
+	
+	
     $scope.normallogin = function(login) {
         MyServices.normallogin(login).success(loginsuccess);
     }
@@ -105,7 +128,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(window.location);
         var abc=window.location.href;
         abc.replace("index.html", "success.html");
-        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
+        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
+		stopinterval=$interval(callAtIntervalfb, 5000);
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
         });
@@ -113,7 +137,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.twitterlogin = function() {
         console.log(window.location);
         var abc=window.location.origin+window.location.pathname+"success.html";
-        var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
+        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
         });
