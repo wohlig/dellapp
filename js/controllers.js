@@ -106,12 +106,17 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         var abc=window.location.href;
         abc.replace("index.html", "success.html");
         var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
-        ref.addEventListener('exit', function(event) { console.log("Check jStorage Facebook Login"); console.log($.jStorage.get("facebooklogin"));});
+        ref.addEventListener('exit', function(event) {
+            MyServices.authenticate().success(authenticatesuccess);
+        });
     };
     $scope.twitterlogin = function() {
         console.log(window.location);
         var abc=window.location.origin+window.location.pathname+"success.html";
         var ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
+        ref.addEventListener('exit', function(event) {
+            MyServices.authenticate().success(authenticatesuccess);
+        });
     };
     // GET USER DATA
     
