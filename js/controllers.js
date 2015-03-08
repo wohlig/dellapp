@@ -474,7 +474,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     var postcount=0;
     var checktwitter = function (data, status) {
         var newpostcount=parseInt(data.count);
-        if (postcount!=newpostcount) {
+        if (postcount==newpostcount) {
             console.log("Do nothing");
         } else {
             ref.close();
@@ -574,7 +574,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     var postcount=0;
     var checkfb = function (data, status) {
         var newpostcount=parseInt(data.count);
-        if (postcount!=newpostcount) {
+        if (postcount==newpostcount) {
             console.log("Do nothing");
         } else {
             ref.close();
