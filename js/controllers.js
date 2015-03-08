@@ -1,29 +1,29 @@
-var ref=0;
+var ref = 0;
 angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {})
 
-.controller('LogoutCtrl', function($scope, $ionicModal, $timeout, MyServices) {
+.controller('LogoutCtrl', function ($scope, $ionicModal, $timeout, MyServices) {
 
-    var logoutsuccess = function(data, status) {
+    var logoutsuccess = function (data, status) {
         console.log(data);
     }
     MyServices.logout().success(logoutsuccess);
 
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
+.controller('HomeCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.homeclass = "active";
     $scope.user = [];
 
 
     //  AUTHENTICATE
-    var usersuccess = function(data, status) {
+    var usersuccess = function (data, status) {
         console.log(data);
         $scope.user = data;
     }
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -36,41 +36,41 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('LoginCtrl', function($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate, $interval) {
+.controller('LoginCtrl', function ($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate, $interval) {
 
     $scope.facebooktwitter = false;
     $scope.logindiv = true;
     $scope.user = [];
     $scope.facebooktik = false;
     $scope.twittertik = false;
-    
-    
+
+
     //  AUTHENTICATE
     var usersuccess = function (data, status) {
         console.log(data);
         $scope.user = data;
-        
-        if($scope.user.facebookid == "" || $scope.user.twitterid == ""){
+
+        if ($scope.user.facebookid == "" || $scope.user.twitterid == "") {
             $scope.facebooktwitter = true;
             $scope.logindiv = false;
-            if($scope.user.facebookid == ''){
+            if ($scope.user.facebookid == '') {
                 $scope.facebooktik = false;
-            }else{
+            } else {
                 console.log($scope.user.facebookid);
                 $scope.facebooktik = true;
             }
-            if($scope.user.twitterid == ''){
+            if ($scope.user.twitterid == '') {
                 $scope.twittertik = false;
-            }else{
+            } else {
                 console.log($scope.user.twitterid);
                 $scope.twittertik = true;
             }
-        }else{
+        } else {
             $location.url("app/home");
         }
     }
-    
-    var authenticatesuccess = function(data, status) {
+
+    var authenticatesuccess = function (data, status) {
         if (data != "false") {
             MyServices.editprofilebefore().success(usersuccess);
         }
@@ -78,16 +78,16 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     MyServices.authenticate().success(authenticatesuccess);
 
 
-    $scope.changetologin = function() {
+    $scope.changetologin = function () {
         $ionicSlideBoxDelegate.slide(1);
     };
-	
-    $scope.changetoinformation = function() {
+
+    $scope.changetoinformation = function () {
         $ionicSlideBoxDelegate.slide(0);
     };
 
     //  ON LOGIN CLICK
-    var loginsuccess = function(data, status) {
+    var loginsuccess = function (data, status) {
         if (data == "false") {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login',
@@ -95,100 +95,94 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             });
         } else {
             MyServices.editprofilebefore().success(usersuccess);
-//            $location.url("app/home");
+            //            $location.url("app/home");
         }
     }
-	
-	
-	var stopinterval=0;
-	var checkfb = function (data, status) {
-		console.log(data);
-        if(data.facebookid=="")
-		{
-			console.log("Do nothing");
-		}
-		else
-		{
-			ref.close();
-			$interval.cancel(stopinterval);
-		}
+
+
+    var stopinterval = 0;
+    var checkfb = function (data, status) {
+        console.log(data);
+        if (data.facebookid == "") {
+            console.log("Do nothing");
+        } else {
+            ref.close();
+            $interval.cancel(stopinterval);
+        }
     }
 
-	var callAtIntervalfb=function () {
-		MyServices.editprofilebefore().success(checkfb);
-	};
+    var callAtIntervalfb = function () {
+        MyServices.editprofilebefore().success(checkfb);
+    };
 
     var checktwitter = function (data, status) {
-		console.log(data);
-        if(data.twitterid=="")
-		{
-			console.log("Do nothing");
-		}
-		else
-		{
-			ref.close();
-			$interval.cancel(stopinterval);
-		}
+        console.log(data);
+        if (data.twitterid == "") {
+            console.log("Do nothing");
+        } else {
+            ref.close();
+            $interval.cancel(stopinterval);
+        }
     }
 
-	var callAtIntervaltwitter=function () {
-		MyServices.editprofilebefore().success(checktwitter);
-	};
-	
-	
-	
-	
-    $scope.normallogin = function(login) {
+    var callAtIntervaltwitter = function () {
+        MyServices.editprofilebefore().success(checktwitter);
+    };
+
+
+
+
+    $scope.normallogin = function (login) {
         MyServices.normallogin(login).success(loginsuccess);
     }
-    $scope.facebooklogin = function() {
+    $scope.facebooklogin = function () {
         console.log(window.location);
-        var abc=window.location.href;
+        var abc = window.location.href;
         abc.replace("index.html", "success.html");
-        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
-		stopinterval=$interval(callAtIntervalfb, 2000);
-        ref.addEventListener('exit', function(event) {
+        ref = window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home=' + abc, '_blank', 'location=yes');
+        stopinterval = $interval(callAtIntervalfb, 2000);
+        ref.addEventListener('exit', function (event) {
             MyServices.authenticate().success(authenticatesuccess);
-			$interval.cancel(stopinterval);
+            $interval.cancel(stopinterval);
         });
     };
-    $scope.twitterlogin = function() {
+    $scope.twitterlogin = function () {
         console.log(window.location);
-        var abc=window.location.origin+window.location.pathname+"success.html";
-        ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
-        stopinterval=$interval(callAtIntervaltwitter, 2000);
-        ref.addEventListener('exit', function(event) {
+        var abc = window.location.origin + window.location.pathname + "success.html";
+        ref = window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home=' + abc, '_blank', 'location=yes');
+        stopinterval = $interval(callAtIntervaltwitter, 2000);
+        ref.addEventListener('exit', function (event) {
             MyServices.authenticate().success(authenticatesuccess);
-			$interval.cancel(stopinterval);
+            $interval.cancel(stopinterval);
         });
     };
     // GET USER DATA
-    
-    
+
+
     // FACEBOOK TWITTER SHOW
 
 })
 
-.controller('WelcomeCtrl', function($scope, $stateParams, $ionicModal) {
+.controller('WelcomeCtrl', function ($scope, $stateParams, $ionicModal) {
 
     $ionicModal.fromTemplateUrl('templates/model.html', {
         scope: $scope,
         animation: 'slide-in-up'
-    }).then(function(modal) {
+    }).then(function (modal) {
         $scope.modal = modal;
     });
 
-    $scope.openedit = function() {
+    $scope.openedit = function () {
         $scope.modal.show();
     }
 
-    $scope.closeModal = function() {
+    $scope.closeModal = function () {
         $scope.modal.hide();
     };
 
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup) {
+.controller('ProfileCtrl', function ($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup) {
     TemplateService.noactive();
     TemplateService.homeclass = "active";
 
@@ -197,15 +191,15 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.profile = [];
 
     //  AUTHENTICATE
-    var usersuccess = function(data, status) {
+    var usersuccess = function (data, status) {
         console.log(data);
         $scope.user = data;
     }
-    var profilesuccess = function(data, status) {
+    var profilesuccess = function (data, status) {
         console.log(data);
         $scope.profile = data;
     }
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -216,7 +210,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     MyServices.authenticate().success(authenticatesuccess);
 
 
-    $scope.mkopen = function() {
+    $scope.mkopen = function () {
         console.log("cbd");
         if ($scope.shldopens == "openprf") {
             $scope.shldopens = "";
@@ -228,18 +222,18 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $ionicModal.fromTemplateUrl('templates/editprofile.html', {
         scope: $scope,
         animation: 'slide-in-up'
-    }).then(function(modal) {
+    }).then(function (modal) {
         $scope.modal = modal;
     });
 
-    $scope.openedit = function() {
+    $scope.openedit = function () {
         $scope.modal.show();
     }
 
-    $scope.closeModal = function() {
+    $scope.closeModal = function () {
         $scope.modal.hide();
     };
-    $scope.mkopen1 = function() {
+    $scope.mkopen1 = function () {
         console.log("cbd");
         if ($scope.shldopens1 == "changesul" &&
             $scope.shldopens2 == "changesi") {
@@ -251,7 +245,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     };
 
-    $scope.mkopen2 = function() {
+    $scope.mkopen2 = function () {
         console.log("cbd");
         if ($scope.shldopens3 == "changesul1" &&
             $scope.shldopens4 == "changesi") {
@@ -263,7 +257,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     };
 
-    $scope.savepassword = function() {
+    $scope.savepassword = function () {
         $scope.shldopens3 = "changesul1";
         $scope.shldopens4 = "changesi";
     }
@@ -274,7 +268,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     // CHANGE PASSWORD
 
-    var passwordsuccess = function(data, status) {
+    var passwordsuccess = function (data, status) {
         console.log(data);
         if (data == "false") {
             var alertPopup = $ionicPopup.alert({
@@ -288,14 +282,14 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             });
         }
     }
-    $scope.savepassword = function(password) {
+    $scope.savepassword = function (password) {
         console.log(password);
         MyServices.changepassword(password).success(passwordsuccess);
     }
 
     // CHANGE PROFILE
 
-    var changeprofilesuccess = function(data, status) {
+    var changeprofilesuccess = function (data, status) {
         console.log(data);
         if (data == false) {
             var alertPopup = $ionicPopup.alert({
@@ -309,21 +303,21 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             });
         }
     }
-    $scope.saveprofile = function(profile) {
+    $scope.saveprofile = function (profile) {
         console.log(profile);
         MyServices.changeprofile(profile).success(changeprofilesuccess);
     }
 
 })
 
-.controller('EditprofileCtrl', function($scope, $stateParams, MyServices, $location) {
+.controller('EditprofileCtrl', function ($scope, $stateParams, MyServices, $location) {
 
 
     $scope.user = 0;
 
 
     //  AUTHENTICATE
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -333,21 +327,21 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     MyServices.authenticate().success(authenticatesuccess);
 
     // CHANGE PASSWORD
-    var passwordsuccess = function(data, status) {
+    var passwordsuccess = function (data, status) {
         console.log(data);
     }
-    $scope.savepassword = function(password) {
+    $scope.savepassword = function (password) {
         console.log(password);
         MyServices.changepassword(password).success(passwordsuccess);
     }
 
 })
 
-.controller('PostinfoCtrl', function($scope, $stateParams) {})
+.controller('PostinfoCtrl', function ($scope, $stateParams) {})
 
-.controller('SuggestpostCtrl', function($scope, $stateParams) {})
+.controller('SuggestpostCtrl', function ($scope, $stateParams) {})
 
-.controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
+.controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
     TemplateService.noactive();
     TemplateService.leaderclass = "active";
 
@@ -359,22 +353,22 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 
     //  AUTHENTICATE
-    var usersuccess = function(data, status) {
+    var usersuccess = function (data, status) {
         $scope.user = data;
     }
-    var leaderboardsuccess = function(data, status) {
+    var leaderboardsuccess = function (data, status) {
         $scope.totallength = data.totalvalues - 3;
         $scope.rankuser = data.queryresult.slice(0, 3);
         $scope.leaderboard = data.queryresult.splice(3);
         $scope.$broadcast('scroll.infiniteScrollComplete');
     }
-    var leaderboardsuccesspush = function(data, status) {
+    var leaderboardsuccesspush = function (data, status) {
         for (var i = 0; i < data.queryresult.length; i++) {
             $scope.leaderboard.push(data.queryresult[i]);
         }
         $scope.$broadcast('scroll.infiniteScrollComplete');
     }
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -384,7 +378,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     }
     MyServices.authenticate().success(authenticatesuccess);
 
-    $scope.loadMore = function() {
+    $scope.loadMore = function () {
         console.log("loading.....");
         console.log($scope.leaderboard.length);
         console.log($scope.totallength);
@@ -399,20 +393,20 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('PostCtrl', function($scope, $stateParams) {})
+.controller('PostCtrl', function ($scope, $stateParams) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams) {})
+.controller('CreatepostCtrl', function ($scope, $stateParams) {})
 
-.controller('PostfbCtrl', function($scope, $stateParams) {})
+.controller('PostfbCtrl', function ($scope, $stateParams) {})
 
-.controller('PostinfofbCtrl', function($scope, $stateParams) {})
+.controller('PostinfofbCtrl', function ($scope, $stateParams) {})
 
-.controller('SuggestedpostCtrl', function($scope, TemplateService) {
+.controller('SuggestedpostCtrl', function ($scope, TemplateService) {
     TemplateService.noactive();
     TemplateService.createpostclass = "active";
 })
 
-.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
+.controller('TableCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.tabletwitclass = "active";
 
@@ -425,11 +419,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.twitterpost = [];
 
     //  AUTHENTICATE
-    var twittersuccess = function(data, status) {
+    var twittersuccess = function (data, status) {
         console.log(data);
         $scope.twitter = data;
     }
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -438,38 +432,38 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
-    
-    
-    
-    
+
+
+
+
     //  ON TAB CHANGE
-    
+
     var postsuccess = function (data, status) {
         console.log(data);
         $scope.twitterpost = data;
         $scope.lastid = data.id;
     }
-    
+
     $scope.changetab = function (tab) {
         console.log(tab);
-        if(tab == "newpost"){
+        if (tab == "newpost") {
             $scope.tab = "newpost";
             $scope.newpostclass = "activated";
             $scope.historyclass = "";
             MyServices.gettwitternextpost($scope.lastid).success(postsuccess);
-            
-        }else{
+
+        } else {
             $scope.tab = "history";
             $scope.historyclass = "activated";
             $scope.newpostclass = "";
         }
     }
-    
+
     // NEXT POST
-    $scope.nextpost = function (){
+    $scope.nextpost = function () {
         MyServices.gettwitternextpost($scope.lastid).success(postsuccess);
     }
-    
+
     //  PREVIOUS POST
     $scope.prevoiuspost = function () {
         MyServices.gettwitterprevpost($scope.lastid).success(postsuccess);
@@ -477,7 +471,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
+.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
     TemplateService.noactive();
     TemplateService.tablefbclass = "active";
 
@@ -490,11 +484,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.facebookpost = [];
 
     //  AUTHENTICATE
-    var facebooksuccess = function(data, status) {
+    var facebooksuccess = function (data, status) {
         console.log(data);
         $scope.facebook = data;
     }
-    var authenticatesuccess = function(data, status) {
+    var authenticatesuccess = function (data, status) {
         if (data == "false") {
             $location.url("/login");
         } else {
@@ -503,62 +497,90 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
     }
     MyServices.authenticate().success(authenticatesuccess);
-    
-    
+
+
     //  ON TAB CHANGE
-    
+
     var postsuccess = function (data, status) {
         console.log(data);
         $scope.facebookpost = data;
         $scope.lastid = data.id;
     }
-    
+
     $scope.changetab = function (tab) {
         console.log(tab);
-        if(tab == "newpost"){
+        if (tab == "newpost") {
             $scope.tab = "newpost";
             $scope.newpostclass = "activated";
             $scope.historyclass = "";
             MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
-            
-        }else{
+
+        } else {
             $scope.tab = "history";
             $scope.historyclass = "activated";
             $scope.newpostclass = "";
         }
     }
-    
+
     // NEXT POST
-    $scope.nextpost = function (){
+    $scope.nextpost = function () {
         MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
     }
-    
+
     //  PREVIOUS POST
     $scope.prevoiuspost = function () {
         MyServices.getfacebookprevpost($scope.lastid).success(postsuccess);
     }
+    
+    
+    var stopinterval = 0;
+    var checkfb = function (data, status) {
+        console.log(data);
+        if (data.facebookid == "") {
+            console.log("Do nothing");
+        } else {
+            ref.close();
+            $interval.cancel(stopinterval);
+        }
+    }
+
+    var callAtIntervalfb = function () {
+        MyServices.editprofilebefore().success(checkfb);
+    };
+
+    $scope.normallogin = function (login) {
+        MyServices.normallogin(login).success(loginsuccess);
+    }
+    $scope.makepost = function () {
+        ref = window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home=' + abc, '_blank', 'location=yes');
+        stopinterval = $interval(callAtIntervalfb, 2000);
+        ref.addEventListener('exit', function (event) {
+            MyServices.authenticate().success(authenticatesuccess);
+            $interval.cancel(stopinterval);
+        });
+    };
 
 })
 
-.controller('TwitterpostCtrl', function($scope, $stateParams, TemplateService) {
+.controller('TwitterpostCtrl', function ($scope, $stateParams, TemplateService) {
     TemplateService.noactive();
     TemplateService.twitpostclass = "active";
 
 })
 
-.controller('FbpostCtrl', function($scope, $stateParams, TemplateService) {
+.controller('FbpostCtrl', function ($scope, $stateParams, TemplateService) {
     TemplateService.noactive();
     TemplateService.fbpostclass = "active";
 })
 
-.controller('MenuCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
+.controller('MenuCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location) {
 
     // DEVELOPMENT
-    var logoutsuccess = function(data, status) {
+    var logoutsuccess = function (data, status) {
         console.log(data);
         $location.url("/login");
     }
-    $scope.logoutapp = function() {
+    $scope.logoutapp = function () {
 
         MyServices.logout().success(logoutsuccess);
 
@@ -566,7 +588,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 
     // DESIGN
-    $scope.changeopen1 = function() {
+    $scope.changeopen1 = function () {
         if ($scope.shouldopen1 == "open") {
             $scope.shouldopen1 = "";
         } else {
@@ -576,7 +598,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     $scope.navigation = TemplateService;
 
-    $scope.changeopen2 = function() {
+    $scope.changeopen2 = function () {
         if ($scope.shouldopen2 == "open") {
             $scope.shouldopen2 = "";
         } else {
