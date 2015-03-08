@@ -117,7 +117,23 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	var callAtIntervalfb=function () {
 		MyServices.editprofilebefore().success(checkfb);
 	};
-	
+
+    var checktwitter = function (data, status) {
+		console.log(data);
+        if(data.twitterid=="")
+		{
+			console.log("Do nothing");
+		}
+		else
+		{
+			ref.close();
+			$interval.cancel(stopinterval);
+		}
+    }
+
+	var callAtIntervaltwitter=function () {
+		MyServices.editprofilebefore().success(checktwitter);
+	};
 	
 	
 	
@@ -130,7 +146,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         var abc=window.location.href;
         abc.replace("index.html", "success.html");
         ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Facebook?home='+abc, '_blank', 'location=yes');
-		stopinterval=$interval(callAtIntervalfb, 5000);
+		stopinterval=$interval(callAtIntervalfb, 2000);
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
 			$interval.cancel(stopinterval);
@@ -140,6 +156,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(window.location);
         var abc=window.location.origin+window.location.pathname+"success.html";
         ref=window.open('http://dellcampassador.com/new/index.php/json/loginhauth/Twitter?home='+abc, '_blank', 'location=yes');
+        stopinterval=$interval(callAtIntervaltwitter, 2000);
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
 			$interval.cancel(stopinterval);
