@@ -73,6 +73,15 @@ var myservices = angular.module('myservices', [])
         },
         getleaderboard: function (pageno){
             return $http.get(adminurl + "viewleaderboardjson?pageno=" + pageno , {});
+        },
+        getuserpostcount: function (post){
+            return $http.get(adminurl + "getuserpostcount?post=" + post , {});
+        },
+        postfb: function (post){
+            return $http.get(adminurl + "postfb?id=" + post , {});
+        },
+        posttweet: function (post){
+            return $http.get(adminurl + "posttweet?id=" + post , {});
         }
     }
 });
