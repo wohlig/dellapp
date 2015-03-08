@@ -130,8 +130,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
 
 
-
-
     $scope.normallogin = function (login) {
         MyServices.normallogin(login).success(loginsuccess);
     }
@@ -339,7 +337,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('PostinfoCtrl', function ($scope, $stateParams) {})
 
-.controller('SuggestpostCtrl', function ($scope, $stateParams) {})
+.controller('SuggestpostCtrl', function ($scope, $stateParams, $ionicHistory) {
+    $scope.myGoBack = function () {
+        $ionicHistory.goBack();
+    };
+
+})
 
 .controller('LeaderboardCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
     TemplateService.noactive();
@@ -390,6 +393,14 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
 
     }
+    $scope.opentexts = function () {
+        if ($scope.textopens == "open-text") {
+            $scope.textopens = "";
+        } else {
+            $scope.textopens = "open-text";
+        }
+    };
+
 
 })
 
@@ -406,7 +417,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     TemplateService.createpostclass = "active";
 })
 
-.controller('TableCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location,$interval) {
+.controller('TableCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
     TemplateService.noactive();
     TemplateService.tabletwitclass = "active";
 
@@ -468,31 +479,31 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.prevoiuspost = function () {
         MyServices.gettwitterprevpost($scope.lastid).success(postsuccess);
     }
-    
+
     var stopinterval = 0;
-    var postid=0;
-    var postcount=0;
+    var postid = 0;
+    var postcount = 0;
     var checktwitter = function (data, status) {
-        
-        var newpostcount=parseInt(data.count);
-        
-        console.log("newpostcount..."+newpostcount);
-        console.log("postcount..."+postcount);
-        if (postcount==newpostcount) {
+
+        var newpostcount = parseInt(data.count);
+
+        console.log("newpostcount..." + newpostcount);
+        console.log("postcount..." + postcount);
+        if (postcount == newpostcount) {
             console.log("Do nothing");
         } else {
             ref.close();
             $interval.cancel(stopinterval);
         }
     }
-    
+
     var callAtIntervaltwitter = function () {
         MyServices.getuserpostcount(postid).success(checktwitter);
     };
 
     var postnow = function (data) {
-        postcount=parseInt(data.count);
-        ref = window.open('http://dellcampassador.com/new/index.php/json/posttweet?id='+postid, '_blank', 'location=no');
+        postcount = parseInt(data.count);
+        ref = window.open('http://dellcampassador.com/new/index.php/json/posttweet?id=' + postid, '_blank', 'location=no');
         stopinterval = $interval(callAtIntervaltwitter, 2000);
         ref.addEventListener('exit', function (event) {
             MyServices.authenticate().success(authenticatesuccess);
@@ -501,26 +512,20 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
 
     $scope.makeposttwitter = function (post) {
-        postid=post;
+        postid = post;
         MyServices.getuserpostcount(post).success(postnow);
     };
-    
-    
+
     var path = $location.path();
-    if(path=="/app/table")
-    {
-        
-    }
-    else 
-    {
+    if (path == "/app/table") {
+
+    } else {
         $scope.changetab('newpost');
     }
-    
-    
 
 })
 
-.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location,$interval) {
+.controller('TablefbCtrl', function ($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
     TemplateService.noactive();
     TemplateService.tablefbclass = "active";
 
@@ -580,28 +585,28 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.prevoiuspost = function () {
         MyServices.getfacebookprevpost($scope.lastid).success(postsuccess);
     }
-    
-    
+
+
     var stopinterval = 0;
-    var postid=0;
-    var postcount=0;
+    var postid = 0;
+    var postcount = 0;
     var checkfb = function (data, status) {
-        var newpostcount=parseInt(data.count);
-        if (postcount==newpostcount) {
+        var newpostcount = parseInt(data.count);
+        if (postcount == newpostcount) {
             console.log("Do nothing");
         } else {
             ref.close();
             $interval.cancel(stopinterval);
         }
     }
-    
+
     var callAtIntervalfb = function () {
         MyServices.getuserpostcount(postid).success(checkfb);
     };
 
     var postfbnow = function (data) {
-        postcount=parseInt(data.count);
-        ref = window.open('http://dellcampassador.com/new/index.php/json/postfb?id='+postid, '_blank', 'location=no');
+        postcount = parseInt(data.count);
+        ref = window.open('http://dellcampassador.com/new/index.php/json/postfb?id=' + postid, '_blank', 'location=no');
         stopinterval = $interval(callAtIntervalfb, 2000);
         ref.addEventListener('exit', function (event) {
             MyServices.authenticate().success(authenticatesuccess);
@@ -611,22 +616,19 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     $scope.makepostfb = function (post) {
         console.log(post);
-        postid=post;
+        postid = post;
         MyServices.getuserpostcount(post).success(postfbnow);
     };
-    
-    
+
+
     var path = $location.path();
-    if(path=="/app/tablefb")
-    {
-        
-    }
-    else 
-    {
+    if (path == "/app/tablefb") {
+
+    } else {
         $scope.changetab('newpost');
     }
-    
-    
+
+
 
 })
 
