@@ -473,7 +473,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     var postid=0;
     var postcount=0;
     var checktwitter = function (data, status) {
+        
         var newpostcount=parseInt(data.count);
+        
+        console.log("newpostcount..."+newpostcount);
+        console.log("postcount..."+postcount);
         if (postcount==newpostcount) {
             console.log("Do nothing");
         } else {
