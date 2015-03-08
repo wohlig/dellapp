@@ -1399,6 +1399,15 @@ hr.vertical-blue {
     height: 1px;
     border: 0;
     background: rgba(15, 136, 197, 0.6);
+    position: absolute;
+    top: 236px;
+    z-index: 9999999999999;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
 }
 
 .lead13 h4,
@@ -1487,6 +1496,7 @@ span.lead-score {
 .leader-brd {
     padding-bottom: 30px;
     position: relative;
+    padding-top: 240px;
 }
 
 .social-lead span {
@@ -1576,10 +1586,6 @@ a.button.ion-edit.post-icon {
     width: 33px;
     display: inline-table;
     margin-right: 5px;
-}
-
-.logout {
-    margin: 10px 0;
 }
 
 .button-post.button.icon-left:before {
@@ -2100,7 +2106,7 @@ button.button.back-button.buttons.header-item.green {
     color: #0084c4;
 }
 
-.modal-button a {
+.modal-button button {
     background-color: #0084c4!important;
     border-color: #0084c4!important;
     text-transform: uppercase;
@@ -2116,12 +2122,6 @@ a.button.button-small.button-positive.history {
 }
 
 a.button.button-small.button-positive.history.activated {
-    color: #fff;
-    border-color: #2280CA;
-    background: #2280CA;
-}
-
-.activated a.button.button-small.button-positive.history {
     color: #fff;
     border-color: #2280CA;
     background: #2280CA;
@@ -2160,14 +2160,6 @@ button.button.icon-left.ion-social-twitter.button-post:hover {
     top: 5px;
     right: 5px;
 }
-/*
-.tri-grp {
-    -webkit-transition: all 200ms ease;
-    -moz-transition: all 200ms ease;
-    -o-transition: all 200ms ease;
-    transition: all 200ms ease;
-}
-*/
 
 .head-lead i {
     color: #fff;
@@ -2314,6 +2306,37 @@ img.prevoius {
     position: relative;
 }
 
-a.button.loginactive:hover {
-    color: #fff;
+ion-header-bar.static-header {
+    top: 43px;
+    border: 0px;
+    background: transparent;
+}
+
+.text-top {
+    position: absolute;
+    top: -1px;
+    border-top: 1px solid #FF7701!important;
+    border-bottom: 1px solid #FF7701 !important;
+    border-left: 1px solid #FF7701!important;
+    right: 20px;
+    width: 0px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.open-textss .open-text {
+    width: 257px;
+    opacity: 1;
+}
+
+.button.absolutedone {
+    position: absolute;
+    top: 0px;
+    right: 10px;
 }
