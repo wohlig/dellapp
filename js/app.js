@@ -145,8 +145,8 @@ $ionicConfigProvider.views.maxCache(0);
             url: "/twitterpost",
             views: {
                 'menuContent': {
-                    templateUrl: "templates/twitterpost.html",
-                    controller: 'TwitterpostCtrl'
+                    templateUrl: "templates/table.html",
+                    controller: 'TableCtrl'
                 }
             }
         })
@@ -154,8 +154,8 @@ $ionicConfigProvider.views.maxCache(0);
             url: "/fbpost",
             views: {
                 'menuContent': {
-                    templateUrl: "templates/fbpost.html",
-                    controller: 'FbpostCtrl'
+                    templateUrl: "templates/tablefb.html",
+                    controller: 'TablefbCtrl'
                 }
             }
         })

@@ -66,13 +66,14 @@
             </div>
         </div>
         <div class="row center-main">
-            <div class="col">
-                <a class="button button-small button-positive history" ng-click="changetab('newpost')">
+            <div class="col {{newpostclass}}">
+            
+                <a class="button button-small button-positive history {{newpostclass}}" ng-click="changetab('newpost')">
                         New Post
                 </a>
             </div>
-            <div class="col">
-                <a class="button button-small button-positive history activated" ng-click="changetab('history')">
+            <div class="col {{historyclass}}">
+                <a class="button button-small button-positive history {{historyclass}}" ng-click="changetab('history')">
                         History
                     </a>
             </div>

@@ -2121,6 +2121,12 @@ a.button.button-small.button-positive.history.activated {
     background: #2280CA;
 }
 
+.activated a.button.button-small.button-positive.history {
+    color: #fff;
+    border-color: #2280CA;
+    background: #2280CA;
+}
+
 .post-cont {
     text-align: center;
 }

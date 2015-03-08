@@ -506,6 +506,15 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
     
     
+    var path = $location.path();
+    if(path=="/app/table")
+    {
+        
+    }
+    else 
+    {
+        $scope.changetab('newpost');
+    }
     
     
 
@@ -607,6 +616,15 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
     
     
+    var path = $location.path();
+    if(path=="/app/tablefb")
+    {
+        
+    }
+    else 
+    {
+        $scope.changetab('newpost');
+    }
     
     
 
