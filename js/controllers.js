@@ -536,7 +536,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.newpostclass = "";
     $scope.lastid = "";
     $scope.facebookpost = [];
-
     //  AUTHENTICATE
     var facebooksuccess = function (data, status) {
         console.log(data);
@@ -655,7 +654,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         MyServices.logout().success(logoutsuccess);
 
     }
-
 
     // DESIGN
     $scope.changeopen1 = function () {
