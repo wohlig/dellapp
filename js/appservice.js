@@ -1,10 +1,9 @@
 var adminurl = "http://dellcampassador.com/new/index.php/json/";
 //var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
-
 var myservices = angular.module('myservices', [])
 
 .factory('MyServices', function ($http, $location) {
-    
+
     var useremail = "";
     var uservalue = {};
     return {
@@ -18,7 +17,7 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
-		changepassword: function (password) {
+        changepassword: function (password) {
             return $http({
                 url: adminurl + 'changepasswordsubmit',
                 method: "POST",
@@ -29,7 +28,7 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
-		changeprofile: function (profile) {
+        changeprofile: function (profile) {
             return $http({
                 url: adminurl + 'editprofilesubmit',
                 method: "POST",
@@ -37,51 +36,51 @@ var myservices = angular.module('myservices', [])
                     'name': profile.name,
                     'contact': profile.contact,
                     'dob': profile.dob,
-					'city': profile.city
+                    'city': profile.city
                 }
             });
         },
-        gettwitterposts: function (){
+        gettwitterposts: function () {
             return $http.get(adminurl + "gettwitterposts", {});
         },
-        getfacebookposts: function (){
+        getfacebookposts: function () {
             return $http.get(adminurl + "getfacebookposts", {});
         },
-        editprofilebefore: function (){
+        editprofilebefore: function () {
             return $http.get(adminurl + "editprofilebefore", {});
         },
-        gettwitternextpost: function (id){
+        gettwitternextpost: function (id) {
             return $http.get(adminurl + "gettwitternextpost?id=" + id, {});
         },
-        getfacebooknextpost: function (id){
+        getfacebooknextpost: function (id) {
             return $http.get(adminurl + "getfacebooknextpost?id=" + id, {});
         },
-        getfacebookprevpost: function (id){
+        getfacebookprevpost: function (id) {
             return $http.get(adminurl + "getfacebookprevpost?id=" + id, {});
         },
-        gettwitterprevpost: function (id){
+        gettwitterprevpost: function (id) {
             return $http.get(adminurl + "gettwitterprevpost?id=" + id, {});
         },
-        authenticate: function (){
+        authenticate: function () {
             return $http.get(adminurl + "authenticate", {});
         },
-        logout: function (){
+        logout: function () {
             return $http.get(adminurl + "logout", {});
         },
-        getuser: function (id){
-            return $http.get(adminurl + "usersdetail?id=" + id , {});
+        getuser: function (id) {
+            return $http.get(adminurl + "usersdetail?id=" + id, {});
         },
-        getleaderboard: function (pageno){
-            return $http.get(adminurl + "viewleaderboardjson?pageno=" + pageno , {});
+        getleaderboard: function (pageno) {
+            return $http.get(adminurl + "viewleaderboardjson?pageno=" + pageno, {});
         },
-        getuserpostcount: function (post){
-            return $http.get(adminurl + "getuserpostcount?post=" + post , {});
+        getuserpostcount: function (post) {
+            return $http.get(adminurl + "getuserpostcount?post=" + post, {});
         },
-        postfb: function (post){
-            return $http.get(adminurl + "postfb?id=" + post , {});
+        postfb: function (post) {
+            return $http.get(adminurl + "postfb?id=" + post, {});
         },
-        posttweet: function (post){
-            return $http.get(adminurl + "posttweet?id=" + post , {});
+        posttweet: function (post) {
+            return $http.get(adminurl + "posttweet?id=" + post, {});
         }
     }
 });
