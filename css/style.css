@@ -124,7 +124,7 @@ button {
 
 .login-down {
     text-align: center;
-    background: rgba(255, 119, 1, 0.85);
+    background: rgba(255, 119, 1, 0.7);
     margin: 20px 20px 20px 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -295,7 +295,7 @@ span.ion-record.ion-record1st {
 }
 
 .wel-content {
-    background: rgba(255, 119, 1, 0.85);
+    background: rgba(255, 119, 1, 0.7);
     min-height: 500px;
 }
 
@@ -712,14 +712,14 @@ ion-view.bgprofile.pane {
 }
 
 .profile-cont1 {
-    background: rgba(40, 70, 121, 0.9);
+    background: rgba(40, 70, 121, 0.7);
     min-height: 470px;
     z-index: 1;
     position: relative;
 }
 
 .profile-cont {
-    background: rgba(255, 119, 1, 0.82);
+    background: rgba(255, 119, 1, 0.7);
     min-height: 200px;
     margin-top: 0px;
     padding: 16px 0 10px 0px;
@@ -1421,6 +1421,7 @@ hr.vertical-bluess {
 .lead12 h5,
 .lead11 h5 {
     color: #455da3;
+    height: 25px;
 }
 
 .lead12 h4 {
@@ -2187,7 +2188,7 @@ button.button.button-icon.ion-close.post-icon.blue:before {
     text-transform: uppercase;
     color: #0f88c5;
     padding-top: 14px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .edit-cont {
