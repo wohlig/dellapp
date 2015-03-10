@@ -13,9 +13,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
-  
+
     TemplateService.noactive();
-    TemplateService.homeclass="active";
+    TemplateService.homeclass = "active";
     //  AUTHENTICATE
     var usersuccess = function(data, status) {
         console.log(data);
@@ -35,8 +35,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('LoginCtrl', function($scope, $stateParams, MyServices, $location, $ionicPopup, $ionicSlideBoxDelegate, $interval) {
+    $scope.facebooktwitter = false;
+    $scope.logindiv = true;
+    $scope.user = [];
+    $scope.facebooktik = false;
+    $scope.twittertik = false;
 
-   
 
 
     //  AUTHENTICATE
@@ -175,10 +179,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('ProfileCtrl', function($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup) {
-    
+
 
     TemplateService.noactive();
-    TemplateService.profileclass="active";
+    TemplateService.profileclass = "active";
     TemplateService.changeopen1();
 
     $scope.user = [];
@@ -303,10 +307,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('EditprofileCtrl', function($scope, $stateParams, MyServices, $location,TemplateService) {
+.controller('EditprofileCtrl', function($scope, $stateParams, MyServices, $location, TemplateService) {
 
 
-    
+
 
     $scope.user = 0;
 
@@ -332,9 +336,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('PostinfoCtrl', function($scope, $stateParams,TemplateService) {})
+.controller('PostinfoCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory,TemplateService) {
+.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService) {
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
@@ -342,9 +346,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
-   
+
     TemplateService.noactive();
-    TemplateService.leaderclass="active";
+    TemplateService.leaderclass = "active";
 
     $scope.leaderboard = [];
     $scope.rankuser = [];
@@ -395,23 +399,23 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('PostCtrl', function($scope, $stateParams,TemplateService) {})
+.controller('PostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams,TemplateService) {})
+.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('PostfbCtrl', function($scope, $stateParams,TemplateService) {})
+.controller('PostfbCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('PostinfofbCtrl', function($scope, $stateParams,TemplateService) {})
+.controller('PostinfofbCtrl', function($scope, $stateParams, TemplateService) {})
 
 .controller('SuggestedpostCtrl', function($scope, TemplateService) {
     TemplateService.noactive();
-        TemplateService.createpostclass="active";
-        TemplateService.changeopen2();
+    TemplateService.createpostclass = "active";
+    TemplateService.changeopen2();
 })
 
 .controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
-   
-    
+
+
     $scope.user = 0;
     $scope.twitter = [];
     $scope.tab = "history";
@@ -509,25 +513,25 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     var path = $location.path();
     if (path == "/app/table") {
-        
+
         TemplateService.noactive();
-        TemplateService.tabletwitclass="active";
+        TemplateService.tabletwitclass = "active";
         TemplateService.changeopen1();
 
     } else {
         $scope.changetab('newpost');
         TemplateService.noactive();
-        TemplateService.twitpostclass="active";
+        TemplateService.twitpostclass = "active";
         TemplateService.changeopen2();
     }
 
 })
 
 .controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
-    
-   
-    
-    
+
+
+
+
     $scope.user = 0;
     $scope.facebook = [];
     $scope.tab = "history";
@@ -623,12 +627,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     if (path == "/app/tablefb") {
 
         TemplateService.noactive();
-        TemplateService.tablefbclass="active";
+        TemplateService.tablefbclass = "active";
         TemplateService.changeopen1();
     } else {
         $scope.changetab('newpost');
         TemplateService.noactive();
-        TemplateService.fbpostclass="active";
+        TemplateService.fbpostclass = "active";
         TemplateService.changeopen2();
     }
 
@@ -637,19 +641,19 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('TwitterpostCtrl', function($scope, $stateParams, TemplateService) {
-    
+
 
 })
 
 .controller('FbpostCtrl', function($scope, $stateParams, TemplateService) {
-    
+
 })
 
 .controller('MenuCtrl', function($scope, $stateParams, TemplateService, MyServices, $location) {
 
     // DEVELOPMENT
-    
-    
+
+
     $scope.navigation = TemplateService;
-    
+
 });
