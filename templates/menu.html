@@ -1,4 +1,5 @@
 <ion-side-menus enable-menu-with-back-views="false" ng-controller="MenuCtrl">
+
     <ion-side-menu-content drag-content="false">
         <ion-nav-bar>
             <ion-nav-back-button>
@@ -11,7 +12,7 @@
         <ion-header-bar class="bar-positive bg-menu">
             <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
         </ion-header-bar>
-
+  
         <ion-content class="main-menu">
             <ion-list>
                 <ion-header-bar class="bar-positive bg-menu">
@@ -20,9 +21,9 @@
 
                 <ion-item nav-clear menu-close href="#/app/home" class="menumain" ng-class="navigation.homeclass">
                     <span class="ion-home tac" title="home" aria-hidden="true"></span>
-                    <div class="head-text">Dashboard</div>
+                    <div class="head-text">Dashboard </div>
                 </ion-item>
-                <ion-item nav-clear href="#" class="menumain" ng-click="changeopen1();" ng-class="shouldopen1">
+                <ion-item nav-clear href="#" class="menumain" ng-click="navigation.changeopen1();" ng-class="navigation.shouldopen1">
                     <span class="ion-person tac" title="profile" aria-hidden="true"></span>
                     <div class="head-text">Profile</div>
                     <i class="icon ion-chevron-up"></i>
@@ -41,7 +42,7 @@
                         </ion-item>
                     </ion-list>
                 </ion-item>
-                <ion-item nav-clear href="#" class="menumain submenu" ng-click="changeopen2();" ng-class="shouldopen2">
+                <ion-item nav-clear href="#" class="menumain submenu" ng-click="navigation.changeopen2();" ng-class="navigation.shouldopen2">
                     <span class="ion-email tac" title="posting" aria-hidden="true"></span>
                     <div class="head-text">Posting
                     </div>
@@ -65,13 +66,17 @@
                     <span class="ion-trophy tac" title="leaderboard" aria-hidden="true"></span>
                     <div class="head-text">Leader Board</div>
                 </ion-item>
-                <ion-item nav-clear menu-close class="menumain main-logout" ng-click="logoutapp()">
+                <ion-item nav-clear menu-close class="menumain main-logout" ng-click="navigation.logoutapp()">
                     <div class="logout">
                         <span class="ion-log-out tac" title="logout" aria-hidden="true"></span>
                         <div class="head-text">Logout</div>
                     </div>
                 </ion-item>
+                
             </ion-list>
         </ion-content>
+
     </ion-side-menu>
 </ion-side-menus>
+
+
