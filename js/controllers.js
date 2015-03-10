@@ -393,13 +393,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
 
     }
-    $scope.opentexts = function () {
-        if ($scope.textopens == "open-text") {
-            $scope.textopens = "";
-        } else {
-            $scope.textopens = "open-text";
-        }
-    };
 
 
 })

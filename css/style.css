@@ -1240,6 +1240,9 @@ hr.vertical-bluess {
     -moz-border-radius: 100%;
     border-radius: 100%;
 }
+.coming-soon>* {
+    color: #0f88c5;
+}
 .rank-lead {
     text-align: center;
     color: #0f88c5;
