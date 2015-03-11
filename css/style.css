@@ -1227,6 +1227,7 @@ hr.vertical-bluess {
     color: #455da3;
     height: auto;
     margin: 5px 0 0 0;
+    height: 20px;
 }
 .lead12 h4 {
     color: #E33F1D;
@@ -1251,12 +1252,13 @@ hr.vertical-bluess {
     text-align: center;
     color: #0f88c5;
     padding-top: 18px;
-    font-size: 15px;
+    font-size: 12px;
 }
 .social-lead h4 {
     color: #0f88c5;
     font-size: 16px;
     font-weight: 300;
+    margin-top: 0px;
 }
 .social-lead {
     color: #0f88c5;
@@ -1346,9 +1348,9 @@ button.button-clear.post-icon {
     color: #a6afb3;
 }
 .button-post {
-  color: #fff;
-  padding: 4px 10px 3px;
-  background: #0F88C5;
+    color: #fff;
+    padding: 4px 10px 3px;
+    background: #0F88C5;
 }
 button.button.icon-left.ion-social-twitter.button-post {
     background: #0F88C5;
@@ -2051,7 +2053,8 @@ ion-header-bar.static-header-main {
 ion-item.menumain.main-logout.item {
     margin-top: 10px;
 }
-.button-stnd .button.active,a.button.history.active {
+.button-stnd .button.active,
+a.button.history.active {
     background: #0085c3 !important;
     color: white !important;
     border-color: #0085c3;
