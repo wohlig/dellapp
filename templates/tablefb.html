@@ -85,7 +85,7 @@
                 <div class="box" on-swipe-left="prevoiuspost()" on-swipe-right="nextpost()">
                     <div class="box-infofb">
                         <div class="fbpost">
-                            <img ng-src="{{facebookpost.image='' | imagepath}}" alt="">
+                            <img ng-src="{{facebookpost.image | imagepath}}" alt="">
                         </div>
                         <div class="postinfofb">
                             <h5>{{facebookpost.text}}</h5>
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col">
                         <div class="tlb-item">
-                            <img src="img/dellpost.png">
+                            <img ng-src="{{post.image | imagepath}}" >
                         </div>
                     </div>
                     <div class="col">
