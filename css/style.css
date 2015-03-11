@@ -612,13 +612,13 @@ ion-view.bgprofile.pane {
     border-radius: 100%;
 }
 .profile-cont1 {
-    background: rgba(40, 70, 121, 0.7);
-    min-height: 470px;
+    background: rgba(40, 70, 121, 0.9);
     z-index: 1;
     position: relative;
+    min-height: 440px;
 }
 .profile-cont {
-    background: rgba(255, 119, 1, 0.7);
+    background: rgba(255, 119, 1, 0.9);
     min-height: 200px;
     margin-top: 0px;
     padding: 16px 0 10px 0px;
@@ -703,7 +703,8 @@ hr.vertical {
 .all-profile {
     text-align: center;
     color: #fff;
-    padding-top: 35px;
+    padding-top: 10px;
+    font-size: 16px;
 }
 .social-fb i.ion-social-facebook {
     color: #5b76c1;
@@ -1162,7 +1163,7 @@ span.dob-prf {
 .lead11,
 .lead12,
 .lead13 {
-    padding-top: 10px;
+    padding-top: 0;
     text-align: center;
 }
 .lead12 p,
@@ -1170,6 +1171,7 @@ span.dob-prf {
 .lead13 p {
     color: #455da3;
     font-size: 16px;
+    margin: 0;
 }
 .lead2 {
     padding-top: 15px;
@@ -1200,10 +1202,11 @@ hr.verticalup {
 hr.vertical-blue {
     width: 70%;
     height: 1px;
+    margin: 0 auto;
     border: 0;
     background: rgba(15, 136, 197, 0.6);
     position: absolute;
-    top: 270px;
+    top: 247px;
     z-index: 9999999999999;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -1222,7 +1225,8 @@ hr.vertical-bluess {
 .lead12 h5,
 .lead11 h5 {
     color: #455da3;
-    height: 25px;
+    height: auto;
+    margin: 5px 0 0 0;
 }
 .lead12 h4 {
     color: #E33F1D;
@@ -1305,18 +1309,21 @@ span.lead-score {
 }
 .like-comnt.leader h5 {
     color: #fff;
-    margin-top: 4px;
-    font-size: 15px;
+    margin-top: 6px;
+    font-size: 14px;
     text-shadow: 0px 0px 0px;
     font-weight: 300;
+    overflow: hidden;
 }
 i.icon-star.icon-str {
     margin: 0;
     width: 25px;
     height: 20px;
+    vertical-align: middle;
 }
 h5.score-tot {
-    font-size: 20px!important;
+    font-size: 16px!important;
+    margin-top: 3px !important;
 }
 button.button-clear.post-icon {
     border: 1px solid #ff7701;
@@ -1333,16 +1340,18 @@ button.button-clear.post-icon {
     font-size: 16px;
     line-height: 150%;
     color: #0F88C5;
+    padding: 0 15px;
 }
 .post-cont h4 a {
     color: #a6afb3;
 }
 .button-post {
-    color: #0F88C5;
-    padding: 2px 6px 1px 6px;
+  color: #fff;
+  padding: 4px 10px 3px;
+  background: #0F88C5;
 }
 button.button.icon-left.ion-social-twitter.button-post {
-    background: #f2f7f9;
+    background: #0F88C5;
 }
 .post-cont .item.item-text-wrap {
     text-align: center;
@@ -1655,6 +1664,7 @@ button.button.button-small.imgset {
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
+    margin: 0;
 }
 .tot-title {
     min-height: 26px;
@@ -1896,6 +1906,7 @@ label.item.item-input.fb-twt i.ion-social-facebook {
     cursor: pointer;
     z-index: 99;
     position: relative;
+    margin: 5px 0;
 }
 button.button.ion-gear-a.menu-btncolor.brf:before {
     font-size: 20px;
@@ -1995,12 +2006,12 @@ ion-header-bar.static-header {
 .static-table {
     position: absolute;
     width: 100%;
-    top: 87px;
+    top: 95px;
     left: 0px;
 }
 .static-main {
     position: absolute;
-    top: 255px;
+    top: 195px;
 }
 .head-lead-static {
     text-align: center;
@@ -2017,15 +2028,11 @@ hr.vertical-blue-satatic {
     height: 1px;
     border: 0;
     background: rgba(15, 136, 197, 0.6);
-    position: absolute;
-    top: 138px;
+    top: 90px;
     z-index: 9999999999999;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    left: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5px;
 }
 ion-header-bar.static-header-main {
     top: 0px;
@@ -2033,14 +2040,24 @@ ion-header-bar.static-header-main {
     background: transparent;
 }
 .has-header2 {
-    top: 310px;
+    top: 260px;
 }
 .has-header3 {
-    top: 290px;
+    top: 248px;
 }
 .bar-footer {
     background: transparent;
 }
 ion-item.menumain.main-logout.item {
     margin-top: 10px;
+}
+.button-stnd .button.active,a.button.history.active {
+    background: #0085c3 !important;
+    color: white !important;
+    border-color: #0085c3;
+}
+.button-stnd a.button.button-light.bgtrans:hover {
+    background: #0085c3 !important;
+    color: white !important;
+    border-color: #0085c3;
 }

@@ -75,13 +75,18 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     }
     MyServices.authenticate().success(authenticatesuccess);
 
+    var activator = $ionicSlideBoxDelegate.currentIndex();
 
     $scope.changetologin = function() {
         $ionicSlideBoxDelegate.slide(1);
+        $scope.her = '';
+        $scope.him = 'active';
     };
-
+    $scope.her = 'active';
     $scope.changetoinformation = function() {
         $ionicSlideBoxDelegate.slide(0);
+        $scope.her = 'active';
+        $scope.him = '';
     };
 
     //  ON LOGIN CLICK
@@ -419,7 +424,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.user = 0;
     $scope.twitter = [];
     $scope.tab = "history";
-    $scope.historyclass = "activated";
+    $scope.historyclass = "active";
     $scope.newpostclass = "";
     $scope.lastid = "";
     $scope.twitterpost = [];
@@ -454,13 +459,13 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(tab);
         if (tab == "newpost") {
             $scope.tab = "newpost";
-            $scope.newpostclass = "activated";
+            $scope.newpostclass = "active";
             $scope.historyclass = "";
             MyServices.gettwitternextpost($scope.lastid).success(postsuccess);
 
         } else {
             $scope.tab = "history";
-            $scope.historyclass = "activated";
+            $scope.historyclass = "active";
             $scope.newpostclass = "";
         }
     }
@@ -504,6 +509,20 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             MyServices.authenticate().success(authenticatesuccess);
             $interval.cancel(stopinterval);
         });
+        $scope.showPopup();
+    };
+    
+        $scope.showPopup = function() {
+        $scope.data = {}
+        var myPopup = $ionicPopup.show({
+            template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
+            title: 'Succesfully tweeted!',
+            scope: $scope,
+
+        });
+        $timeout(function() {
+            myPopup.close();
+        }, 2000);
     };
 
     $scope.makeposttwitter = function(post) {
@@ -527,15 +546,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
-
-
-
+.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup) {
 
     $scope.user = 0;
     $scope.facebook = [];
     $scope.tab = "history";
-    $scope.historyclass = "activated";
+    $scope.historyclass = "active";
     $scope.newpostclass = "";
     $scope.lastid = "";
     $scope.facebookpost = [];
@@ -567,13 +583,13 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         console.log(tab);
         if (tab == "newpost") {
             $scope.tab = "newpost";
-            $scope.newpostclass = "activated";
+            $scope.newpostclass = "active";
             $scope.historyclass = "";
             MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
 
         } else {
             $scope.tab = "history";
-            $scope.historyclass = "activated";
+            $scope.historyclass = "active";
             $scope.newpostclass = "";
         }
     }
@@ -614,7 +630,23 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             MyServices.authenticate().success(authenticatesuccess);
             $interval.cancel(stopinterval);
         });
+        $scope.showPopup();
     };
+
+
+    $scope.showPopup = function() {
+        $scope.data = {}
+        var myPopup = $ionicPopup.show({
+            template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
+            title: 'Succesfully posted!',
+            scope: $scope,
+
+        });
+        $timeout(function() {
+            myPopup.close();
+        }, 2000);
+    };
+
 
     $scope.makepostfb = function(post) {
         console.log(post);

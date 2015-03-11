@@ -67,12 +67,12 @@
         </div>
         <div class="row center-main static-main">
             <div class="col {{newpostclass}}">
-                <a class="button button-small button-positive history" ng-class="newpostclass" ng-click="changetab('newpost')">
+                <a class="button button-small button-positive history {{newpostclass}}" ng-click="changetab('newpost')">
                         New Post
                     </a>
             </div>
             <div class="col {{historyclass}}">
-                <a class="button button-small button-positive history" ng-class="historyclass" ng-click="changetab('history')">
+                <a class="button button-small button-positive history {{historyclass}}"  ng-click="changetab('history')">
                         History
                 </a>
             </div>
@@ -85,13 +85,13 @@
                 <div class="box" on-swipe-left="prevoiuspost()" on-swipe-right="nextpost()">
                     <div class="box-infofb">
                         <div class="fbpost">
-                            <img src="{{facebookpost.image='' | imagepath}}" alt="">
+                            <img ng-src="{{facebookpost.image='' | imagepath}}" alt="">
                         </div>
                         <div class="postinfofb">
                             <h5>{{facebookpost.text}}</h5>
                         </div>
                         <div style="text-align:center;">
-                            <button style="text-align:center;" class="button icon-left ion-social-facebook button-post" ng-click="makepostfb(facebookpost.id)">&nbsp;&nbsp;Post</button>
+                            <button style="text-align:center;" class="button icon-left ion-social-facebook button-post" ng-click="makepostfb(facebookpost.id)">&nbsp;&nbsp;Post to Facebook</button>
                         </div>
                     </div>
 

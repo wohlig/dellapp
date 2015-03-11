@@ -5,17 +5,18 @@
         </div>
         <div class="button-stnd">
             <div class="button-tickfb">
-                <a class="button button-small button-light bgtrans" ng-click="changetoinformation();">
+                <a class="button button-small button-light bgtrans {{her}}" ng-click="changetoinformation();">
                         Information
                 </a>
             </div>
             <div class="button-ticktwit">
-                <a class="button button-small button-light bgtrans" ng-click="changetologin();">
+                <a class="button button-small button-light bgtrans {{him}}" ng-click="changetologin();">
                     Login
                 </a>
+                
             </div>
         </div>
-        <!--                   box slider-->
+        <!--box slider-->
         <div class="box-slider login">
             <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
                 <ion-slide>
