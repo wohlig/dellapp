@@ -494,6 +494,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
+			
+			
+			
         }
     }
 
@@ -554,7 +557,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.historyclass = "active";
     $scope.newpostclass = "";
     $scope.lastid = "";
-    $scope.facebookpost = [];
+    $scope.facebookpost = [];	
+
     //  AUTHENTICATE
     var facebooksuccess = function(data, status) {
         console.log(data);
@@ -615,6 +619,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
+			
         }
     }
 
