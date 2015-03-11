@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-//var adminurl = "http://dellcampassador.com/new/index.php/json/";
-=======
-var adminurl = "http://dellcampassador.com/new/index.php/json/";
->>>>>>> origin/master
-var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
+var adminurl = "http://dellcampassador.com/new/index.php/json/"
+//var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
 var myservices = angular.module('myservices', [])
 
 .factory('MyServices', function ($http, $location) {
