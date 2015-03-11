@@ -418,7 +418,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     TemplateService.changeopen2();
 })
 
-.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval) {
+.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval,$timeout) {
 
 
     $scope.user = 0;
@@ -546,7 +546,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup) {
+.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup,$timeout) {
 
     $scope.user = 0;
     $scope.facebook = [];
