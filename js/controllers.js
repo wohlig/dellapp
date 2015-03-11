@@ -495,7 +495,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             ref.close();
             $interval.cancel(stopinterval);
 			
-			
+			$scope.showPopup();
 			
         }
     }
@@ -619,7 +619,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
-			
+			$scope.showPopup();
         }
     }
 
