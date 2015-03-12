@@ -347,7 +347,21 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
-
+	
+	// DECLARATION
+	$scope.post = [];
+	$scope.post.platform = "Facebook";
+	
+	// SUGGEST FACEBOOK
+	$scope.suggestfacebook = function(){
+		console.log("facebook");
+		$scope.post.platform = "Facebook";
+	}
+	
+	$scope.suggesttwitter = function(){
+		console.log("teitter");
+		$scope.post.platform = "Twitter";
+	}
 })
 
 .controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {

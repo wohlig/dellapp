@@ -106,7 +106,7 @@ $ionicConfigProvider.views.maxCache(0);
             }
         })
         .state('app.createpost', {
-            url: "/createpost",
+            url: "/createpost/:status",
             views: {
                 'menuContent': {
                     templateUrl: "templates/createpost.html",
