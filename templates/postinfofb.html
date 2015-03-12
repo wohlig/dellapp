@@ -20,37 +20,40 @@
     <ion-content>
         <div class="post-infocontfb">
             <h5>Platform</h5>
+            
             <i class="iicons ion-fb1"></i>
-            <h5>date</h5> 02-02-15 | 12.05.05
+            <h5>date</h5> {{post.timestamp|date:fullDate}}
         </div>
         <div class="box-slider">
             <div class="box">
                 <div class="box-infofb">
                     <div class="fbpost">
-                        <img src="img/dellpost.png" alt="">
+                        <img ng-src="{{post.image|imagepath}}" alt="">
                     </div>
                     <div class="postinfofb">
-                        <h5>Get your voucher code as soon as your redeem your reward points on My Dell Rewards.</h5>
+                        <h5>{{post.posttext}}</h5>
                     </div>
                 </div>
             </div>
+<!--
             <div class="previous1">
                 <img src="img/arrowleft.png" class="next">
                 <img src="img/arrowright.png" class="prevoius">
             </div>
+-->
         </div>
     </ion-content>
     <ion-footer-bar>
         <div class="bar bar-footer">
             <div class="row like-comnt">
                 <div class="col">
-                    <i class="iicon hrt-icon"></i>5
+                    <i class="iicon hrt-icon"></i>{{post.likes}}
                 </div>
                 <div class="col">
-                    <i class="iicon icon-comment"></i>2
+                    <i class="iicon icon-comment"></i>{{post.comment}}
                 </div>
                 <div class="col">
-                    <i class="iicon ion-shares"></i>1
+                    <i class="iicon ion-shares"></i>{{post.share}}
                 </div>
             </div>
         </div>

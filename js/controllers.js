@@ -341,7 +341,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('PostinfoCtrl', function($scope, $stateParams, TemplateService) {})
+.controller('PostinfoCtrl', function($scope, $stateParams, TemplateService) {
+
+    $scope.post = $.jStorage.get("twipost");
+})
 
 .controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService) {
     $scope.myGoBack = function() {
@@ -349,19 +352,20 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
 
     // DECLARATION
-    $scope.post = {text:""};
+    $scope.post = {
+        text: ""
+    };
     $scope.post.platform = "Facebook";
     $scope.showfb = true;
 
     $scope.twittertext = function() {
         console.log("android");
         if ($scope.showfb == false) {
-            if ($scope.post.text.length > 140)
-            {
+            if ($scope.post.text.length > 140) {
                 $scope.post.text = $scope.post.text.substr(0, 140);
                 console.log("NP");
             }
-            $scope.keysremaining=140-$scope.post.text.length + " characters remaining.";
+            $scope.keysremaining = 140 - $scope.post.text.length + " characters remaining.";
         }
     };
 
@@ -438,32 +442,32 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
 
-	// DECLARATION
-	$scope.posts = [];
-	$scope.totallength = 0;
-	
-	// CALL POST API
-	var suggestionsuccess = function(data, status){
-		console.log(data);
-		$scope.posts = data.queryresult
-		$scope.totallength = data.totalvalues;
-		$scope.$broadcast('scroll.infiniteScrollComplete');
-	}
-	
-	var suggestionsuccesspush = function(data, status){
-		console.log(data);
-		for (var i = 0; i < data.queryresult.length; i++) {
+    // DECLARATION
+    $scope.posts = [];
+    $scope.totallength = 0;
+
+    // CALL POST API
+    var suggestionsuccess = function(data, status) {
+        console.log(data);
+        $scope.posts = data.queryresult
+        $scope.totallength = data.totalvalues;
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+    }
+
+    var suggestionsuccesspush = function(data, status) {
+        console.log(data);
+        for (var i = 0; i < data.queryresult.length; i++) {
             $scope.posts.push(data.queryresult[i]);
         }
-		$scope.$broadcast('scroll.infiniteScrollComplete');
-	}
-	
-		MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccess);
-	
-	
-	
-	//LOAD MORE
-	$scope.loadMore = function() {
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+    }
+
+    MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccess);
+
+
+
+    //LOAD MORE
+    $scope.loadMore = function() {
         console.log("loading.....");
         console.log($scope.leaderboard.length);
         console.log($scope.totallength);
@@ -475,12 +479,15 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
 
     }
-	
+
 })
 
 .controller('PostfbCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('PostinfofbCtrl', function($scope, $stateParams, TemplateService) {})
+.controller('PostinfofbCtrl', function($scope, $stateParams, TemplateService) {
+
+    $scope.post = $.jStorage.get("fbpost");
+})
 
 .controller('SuggestedpostCtrl', function($scope, TemplateService) {
     TemplateService.noactive();
@@ -617,6 +624,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         TemplateService.changeopen2();
     }
 
+    $scope.gotopost = function(post) {
+        console.log(post);
+        $.jStorage.set("twipost", post);
+        $location.path("/app/postinfo");
+    };
+
 })
 
 .controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup, $timeout) {
@@ -743,6 +756,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         TemplateService.changeopen2();
     }
 
+    $scope.gotopost = function(post) {
+        $.jStorage.set("fbpost", post);
+        $location.path("/app/postinfofb");
+    };
 
 
 })

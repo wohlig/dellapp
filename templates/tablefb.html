@@ -105,7 +105,7 @@
             <!--        FACEBOOK TABLE   TAB HISTORY-->
 
             <div class="table-cont" ng-show="tab=='history'">
-                <div class="row" ng-repeat="post in facebook.posts">
+                <div class="row" ng-repeat="post in facebook.posts" ng-click="gotopost(post)">
                     <div class="col">
                         <div class="tlb-item">
                             <h5>

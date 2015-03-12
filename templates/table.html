@@ -97,33 +97,33 @@
                 </div>
             </div>
             <div class="table-cont" ng-show="tab=='history'">
-                <a href="#/app/postinfo">
-                    <div class="row" ng-repeat="posts in twitter.posts">
-                        <div class="col">
-                            <div class="tlb-item">
-                                <h5>
+
+                <div class="row" ng-repeat="posts in twitter.posts" ng-click="gotopost(posts)">
+                    <div class="col">
+                        <div class="tlb-item">
+                            <h5 >
                             {{posts.posttext | cut:true:20:' ...'}}
                         </h5>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="tlb-item">
-                                -
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="tlb-item">
-                                {{posts.timestamp}}
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="tlb-item">
-                                <p> Retweetes:{{posts.retweet}}</p>
-                                <p>Favourites:{{posts.favourites}}</p>
-                            </div>
                         </div>
                     </div>
-                </a>
+                    <div class="col">
+                        <div class="tlb-item">
+                            -
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="tlb-item">
+                            {{posts.timestamp}}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="tlb-item">
+                            <p>Retweetes:{{posts.retweet}}</p>
+                            <p>Favourites:{{posts.favourites}}</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </ion-content>
