@@ -347,21 +347,31 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
-	
-	// DECLARATION
-	$scope.post = [];
-	$scope.post.platform = "Facebook";
-	
-	// SUGGEST FACEBOOK
-	$scope.suggestfacebook = function(){
-		console.log("facebook");
-		$scope.post.platform = "Facebook";
-	}
-	
-	$scope.suggesttwitter = function(){
-		console.log("teitter");
-		$scope.post.platform = "Twitter";
-	}
+
+    // DECLARATION
+    $scope.post = [];
+    $scope.post.platform = "Facebook";
+    $scope.showfb = true;
+
+    $scope.twittertext = function() {
+        if (showfb == false) {
+            if ($scope.post.text > 140)
+                $scope.post.text = $scope.post.text.substr(0, 140);
+        }
+    };
+
+    // SUGGEST FACEBOOK
+    $scope.suggestfacebook = function() {
+        console.log("facebook");
+        $scope.post.platform = "Facebook";
+        $scope.showfb = true;
+    }
+
+    $scope.suggesttwitter = function() {
+        console.log("teitter");
+        $scope.post.platform = "Twitter";
+        $scope.showfb = false;
+    }
 })
 
 .controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
@@ -432,7 +442,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     TemplateService.changeopen2();
 })
 
-.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval,$timeout) {
+.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout) {
 
 
     $scope.user = 0;
@@ -508,9 +518,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
-			
-			$scope.showPopup();
-			
+
+            $scope.showPopup();
+
         }
     }
 
@@ -528,8 +538,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         });
         $scope.showPopup();
     };
-    
-        $scope.showPopup = function() {
+
+    $scope.showPopup = function() {
         $scope.data = {}
         var myPopup = $ionicPopup.show({
             template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
@@ -563,7 +573,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup,$timeout) {
+.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup, $timeout) {
 
     $scope.user = 0;
     $scope.facebook = [];
@@ -571,7 +581,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.historyclass = "active";
     $scope.newpostclass = "";
     $scope.lastid = "";
-    $scope.facebookpost = [];	
+    $scope.facebookpost = [];
 
     //  AUTHENTICATE
     var facebooksuccess = function(data, status) {
@@ -633,7 +643,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
-			$scope.showPopup();
+            $scope.showPopup();
         }
     }
 
