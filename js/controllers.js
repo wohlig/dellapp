@@ -354,7 +354,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.showfb = true;
 
     $scope.twittertext = function() {
-        if (showfb == false) {
+        if ($scope.showfb == false) {
             if ($scope.post.text > 140)
                 $scope.post.text = $scope.post.text.substr(0, 140);
         }
