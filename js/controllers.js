@@ -442,7 +442,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup) {
 
-<<<<<<< HEAD
+
 	// DECLARATION
 	$scope.posts = [];
 	$scope.totallength = 0;
@@ -507,34 +507,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	
 	//LOAD MORE
 	$scope.loadMore = function() {
-=======
-    // DECLARATION
-    $scope.posts = [];
-    $scope.totallength = 0;
-
-    // CALL POST API
-    var suggestionsuccess = function(data, status) {
-        console.log(data);
-        $scope.posts = data.queryresult
-        $scope.totallength = data.totalvalues;
-        $scope.$broadcast('scroll.infiniteScrollComplete');
-    }
-
-    var suggestionsuccesspush = function(data, status) {
-        console.log(data);
-        for (var i = 0; i < data.queryresult.length; i++) {
-            $scope.posts.push(data.queryresult[i]);
-        }
-        $scope.$broadcast('scroll.infiniteScrollComplete');
-    }
-
-    MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccess);
-
-
-
-    //LOAD MORE
-    $scope.loadMore = function() {
->>>>>>> origin/master
         console.log("loading.....");
         console.log($scope.posts.length);
         console.log($scope.totallength);
@@ -546,7 +518,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         }
 
     }
-<<<<<<< HEAD
+
 	
 	//TWITTER POST
 	
@@ -604,9 +576,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         MyServices.getuserpostcount(post).success(postnow);
     };
 	
-=======
 
->>>>>>> origin/master
 })
 
 .controller('PostfbCtrl', function($scope, $stateParams, TemplateService) {})
