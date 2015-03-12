@@ -436,11 +436,49 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('PostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
+.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup) {
 
 	// DECLARATION
 	$scope.posts = [];
 	$scope.totallength = 0;
+	$scope.pageno = 1;
+	$scope.data = [];
+	$scope.search = "";
+	
+	
+	//SEARCH
+	$scope.searchpopup = function (){
+		$scope.pageno = 1;
+		var myPopup = $ionicPopup.show({
+		template: '<input type="text" ng-model="data.wifi">',
+		title: 'Search',
+		scope: $scope,
+		buttons: [
+		  { text: 'Cancel',
+		  	onTap: function(e) {
+				$scope.data.wifi = "";
+				$scope.search = "";
+				MyServices.viewsuggestionjson($stateParams.status,$scope.pageno,$scope.search).success(suggestionsuccess);
+			}
+		  },
+		  {
+			text: '<b>Search</b>',
+			type: 'button-positive',
+			onTap: function(e) {
+			  if (!$scope.data.wifi) {
+				//don't allow the user to close unless he enters wifi password
+				e.preventDefault();
+			  } else {
+				$scope.search = $scope.data.wifi;
+				console.log($scope.search);
+				MyServices.viewsuggestionjson($stateParams.status,$scope.pageno,$scope.search).success(suggestionsuccess);
+//				$scope.data.wifi = "";
+			  }
+			}
+		  }
+		]
+	  });
+	}
 	
 	// CALL POST API
 	var suggestionsuccess = function(data, status){
@@ -458,23 +496,79 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		$scope.$broadcast('scroll.infiniteScrollComplete');
 	}
 	
-		MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccess);
+		MyServices.viewsuggestionjson($stateParams.status,$scope.pageno,$scope.search).success(suggestionsuccess);
 	
 	
 	
 	//LOAD MORE
 	$scope.loadMore = function() {
         console.log("loading.....");
-        console.log($scope.leaderboard.length);
+        console.log($scope.posts.length);
         console.log($scope.totallength);
 
 
         if ($scope.posts.length != $scope.totallength) {
             $scope.pageno = $scope.pageno + 1;
-            MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccesspush);
+            MyServices.viewsuggestionjson($stateParams.status,$scope.pageno,$scope.search).success(suggestionsuccesspush);
         }
 
     }
+	
+	//TWITTER POST
+	
+	
+    var stopinterval = 0;
+    var postid = 0;
+    var postcount = 0;
+    var checktwitter = function(data, status) {
+
+        var newpostcount = parseInt(data.count);
+
+        console.log("newpostcount..." + newpostcount);
+        console.log("postcount..." + postcount);
+        if (postcount == newpostcount) {
+            console.log("Do nothing");
+        } else {
+            ref.close();
+            $interval.cancel(stopinterval);
+
+            $scope.showPopup();
+
+        }
+    }
+
+    var callAtIntervaltwitter = function() {
+        MyServices.getuserpostcount(postid).success(checktwitter);
+    };
+
+    var postnow = function(data) {
+        postcount = parseInt(data.count);
+        ref = window.open('http://dellcampassador.com/new/index.php/json/posttweet?id=' + postid, '_blank', 'location=no');
+        stopinterval = $interval(callAtIntervaltwitter, 2000);
+        ref.addEventListener('exit', function(event) {
+            MyServices.authenticate().success(authenticatesuccess);
+            $interval.cancel(stopinterval);
+        });
+        $scope.showPopup();
+    };
+
+    $scope.showPopup = function() {
+        $scope.data = {}
+        var myPopup = $ionicPopup.show({
+            template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
+            title: 'Succesfully tweeted!',
+            scope: $scope,
+
+        });
+        $timeout(function() {
+            myPopup.close();
+        }, 2000);
+    };
+	
+	 $scope.makeposttwitter = function(post) {
+        postid = post;
+        MyServices.getuserpostcount(post).success(postnow);
+    };
 	
 })
 
@@ -549,7 +643,9 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.prevoiuspost = function() {
         MyServices.gettwitterprevpost($scope.lastid).success(postsuccess);
     }
-
+	
+	// POST TWITTER
+	
     var stopinterval = 0;
     var postid = 0;
     var postcount = 0;

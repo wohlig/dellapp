@@ -13,14 +13,21 @@
         <ion-nav-buttons side="right">
             <a class="button button-icon button-clear ion-edit post-icon blue brf" href="#/app/suggestpost">
             </a>
-            <a class="button button-icon button-clear ion-search menu-btncolor green blue brf">
+            <a class="button button-icon button-clear ion-search menu-btncolor green blue brf" ng-click="searchpopup()">
             </a>
         </ion-nav-buttons>
     </ion-nav-bar>
     <ion-content title="Createpost" class="leader-cont">
         <div class="leader-contmain">
             <div class="crt-post">
-                <ion-list>
+               	<ion-list ng-if="posts.length==0">
+               		<ion-item class="heading">
+						<div class="view-all">
+							No Posts...
+						</div>
+					</ion-item>
+				</ion-list>
+                <ion-list ng-if="posts.length!=0">
                     <ion-item class="heading">
                         <div class="row">
                             <div class="col">Text</div>
@@ -53,15 +60,17 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="crete-btn">
-                                    <button class="button button-small" ng-if="post.suggestionstatus=='Publish' && post.posttype=='1'">
+                                <div class="crete-btn" ng-if="post.suggestionstatus=='Publish' && post.posttype=='1'">
+                                    <button class="button button-small">
                                         Post
                                     </button>
-                                    <div class="crete-btn1" ng-if="post.suggestionstatus=='Publish' && post.posttype=='2'">
-										<button class="button icon-left ion-social-twitter button-post">Tweet</button>
-									</div>
-                                    <p ng-if="post.suggestionstatus=='Rejected' || post.suggestionstatus=='Pending'">{{post.suggestionstatus}}</p>
                                 </div>
+                                <div class="crete-btn" ng-if="post.suggestionstatus=='Rejected' || post.suggestionstatus=='Pending'">
+                                    <p>{{post.suggestionstatus}}</p>
+                                </div>
+                                <div class="crete-btn1" ng-if="post.suggestionstatus=='Publish' && post.posttype=='2'">
+									<button class="button icon-left ion-social-twitter button-post">Tweet</button>
+								</div>
                             </div>
                         </div>
                     </ion-item>
