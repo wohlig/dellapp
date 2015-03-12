@@ -1024,6 +1024,7 @@ label.item.item-input.image-sugest button {
 .suggest {
     text-align: center;
     padding: 0 8%;
+    position: relative;
 }
 .menu {
     width: 135px!important;
@@ -2063,4 +2064,25 @@ a.button.history.active {
     background: #0085c3 !important;
     color: white !important;
     border-color: #0085c3;
+}
+.label67 i.ion-social-facebook {
+    /* padding-right: 70px; */
+}
+.label67 i.ion-social-facebook {
+    color: #526fbf;
+}
+.label67 i {
+    font-size: 25px;
+    float: right;
+    padding: 11px;
+    z-index: 10000;
+}
+.label67 {
+    color: #2e8cd6;
+    width: 100px;
+    float: right;
+    height: 4px;
+    margin-top: -47px;
+    z-index: 10000;
+    position: Relative;
 }

@@ -16,13 +16,27 @@
         </ion-nav-buttons>
     </ion-nav-bar>
     <ion-content>
-        
+
         <div class="suggest">
             <label class="item item-input fb-twt">
                 <input type="text" placeholder="Platform" disabled style="background-color: rgba(255, 255, 255, 0);" ng-model="post.platform">
-				<div ng-click="suggestfacebook()"><a><i class="ion-social-facebook"></i></a></div>
-				<div ng-click="suggesttwitter()"><a><i class="ion-social-twitter"></i></a></div>
+<!--
+                <div ng-click="suggestfacebook()"><a><i class="ion-social-facebook"></i></a>
+                </div>
+                <div ng-click="suggesttwitter()"><a><i class="ion-social-twitter"></i></a>
+                </div>
+-->
+
+
             </label>
+            <div class="label67">
+                
+                <div ng-click="suggesttwitter()"><a><i class="ion-social-twitter"></i></a>
+                </div>
+                <div ng-click="suggestfacebook()"><a><i class="ion-social-facebook"></i></a>
+                </div>
+            </div>
+
             <label class="item item-input img">
                 <input type="text" placeholder="Text" ng-model="post.text">
             </label>
@@ -31,8 +45,8 @@
             </label>
             <label class="item item-input image-sugest">
                 Image
-                
-<!--
+
+                <!--
                 <button class="button button-icon icon ion-image" ng-click="takePicture();"></button>
                 <img ng-src="{{cameraimage}}" alt="" style="height:50px;width:50px; margin:5px;">
 -->
@@ -51,7 +65,7 @@
         <div class="padding-top"></div>
         <div class="padding-top"></div>
         <div class="padding-top"></div>
-<!--
+        <!--
         <div class="text-center coming-soon">
             <h2>Coming Soon..</h2>
         </div>
