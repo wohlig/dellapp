@@ -430,7 +430,47 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('PostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService) {})
+.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
+
+	// DECLARATION
+	$scope.posts = [];
+	$scope.totallength = 0;
+	
+	// CALL POST API
+	var suggestionsuccess = function(data, status){
+		console.log(data);
+		$scope.posts = data.queryresult
+		$scope.totallength = data.totalvalues;
+		$scope.$broadcast('scroll.infiniteScrollComplete');
+	}
+	
+	var suggestionsuccesspush = function(data, status){
+		console.log(data);
+		for (var i = 0; i < data.queryresult.length; i++) {
+            $scope.posts.push(data.queryresult[i]);
+        }
+		$scope.$broadcast('scroll.infiniteScrollComplete');
+	}
+	
+		MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccess);
+	
+	
+	
+	//LOAD MORE
+	$scope.loadMore = function() {
+        console.log("loading.....");
+        console.log($scope.leaderboard.length);
+        console.log($scope.totallength);
+
+
+        if ($scope.posts.length != $scope.totallength) {
+            $scope.pageno = $scope.pageno + 1;
+            MyServices.viewsuggestionjson($stateParams.status).success(suggestionsuccesspush);
+        }
+
+    }
+	
+})
 
 .controller('PostfbCtrl', function($scope, $stateParams, TemplateService) {})
 

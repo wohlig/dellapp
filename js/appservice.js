@@ -49,6 +49,13 @@ var myservices = angular.module('myservices', [])
         editprofilebefore: function () {
             return $http.get(adminurl + "editprofilebefore", {});
         },
+        viewsuggestionjson: function (status) {
+			if(status==3)
+			{
+				status = "";
+			}
+            return $http.get(adminurl + "viewsuggestionjson?status=" + status, {});
+        },
         gettwitternextpost: function (id) {
             return $http.get(adminurl + "gettwitternextpost?id=" + id, {});
         },
