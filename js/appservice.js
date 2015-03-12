@@ -1,5 +1,5 @@
-//var adminurl = "http://dellcampassador.com/new/index.php/json/"
-var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
+var adminurl = "http://dellcampassador.com/new/index.php/json/"
+//var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
 
 var myservices = angular.module('myservices', [])
 .factory('MyServices', function ($http, $location) {
@@ -40,6 +40,18 @@ var myservices = angular.module('myservices', [])
                 }
             });
         },
+        createsuggestion: function (post) {
+            return $http({
+                url: adminurl + 'createsuggestion',
+                method: "POST",
+                data: {
+                    'text': post.text,
+                    'image': post.image,
+                    'posttype': post.posttype,
+                    'link': post.link
+                }
+            });
+        },
         gettwitterposts: function () {
             return $http.get(adminurl + "gettwitterposts", {});
         },
@@ -77,8 +89,8 @@ var myservices = angular.module('myservices', [])
         getuser: function (id) {
             return $http.get(adminurl + "usersdetail?id=" + id, {});
         },
-        getleaderboard: function (pageno) {
-            return $http.get(adminurl + "viewleaderboardjson?pageno=" + pageno, {});
+        getleaderboard: function (pageno,search) {
+            return $http.get(adminurl + "viewleaderboardjson?pageno=" + pageno + "&search=" + search, {});
         },
         getuserpostcount: function (post) {
             return $http.get(adminurl + "getuserpostcount?post=" + post, {});

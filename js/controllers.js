@@ -346,7 +346,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.post = $.jStorage.get("twipost");
 })
 
-.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService) {
+.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup) {
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
@@ -382,9 +382,39 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.showfb = false;
         $scope.twittertext();
     }
+	
+	// SUGGEST POST SAVE
+	var suggestedsuccess = function (data, status) {
+		console.log(data);
+		if(data == "true"){
+			var alertPopup = $ionicPopup.alert({
+                title: 'Suggetion',
+                template: 'Post Suggested Successfully'
+            });
+		}else{
+			var alertPopup = $ionicPopup.alert({
+                title: 'Suggetion',
+                template: 'Error in suggestion'
+            });
+		}
+	}
+	$scope.suggestpost = function (post) {
+		console.log(post);
+		if($scope.post.platform == "Facebook"){
+			post.posttype = "1";
+			post.image = "";
+		}else{
+			post.posttype = "2";
+			post.image = "";
+			post.link = "";
+		}
+		MyServices.createsuggestion(post).success(suggestedsuccess);
+	}
+	
+	
 })
 
-.controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate) {
+.controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup) {
 
     TemplateService.noactive();
     TemplateService.leaderclass = "active";
@@ -394,17 +424,59 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.user = [];
     $scope.pageno = 1;
     $scope.totallength = 0;
+	$scope.search = "";
+	$scope.data = [];
 
-
+	$scope.searchpopup = function (){
+		$scope.pageno = 1;
+		var myPopup = $ionicPopup.show({
+		template: '<input type="text" ng-model="data.wifi">',
+		title: 'Search',
+		scope: $scope,
+		buttons: [
+		  { text: 'Cancel',
+		  	onTap: function(e) {
+				$scope.data.wifi = "";
+				$scope.search = "";
+				MyServices.getleaderboard($scope.pageno, $scope.search).success(leaderboardsuccess);
+			}
+		  },
+		  {
+			text: '<b>Search</b>',
+			type: 'button-positive',
+			onTap: function(e) {
+			  if (!$scope.data.wifi) {
+				//don't allow the user to close unless he enters wifi password
+				e.preventDefault();
+			  } else {
+				$scope.search = $scope.data.wifi;
+				console.log($scope.search);
+				MyServices.getleaderboard($scope.pageno, $scope.search).success(leaderboardsuccess);
+//				$scope.data.wifi = "";
+			  }
+			}
+		  }
+		]
+	  });
+	}
+	
     //  AUTHENTICATE
     var usersuccess = function(data, status) {
         $scope.user = data;
     }
     var leaderboardsuccess = function(data, status) {
-        $scope.totallength = data.totalvalues - 3;
-        $scope.rankuser = data.queryresult.slice(0, 3);
-        $scope.leaderboard = data.queryresult.splice(3);
-        $scope.$broadcast('scroll.infiniteScrollComplete');
+		if($scope.search == "")
+		{
+			$scope.totallength = data.totalvalues - 3;
+			$scope.rankuser = data.queryresult.slice(0, 3);
+			$scope.leaderboard = data.queryresult.splice(3);
+			$scope.$broadcast('scroll.infiniteScrollComplete');
+		}else{
+			$scope.totallength = data.totalvalues;
+			$scope.leaderboard = data.queryresult;
+			$scope.$broadcast('scroll.infiniteScrollComplete');
+			
+		}
     }
     var leaderboardsuccesspush = function(data, status) {
         for (var i = 0; i < data.queryresult.length; i++) {
@@ -416,7 +488,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         if (data == "false") {
             $location.url("/login");
         } else {
-            MyServices.getleaderboard($scope.pageno).success(leaderboardsuccess);
+            MyServices.getleaderboard($scope.pageno, $scope.search).success(leaderboardsuccess);
             MyServices.getuser(data).success(usersuccess);
         }
     }
@@ -430,7 +502,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
         if ($scope.leaderboard.length != $scope.totallength) {
             $scope.pageno = $scope.pageno + 1;
-            MyServices.getleaderboard($scope.pageno).success(leaderboardsuccesspush);
+            MyServices.getleaderboard($scope.pageno, $scope.search).success(leaderboardsuccesspush);
         }
 
     }
@@ -440,7 +512,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('PostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup) {
+.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup, $interval, $timeout) {
 
 
 	// DECLARATION
@@ -549,7 +621,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     var postnow = function(data) {
         postcount = parseInt(data.count);
-        ref = window.open('http://dellcampassador.com/new/index.php/json/posttweet?id=' + postid, '_blank', 'location=no');
+        ref = window.open('http://dellcampassador.com/new/index.php/json/postsugtweet?id=' + postid, '_blank', 'location=no');
         stopinterval = $interval(callAtIntervaltwitter, 2000);
         ref.addEventListener('exit', function(event) {
             MyServices.authenticate().success(authenticatesuccess);
@@ -577,6 +649,60 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
 	
 
+	// FACEBOOK POST
+	
+	
+    var stopintervalf = 0;
+    var postidf = 0;
+    var postcountf = 0;
+    var checkfb = function(data, status) {
+        var newpostcountf = parseInt(data.count);
+        if (postcountf == newpostcountf) {
+            console.log("Do nothing");
+        } else {
+            ref.close();
+            $interval.cancel(stopintervalf);
+            $scope.showPopup();
+        }
+    }
+
+    var callAtIntervalfb = function() {
+        MyServices.getuserpostcount(postidf).success(checkfb);
+    };
+
+    var postfbnow = function(data) {
+        postcountf = parseInt(data.count);
+        ref = window.open('http://dellcampassador.com/new/index.php/json/postsugfb?id=' + postidf, '_blank', 'location=no');
+        stopintervalf = $interval(callAtIntervalfb, 2000);
+        ref.addEventListener('exit', function(event) {
+            MyServices.authenticate().success(authenticatesuccess);
+            $interval.cancel(stopintervalf);
+        });
+        $scope.showPopup();
+    };
+
+
+    $scope.showPopup = function() {
+        $scope.data = {}
+        var myPopup = $ionicPopup.show({
+            template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
+            title: 'Succesfully posted!',
+            scope: $scope,
+
+        });
+        $timeout(function() {
+            myPopup.close();
+        }, 2000);
+    };
+
+
+    $scope.makepostfb = function(post) {
+        console.log(post);
+        postidf = post;
+        MyServices.getuserpostcount(post).success(postfbnow);
+    };
+
+	
 })
 
 .controller('PostfbCtrl', function($scope, $stateParams, TemplateService) {})

@@ -61,7 +61,7 @@
                             </div>
                             <div class="col">
                                 <div class="crete-btn" ng-if="post.suggestionstatus=='Publish' && post.posttype=='1'">
-                                    <button class="button button-small">
+                                    <button class="button button-small" ng-click="makepostfb(post.id)">
                                         Post
                                     </button>
                                 </div>
@@ -69,7 +69,7 @@
                                     <p>{{post.suggestionstatus}}</p>
                                 </div>
                                 <div class="crete-btn1" ng-if="post.suggestionstatus=='Publish' && post.posttype=='2'">
-									<button class="button icon-left ion-social-twitter button-post">Tweet</button>
+									<button class="button icon-left ion-social-twitter button-post"ng-click="makeposttwitter(post.id)">Tweet</button>
 								</div>
                             </div>
                         </div>
