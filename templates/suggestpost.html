@@ -40,6 +40,9 @@
             <label class="item item-input img">
                 <input type="text" placeholder="Text" ng-model="post.text" ng-change="twittertext();">
             </label>
+            <div ng-hide="showfb" style="float: right;">
+                {{keysremaining}}
+            </div>
             <label class="item item-input img" ng-show="showfb">
                 <input type="text" placeholder="Links" ng-model="post.link">
             </label>

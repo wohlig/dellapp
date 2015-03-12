@@ -349,14 +349,19 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     };
 
     // DECLARATION
-    $scope.post = [];
+    $scope.post = {text:""};
     $scope.post.platform = "Facebook";
     $scope.showfb = true;
 
     $scope.twittertext = function() {
+        console.log("android");
         if ($scope.showfb == false) {
-            if ($scope.post.text > 140)
+            if ($scope.post.text.length > 140)
+            {
                 $scope.post.text = $scope.post.text.substr(0, 140);
+                console.log("NP");
+            }
+            $scope.keysremaining=140-$scope.post.text.length + " characters remaining.";
         }
     };
 
@@ -368,9 +373,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     }
 
     $scope.suggesttwitter = function() {
-        console.log("teitter");
+        console.log("twitter");
         $scope.post.platform = "Twitter";
         $scope.showfb = false;
+        $scope.twittertext();
     }
 })
 
