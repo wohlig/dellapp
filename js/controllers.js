@@ -390,7 +390,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                 .then(function (result) {
                     console.log(result);
                     result = result.response;
-                    $scope.filename2 = result;
+                    $scope.filename2 = result.name;
 					console.log($scope.filename2);
                     //$scope.addretailer.store_image = $scope.filename2;
                 }, function (err) {
@@ -469,7 +469,6 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 				post.image = "";
 			}else{
 				post.image = $scope.filename2;
-				post.image.replace (/"/g,'');
 			}
 			
 		}else{
