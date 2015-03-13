@@ -466,10 +466,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                 title: 'Suggetion',
                 template: 'Please Select Image'
             });
+				post.image = "";
 			}else{
 				post.image = $scope.filename2;
 			}
-			post.image = "";
+			
 		}else{
 			post.posttype = "2";
 			post.image = "";
