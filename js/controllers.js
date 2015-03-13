@@ -350,7 +350,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
-
+	
     // IMAGE UPLOAD START
     
     
@@ -469,6 +469,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 				post.image = "";
 			}else{
 				post.image = $scope.filename2;
+				post.image.replace (/"/g,'');
 			}
 			
 		}else{
