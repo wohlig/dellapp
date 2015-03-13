@@ -355,6 +355,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     
     
     //Capture Image
+	$scope.filename2 = "";
     $scope.cameraimage = "http://dellcampassador.com/assets/images/campassador.png";
     $scope.takePicture = function () {
 		console.log("take picture");
@@ -388,8 +389,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             $cordovaFileTransfer.upload(serverpath, $scope.cameraimage, options)
                 .then(function (result) {
                     console.log(result);
-                    result = JSON.parse(result.response);
-                    $scope.filename2 = result.file_name;
+                    result = result.response;
+                    $scope.filename2 = result;
 					console.log($scope.filename2);
                     //$scope.addretailer.store_image = $scope.filename2;
                 }, function (err) {
@@ -460,6 +461,14 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		console.log(post);
 		if($scope.post.platform == "Facebook"){
 			post.posttype = "1";
+			if($scope.filename2 == ""){
+				var alertPopup = $ionicPopup.alert({
+                title: 'Suggetion',
+                template: 'Please Select Image'
+            });
+			}else{
+				post.image = $scope.filename2;
+			}
 			post.image = "";
 		}else{
 			post.posttype = "2";
