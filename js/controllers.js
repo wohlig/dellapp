@@ -346,7 +346,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.post = $.jStorage.get("twipost");
 })
 
-.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup, $cordovaCamera, $cordovaFile) {
+.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup, $cordovaCamera, $cordovaFileTransfer) {
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
@@ -385,7 +385,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         //File Upload parameters: source, filePath, options
         $scope.uploadPhoto = function () {
             console.log("function called");
-            $cordovaFile.uploadFile(serverpath, $scope.cameraimage, options)
+            $cordovaFileTransfer.upload(serverpath, $scope.cameraimage, options)
                 .then(function (result) {
                     console.log(result);
                     result = JSON.parse(result.response);
