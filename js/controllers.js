@@ -346,7 +346,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.post = $.jStorage.get("twipost");
 })
 
-.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup) {
+.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup, $cordovaCamera, $cordovaFile) {
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
@@ -379,7 +379,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         });
 
         //Upload photo
-        var serverpath = "http://mafiawarloots.com/sergybackend/uploads";
+        var serverpath = "http://dellcampassador.com/uploads";
 
         //File Upload parameters: source, filePath, options
         $scope.uploadPhoto = function () {
