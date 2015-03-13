@@ -1,5 +1,5 @@
 var ref = 0;
-angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices'])
+angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices', 'ngCordova'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
 
@@ -351,6 +351,64 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $ionicHistory.goBack();
     };
 
+    // IMAGE UPLOAD START
+    
+    
+    //Capture Image
+    $scope.cameraimage = "http://localhost/dellbackend1.0/assets/images/campassador.png";
+    $scope.takePicture = function () {
+        var options = {
+            quality: 40,
+            destinationType: Camera.DestinationType.NATIVE_URI,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+            encodingType: Camera.EncodingType.JPEG
+        };
+
+        $cordovaCamera.getPicture(options).then(function (imageData) {
+            // Success! Image data is here
+            console.log("here in upload image");
+            console.log(imageData);
+            if (imageData.substring(0,21)=="content://com.android") {
+                var photo_split=imageData.split("%3A");
+                imageData="content://media/external/images/media/"+photo_split[1];
+            }
+            $scope.cameraimage = imageData;
+            $scope.uploadPhoto();
+        }, function (err) {
+            // An error occured. Show a message to the user
+        });
+
+        //Upload photo
+        var serverpath = "http://mafiawarloots.com/sergybackend/uploads";
+
+        //File Upload parameters: source, filePath, options
+        $scope.uploadPhoto = function () {
+            console.log("function called");
+            $cordovaFile.uploadFile(serverpath, $scope.cameraimage, options)
+                .then(function (result) {
+                    console.log(result);
+                    result = JSON.parse(result.response);
+                    $scope.filename2 = result.file_name;
+                
+                    //$scope.addretailer.store_image = $scope.filename2;
+
+                }, function (err) {
+                    // Error
+                    console.log(err);
+                }, function (progress) {
+                    // constant progress updates
+                console.log("progress");
+                });
+
+        };
+        
+
+    }
+    
+    // IMAGE UPLOAD END
+    
+    
+    
     // DECLARATION
     $scope.post = {
         text: ""

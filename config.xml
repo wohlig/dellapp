@@ -38,12 +38,10 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     
     
-<!--
     <preference name="LoadUrlTimeoutValue" value="20000" />
     <gap:plugin name="org.apache.cordova.media"  />
     <gap:plugin name="org.apache.cordova.media-capture"  />
     <gap:plugin name="org.apache.cordova.splashscreen"  />
--->
 
     <icon src="img/CampassadorAppIcon.png" />
 
