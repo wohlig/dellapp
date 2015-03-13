@@ -215,7 +215,7 @@ $ionicConfigProvider.views.maxCache(0);
 .filter('imagepath', function() {
     return function(input) {
         if (input == "" || !input) {
-            return "http://localhost/dellbackend1.0/assets/images/campassador.png";
+            return "http://dellcampassador.com/assets/images/campassador.png";
             //                            return "http://localhost/sergybackend/assets/img/default.jpg";
         } else {
             return "http://dellcampassador.com/uploads/" + input;
