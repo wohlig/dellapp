@@ -385,7 +385,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         //File Upload parameters: source, filePath, options
         $scope.uploadPhoto = function () {
             console.log("function called");
-            $cordovaFileTransfer.upload(serverpath, $scope.cameraimage, options)
+            $cordovaFile.uploadFile(serverpath, $scope.cameraimage, options)
                 .then(function (result) {
                     console.log(result);
                     result = JSON.parse(result.response);
