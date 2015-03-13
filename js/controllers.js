@@ -380,7 +380,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         });
 
         //Upload photo
-        var serverpath = "http://dellcampassador.com/uploads";
+        var serverpath = "http://mafiawarloots.com/sergybackend";
 
         //File Upload parameters: source, filePath, options
         $scope.uploadPhoto = function () {
@@ -390,6 +390,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                     console.log(result);
                     result = JSON.parse(result.response);
                     $scope.filename2 = result.file_name;
+					console.log($scope.filename2);
                     //$scope.addretailer.store_image = $scope.filename2;
                 }, function (err) {
                     // Error
