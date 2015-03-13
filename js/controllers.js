@@ -390,7 +390,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                 .then(function (result) {
                     console.log(result);
                     result = result.response;
-                    $scope.filename2 = result.name;
+                    $scope.filename2 = JSON.parse(result);
+                    $scope.filename2 = $scope.filename2.name;
 					console.log($scope.filename2);
                     //$scope.addretailer.store_image = $scope.filename2;
                 }, function (err) {
