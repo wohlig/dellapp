@@ -36,12 +36,7 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    
-    
     <preference name="LoadUrlTimeoutValue" value="20000" />
-    <gap:plugin name="org.apache.cordova.media"  />
-    <gap:plugin name="org.apache.cordova.media-capture"  />
-    <gap:plugin name="org.apache.cordova.splashscreen"  />
 
     <icon src="img/CampassadorAppIcon.png" />
 
@@ -53,8 +48,10 @@
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="com.phonegap.plugin.statusbar" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" />
-
-    <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.inappbrowser"/>
+    <gap:plugin name="org.apache.cordova.file"/>
+    <gap:plugin name="org.apache.cordova.file-transfer"/>
 
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
