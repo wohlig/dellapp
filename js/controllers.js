@@ -357,6 +357,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     //Capture Image
     $scope.cameraimage = "http://dellcampassador.com/assets/images/campassador.png";
     $scope.takePicture = function () {
+		console.log("take picture");
         var options = {
             quality: 40,
             destinationType: Camera.DestinationType.NATIVE_URI,
