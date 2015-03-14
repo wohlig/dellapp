@@ -1,5 +1,5 @@
 var adminurl = "http://dellcampassador.com/new/index.php/json/";
-//var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
+var adminurl = "http://localhost/dellbackend1.0/index.php/json/";
 
 var myservices = angular.module('myservices', [])
 .factory('MyServices', function ($http, $location) {
@@ -79,6 +79,9 @@ var myservices = angular.module('myservices', [])
         },
         gettwitterprevpost: function (id) {
             return $http.get(adminurl + "gettwitterprevpost?id=" + id, {});
+        },
+        allsuggestion: function () {
+            return $http.get(adminurl + "allsuggestion", {});
         },
         authenticate: function () {
             return $http.get(adminurl + "authenticate", {});

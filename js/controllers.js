@@ -836,10 +836,22 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.post = $.jStorage.get("fbpost");
 })
 
-.controller('SuggestedpostCtrl', function($scope, TemplateService) {
+.controller('SuggestedpostCtrl', function($scope, TemplateService, MyServices) {
     TemplateService.noactive();
     TemplateService.createpostclass = "active";
     TemplateService.changeopen2();
+	
+	// DECLARATION
+	$scope.posts = [];
+	
+	// ALL SUGGESTIONS
+	var suggestionsuccess = function(data, status){
+		console.log(data);
+		$scope.posts = data;
+	}
+	MyServices.allsuggestion().success(suggestionsuccess);
+	
+	
 })
 
 .controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout, $ionicLoading) {

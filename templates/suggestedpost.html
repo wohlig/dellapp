@@ -18,7 +18,7 @@
                     <a href="#/app/createpost/3">
                         <div>
                             <div class="circle clrblue">
-                                3
+								{{posts.suggestedp.count}}
                             </div>
                             <h5>
                     Suggested Posts
@@ -31,7 +31,7 @@
                     <a href="#/app/createpost/Publish">
                         <div>
                             <div class="circle clrgreen">
-                                1
+                                {{posts.publishp.count}}
                             </div>
                             <h5>
                     Approved Posts
@@ -43,7 +43,7 @@
                     <a href="#/app/createpost/Pending">
                         <div>
                             <div class="circle clrgred">
-                                7
+                                {{posts.pendingp.count}}
                             </div>
                             <h5>
                     Pending Posts
@@ -55,7 +55,7 @@
                     <a href="#/app/createpost/Rejected">
                         <div>
                             <div class="circle clrgviolet">
-                                5
+                                {{posts.rejectedp.count}}
                             </div>
                             <h5>
                     Rejected Posts
