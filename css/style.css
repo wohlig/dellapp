@@ -124,7 +124,7 @@ button {
 
 .login-down {
     text-align: center;
-    background: rgba(255, 119, 1, 0.5);
+    background: rgba(255, 119, 1, 1);
     margin: 20px 20px 20px 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
