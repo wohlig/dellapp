@@ -1048,12 +1048,13 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     // NEXT POST
     $scope.nextpost = function() {
-		$scope.loading = "imageisloading";
+		$scope.facebookpost.image = "";
         MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
     }
 
     //  PREVIOUS POST
     $scope.prevoiuspost = function() {
+		$scope.facebookpost.image = "";
         MyServices.getfacebookprevpost($scope.lastid).success(postsuccess);
     }
 
