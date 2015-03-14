@@ -362,7 +362,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.post = $.jStorage.get("twipost");
 })
 
-.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup, $cordovaCamera, $cordovaFileTransfer) {
+.controller('SuggestpostCtrl', function($scope, $stateParams, $ionicHistory, TemplateService, MyServices, $ionicPopup, $cordovaCamera, $cordovaFileTransfer, $ionicLoading) {
     $scope.myGoBack = function() {
         $ionicHistory.goBack();
     };
@@ -409,12 +409,22 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
                     $scope.filename2 = JSON.parse(result);
                     $scope.filename2 = $scope.filename2.name;
 					console.log($scope.filename2);
+					$ionicLoading.hide();
                     //$scope.addretailer.store_image = $scope.filename2;
                 }, function (err) {
                     // Error
                     console.log(err);
                 }, function (progress) {
                     // constant progress updates
+				$ionicLoading.show({
+					//        template: 'We are fetching the best rates for you.',
+
+					content: 'We are fetching the best rates for you.',
+					animation: 'fade-in',
+					showBackdrop: true,
+					maxWidth: 200,
+					showDelay: '0'
+				});
                 console.log("progress");
                 });
 
