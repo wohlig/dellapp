@@ -616,13 +616,13 @@ ion-view.bgprofile.pane {
     border-radius: 100%;
 }
 .profile-cont1 {
-    background: rgba(40, 70, 121, 0.5);
+    background: rgba(40, 70, 121, 0.8);
     z-index: 1;
     position: relative;
     min-height: 440px;
 }
 .profile-cont {
-    background: rgba(255, 119, 1, 0.5);
+    background: rgba(255, 119, 1, 0.8);
     min-height: 200px;
     margin-top: 0px;
     padding: 16px 0 10px 0px;
@@ -2098,4 +2098,7 @@ a.button.history.active {
 }
 .list .menumain.nodown a {
     padding: 10px;
+}
+.no-header {
+    top: 0 !important;
 }
