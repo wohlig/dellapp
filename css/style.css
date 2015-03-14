@@ -59,7 +59,7 @@ button {
     z-index: 0;
 }
 img.imageisloading {
-  background: url(http://localhost/dellapp/img/loading.gif);
+  background: url(http://dellcampassador.com/assets/images/loading.gif);
   background-size: 100% 100%;
 }
 .bckgrnd {
