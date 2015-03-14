@@ -483,7 +483,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	
 })
 
-.controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup) {
+.controller('LeaderboardCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup, $ionicLoading) {
 
     TemplateService.noactive();
     TemplateService.leaderclass = "active";
@@ -496,6 +496,16 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	$scope.search = "";
 	$scope.data = [];
 
+	$ionicLoading.show({
+        //        template: 'We are fetching the best rates for you.',
+
+        content: 'We are fetching the best rates for you.',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: '0'
+    });
+	
 	$scope.searchpopup = function (){
 		$scope.pageno = 1;
 		var myPopup = $ionicPopup.show({
@@ -534,6 +544,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         $scope.user = data;
     }
     var leaderboardsuccess = function(data, status) {
+		
+		
 		if($scope.search == "")
 		{
 			$scope.totallength = data.totalvalues - 3;
@@ -546,8 +558,13 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 			$scope.$broadcast('scroll.infiniteScrollComplete');
 			
 		}
+		
+		$ionicLoading.hide();
     }
     var leaderboardsuccesspush = function(data, status) {
+		
+		
+		
         for (var i = 0; i < data.queryresult.length; i++) {
             $scope.leaderboard.push(data.queryresult[i]);
         }
@@ -581,7 +598,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 .controller('PostCtrl', function($scope, $stateParams, TemplateService) {})
 
-.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicScrollDelegate, $ionicPopup, $interval, $timeout) {
+.controller('CreatepostCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $ionicLoading, $ionicScrollDelegate, $ionicPopup, $interval, $timeout) {
 
 
 	// DECLARATION
@@ -591,6 +608,17 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	$scope.data = [];
 	$scope.search = "";
 	
+	// IONIC LOADER
+	
+	$ionicLoading.show({
+        //        template: 'We are fetching the best rates for you.',
+
+        content: 'We are fetching the best rates for you.',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: '0'
+    });
 	
 	//SEARCH
 	$scope.searchpopup = function (){
@@ -632,6 +660,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		$scope.posts = data.queryresult
 		$scope.totallength = data.totalvalues;
 		$scope.$broadcast('scroll.infiniteScrollComplete');
+		$ionicLoading.hide();
 	}
 	
 	var suggestionsuccesspush = function(data, status){
