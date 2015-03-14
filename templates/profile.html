@@ -11,7 +11,7 @@
             </button>
         </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-content class="no-header">
+    <ion-content class="no-header" lazy-scroll>
         <div class="profile-contmainall">
             <div class="profile-cont" ng-class="shldopens" ng-click="mkopen();">
                 <div class="titlemain">
@@ -23,7 +23,8 @@
                 </div>
                 <div class="img-profile">
                     <div class="profile-pic">
-                        <img src="{{user.image}}">
+<!--                        <img image-lazy-src="{{user.image}}" height="150px" width="150px" alt="">-->
+                        <img image-lazy-src="{{user.image}}" height="150px" width="150px" alt
                     </div>
                 </div>
                 <div class="profile-contmain">

@@ -1,5 +1,5 @@
 var ref = 0;
-angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices', 'ngCordova'])
+angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices', 'ngCordova', 'ionicLazyLoad'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
 
@@ -183,7 +183,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup) {
+.controller('ProfileCtrl', function($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup, $ionicLoading) {
 
 
     TemplateService.noactive();
@@ -193,14 +193,28 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.user = [];
     $scope.profile = [];
 
+	//	PAGE LOADER
+	
+	$ionicLoading.show({
+        //        template: 'We are fetching the best rates for you.',
+
+        content: 'We are fetching the best rates for you.',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: '0'
+    });
+	
     //  AUTHENTICATE
     var usersuccess = function(data, status) {
         console.log(data);
         $scope.user = data;
+		$ionicLoading.hide();
     }
     var profilesuccess = function(data, status) {
         console.log(data);
         $scope.profile = data;
+		
     }
     var authenticatesuccess = function(data, status) {
         if (data == "false") {
@@ -816,7 +830,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     TemplateService.changeopen2();
 })
 
-.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout) {
+.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout, $ionicLoading) {
 
 
     $scope.user = 0;
@@ -827,10 +841,23 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.lastid = "";
     $scope.twitterpost = [];
 
+	//	PAGE LOADER
+	
+	$ionicLoading.show({
+        //        template: 'We are fetching the best rates for you.',
+
+        content: 'We are fetching the best rates for you.',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: '0'
+    });
+	
     //  AUTHENTICATE
     var twittersuccess = function(data, status) {
         console.log(data);
         $scope.twitter = data;
+		$ionicLoading.hide();
     }
     var authenticatesuccess = function(data, status) {
         if (data == "false") {
@@ -955,7 +982,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
 })
 
-.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup, $timeout) {
+.controller('TablefbCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $ionicPopup, $timeout, $ionicLoading) {
 
     $scope.user = 0;
     $scope.facebook = [];
@@ -965,10 +992,23 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.lastid = "";
     $scope.facebookpost = [];
 
+	//	PAGE LOADER
+	
+	$ionicLoading.show({
+        //        template: 'We are fetching the best rates for you.',
+
+        content: 'We are fetching the best rates for you.',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: '0'
+    });
+	
     //  AUTHENTICATE
     var facebooksuccess = function(data, status) {
         console.log(data);
         $scope.facebook = data;
+		$ionicLoading.hide();
     }
     var authenticatesuccess = function(data, status) {
         if (data == "false") {
