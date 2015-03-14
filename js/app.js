@@ -4,6 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+var img="";
 angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod', 'ngCordova','rn-lazy'])
 
 .run(function ($ionicPlatform) {
@@ -227,6 +228,17 @@ $ionicConfigProvider.views.maxCache(0);
     return function(input) {
         if (input == "" || !input) {
             return "http://dellcampassador.com/assets/images/campassador.png";
+        } else {
+            return "http://dellcampassador.com/uploads/" + input;
+            //                        return "http://localhost/sergybackend/uploads/" + input;
+        }
+    };
+})
+.filter('imagepath1', function() {
+    return function(input) {
+        if (input == "" || !input) {
+//            return "http://dellcampassador.com/assets/images/campassador.png";
+            return "http://dellcampassador.com/assets/images/loading.gif";
             //                            return "http://localhost/sergybackend/assets/img/default.jpg";
         } else {
             return "http://dellcampassador.com/uploads/" + input;

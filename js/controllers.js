@@ -993,7 +993,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.newpostclass = "";
     $scope.lastid = "";
     $scope.facebookpost = [];
-
+	$scope.loading = "imageisloading";
 	//	PAGE LOADER
 	
 	$ionicLoading.show({
@@ -1048,6 +1048,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 
     // NEXT POST
     $scope.nextpost = function() {
+		$scope.loading = "imageisloading";
         MyServices.getfacebooknextpost($scope.lastid).success(postsuccess);
     }
 
