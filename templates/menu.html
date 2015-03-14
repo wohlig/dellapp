@@ -19,7 +19,7 @@
                     <h1 menu-close class="title"><i class="icon ion-ios7-close-empty"></i></h1>
                 </ion-header-bar>
 
-                <ion-item nav-clear menu-close href="#/app/home" class="menumain" ng-class="navigation.homeclass">
+                <ion-item nav-clear menu-close href="#/app/home" class="menumain nodown" ng-class="navigation.homeclass">
                     <span class="ion-home tac" title="home" aria-hidden="true"></span>
                     <div class="head-text">Dashboard </div>
                 </ion-item>
@@ -48,7 +48,7 @@
                     </div>
                     <i class="icon ion-chevron-up"></i>
                     <ion-list class="cls-margin submenu-list">
-                        <ion-item nav-clear menu-close href="#/app/fbpost" class="menumain" ng-class="navigation.fbpostclass">
+                        <ion-item nav-clear menu-close href="#/app/fbpost" class="menumain " ng-class="navigation.fbpostclass">
                             <span class="ion-social-facebook tac" title="profile" aria-hidden="true"></span>
                             <div class="head-text">Facebook</div>
                         </ion-item>
@@ -62,15 +62,15 @@
                         </ion-item>
                     </ion-list>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/leaderboard" class="menumain" ng-class="navigation.leaderclass">
+                <ion-item nav-clear menu-close href="#/app/leaderboard" class="menumain nodown" ng-class="navigation.leaderclass">
                     <span class="ion-trophy tac" title="leaderboard" aria-hidden="true"></span>
                     <div class="head-text">Leader Board</div>
                 </ion-item>
-                <ion-item nav-clear menu-close class="menumain main-logout" ng-click="navigation.logoutapp()">
-                    <div class="logout">
-                        <span class="ion-log-out tac" title="logout" aria-hidden="true"></span>
+                
+                
+                <ion-item nav-clear menu-close href="#/app/home" class="menumain main-logout nodown" ng-click="navigation.logoutapp()">
+                    <span class="ion-log-out tac" title="logout" aria-hidden="true"></span>
                         <div class="head-text">Logout</div>
-                    </div>
                 </ion-item>
                 
             </ion-list>
