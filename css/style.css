@@ -58,6 +58,10 @@ button {
 .menu .bar-header {
     z-index: 0;
 }
+img.imageisloading {
+  background: url(http://localhost/dellapp/img/loading.gif);
+  background-size: 100% 100%;
+}
 .bckgrnd {
     background: url('../img/background.png') no-repeat;
     -webkit-background-size: 100% 100%;

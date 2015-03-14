@@ -11,7 +11,7 @@
             </button>
         </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-content class="no-header" lazy-scroll>
+    <ion-content>
         <div class="profile-contmainall">
             <div class="profile-cont" ng-class="shldopens" ng-click="mkopen();">
                 <div class="titlemain">
@@ -24,7 +24,8 @@
                 <div class="img-profile">
                     <div class="profile-pic">
 <!--                        <img image-lazy-src="{{user.image}}" height="150px" width="150px" alt="">-->
-                        <img image-lazy-src="{{user.image}}" height="150px" width="150px" alt
+<!--                        <img hires="{{user.image}}" ng-src="http://dellcampassador.com/assets/images/campassador.png">-->
+                        <img ng-src="{{user.image}}" rnLazyBackground class="imageisloading">
                     </div>
                 </div>
                 <div class="profile-contmain">

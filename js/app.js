@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'templateservicemod', 'ngCordova','rn-lazy'])
 
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -211,7 +211,18 @@ $ionicConfigProvider.views.maxCache(0);
 .config(function($compileProvider){
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
 })
-
+.directive('hires', function() {
+  return {
+    restrict: 'A',
+    scope: { hires: '@' },
+    link: function(scope, element, attrs) {
+        element.bind('load', function() {
+			console.log(scope.hires);
+            element.attr('src', scope.hires);
+        });
+    }
+  };
+})
 .filter('imagepath', function() {
     return function(input) {
         if (input == "" || !input) {

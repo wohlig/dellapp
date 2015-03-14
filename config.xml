@@ -52,6 +52,7 @@
     <gap:plugin name="org.apache.cordova.inappbrowser"/>
     <gap:plugin name="org.apache.cordova.file"/>
     <gap:plugin name="org.apache.cordova.file-transfer"/>
+    <gap:plugin name="org.pbernasconi.progressindicator"/>
 
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />

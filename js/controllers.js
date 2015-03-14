@@ -1,5 +1,5 @@
 var ref = 0;
-angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices', 'ngCordova', 'ionicLazyLoad'])
+angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservices', 'ngCordova','rn-lazy'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {})
 
@@ -184,6 +184,8 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 })
 
 .controller('ProfileCtrl', function($scope, $stateParams, $ionicModal, TemplateService, MyServices, $location, $ionicPopup, $ionicLoading) {
+	
+//	$cordovaProgress.showSimple(true);
 
 
     TemplateService.noactive();
