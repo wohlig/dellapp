@@ -125,6 +125,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopinterval);
+            $scope.showPopup();
         }
     }
 
@@ -372,7 +373,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     
     //Capture Image
 	$scope.filename2 = "";
-    $scope.cameraimage = "http://dellcampassador.com/assets/images/campassador.png";
+    $scope.cameraimage = "http://dellcampassador.com/new/assets/images/tcp-no-image.jpg";
     $scope.takePicture = function () {
 		console.log("take picture");
         var options = {
