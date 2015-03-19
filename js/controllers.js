@@ -476,7 +476,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		if(data == "true"){
 			var alertPopup = $ionicPopup.alert({
                 title: 'Suggetion',
-                template: 'Post Suggested Successfully'
+                template: 'Suggest post successfully submitted for review'
             });
 		}else{
 			var alertPopup = $ionicPopup.alert({
@@ -490,10 +490,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		if($scope.post.platform == "Facebook"){
 			post.posttype = "1";
 			if($scope.filename2 == ""){
-				var alertPopup = $ionicPopup.alert({
-                title: 'Suggetion',
-                template: 'Please Select Image'
-            });
+//				var alertPopup = $ionicPopup.alert({
+//                title: 'Suggetion',
+//                template: 'Please Select Image'
+//            });
 				post.image = "";
 			}else{
 				post.image = $scope.filename2;
@@ -787,7 +787,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
         } else {
             ref.close();
             $interval.cancel(stopintervalf);
-            $scope.showPopup();
+            $scope.showPopupf();
         }
     }
 
@@ -803,11 +803,11 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             MyServices.authenticate().success(authenticatesuccess);
             $interval.cancel(stopintervalf);
         });
-        $scope.showPopup();
+        $scope.showPopupf();
     };
 
 
-    $scope.showPopup = function() {
+    $scope.showPopupf = function() {
         $scope.data = {}
         var myPopup = $ionicPopup.show({
             template: '<div class="text-center"><h1 class="ion-ios7-checkmark balanced"></h1><p>',
