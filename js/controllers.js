@@ -562,6 +562,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     $scope.totallength = 0;
 	$scope.search = "";
 	$scope.data = [];
+    $scope.scrollload = true;
 
 	$ionicLoading.show({
         //        template: 'We are fetching the best rates for you.',
@@ -612,30 +613,40 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     }
     var leaderboardsuccess = function(data, status) {
 		
-		
-		if($scope.search == "")
-		{
-			$scope.totallength = data.totalvalues - 3;
-			$scope.rankuser = data.queryresult.slice(0, 3);
-			$scope.leaderboard = data.queryresult.splice(3);
-			$scope.$broadcast('scroll.infiniteScrollComplete');
-		}else{
-			$scope.totallength = data.totalvalues;
-			$scope.leaderboard = data.queryresult;
-			$scope.$broadcast('scroll.infiniteScrollComplete');
-			
-		}
+		if(data.queryresult.length==0)
+        {
+            $scope.scrollload = false;
+            $scope.leaderboard = [];
+        }else{
+            if($scope.search == "")
+            {
+                $scope.totallength = data.totalvalues - 3;
+                $scope.rankuser = data.queryresult.slice(0, 3);
+                $scope.leaderboard = data.queryresult.splice(3);
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            }else{
+                $scope.totallength = data.totalvalues;
+                $scope.leaderboard = data.queryresult;
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+
+            }
+        }
 		
 		$ionicLoading.hide();
     }
     var leaderboardsuccesspush = function(data, status) {
-		
-		
-		
-        for (var i = 0; i < data.queryresult.length; i++) {
-            $scope.leaderboard.push(data.queryresult[i]);
-        }
-        $scope.$broadcast('scroll.infiniteScrollComplete');
+        
+        
+            for (var i = 0; i < data.queryresult.length; i++) {
+                $scope.leaderboard.push(data.queryresult[i]);
+            }
+            console.log("in push");
+            if($scope.leaderboard.length==$scope.totallength){
+                $scope.scrollload = false;
+            }
+            console.log($scope.leaderboard.length);
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        
     }
     var authenticatesuccess = function(data, status) {
         if (data == "false") {
@@ -674,6 +685,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	$scope.pageno = 1;
 	$scope.data = [];
 	$scope.search = "";
+    $scope.scrollload = true;
 	
 	// IONIC LOADER
 	
@@ -724,9 +736,13 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	// CALL POST API
 	var suggestionsuccess = function(data, status){
 		console.log(data);
-		$scope.posts = data.queryresult
-		$scope.totallength = data.totalvalues;
-		$scope.$broadcast('scroll.infiniteScrollComplete');
+        if(data.queryresult.length==0){
+            $scope.scrollload = false;
+        }else{
+            $scope.posts = data.queryresult
+            $scope.totallength = data.totalvalues;
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        }
 		$ionicLoading.hide();
 	}
 	
@@ -735,6 +751,10 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 		for (var i = 0; i < data.queryresult.length; i++) {
             $scope.posts.push(data.queryresult[i]);
         }
+        
+            if($scope.posts.length==$scope.totallength){
+                $scope.scrollload = false;
+            }
 		$scope.$broadcast('scroll.infiniteScrollComplete');
 	}
 	
