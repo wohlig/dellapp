@@ -193,8 +193,12 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
     TemplateService.profileclass = "active";
     TemplateService.changeopen1();
 
+    //  DECLARATION
+    $scope.allvalidation = [];
+    $scope.allvalidation1 = [];
     $scope.user = [];
     $scope.profile = [];
+    $scope.password = [];
 
 	//	PAGE LOADER
 	
@@ -322,9 +326,45 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
             });
         }
     }
-    $scope.saveprofile = function(profile) {
-        console.log(profile);
-        MyServices.changeprofile(profile).success(changeprofilesuccess);
+    $scope.saveprofile = function(profile,password) {
+        
+        
+        
+        $scope.allvalidation = [{
+            field: $scope.password.currentpassword,
+            validation: ""
+        }, {
+            field: $scope.password.password,
+            validation: ""
+        }, {
+            field: $scope.password.confirmpassword,
+            validation: ""
+        }];
+        var check = formvalidation($scope.allvalidation);
+
+        if (check) {
+            MyServices.changepassword(password).success(passwordsuccess);
+        };
+        
+        $scope.allvalidation1 = [{
+            field: $scope.profile.name,
+            validation: ""
+        }, {
+            field: $scope.profile.contact,
+            validation: ""
+        }, {    
+            field: $scope.profile.city,
+            validation: ""
+        }, {
+            field: $scope.profile.dob,
+            validation: ""
+        }];
+        var check = formvalidation($scope.allvalidation1);
+
+        if (check) {
+            MyServices.changeprofile(profile).success(changeprofilesuccess);
+        };
+        
     }
 
 })

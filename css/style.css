@@ -41,6 +41,14 @@ button {
 .tac {
     font-size: 30px;
 }
+.ng-invalid.ng-dirty,
+.ng-dirty {
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+}
+.ng-dirty>* {
+    color: red;
+}
 .menumain {
     text-align: center;
     color: #fff;

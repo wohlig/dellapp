@@ -23,22 +23,24 @@
                     </h5>
                     <ul class="pswd-chgn " ng-class="shldopens3 ">
                         <li>
-                            <label class="item item-input ">
-                                <i class="lockicon iicon "></i>
-                                <input type="password" placeholder="Current Password " ng-model="password.currentpassword">
+                            <label class="item item-input">
+                                <i class="lockicon iicon"></i>
+                                <input type="password" placeholder="Current Password " ng-model="password.currentpassword" ng-class="allvalidation[0].validation" required>
                             </label>
-                            <label class="item item-input ">
-                                <i class="lockicon iicon "></i>
-                                <input type="password" placeholder="New Password " ng-model="password.password">
+                            <label class="item item-input">
+                                <i class="lockicon iicon"></i>
+                                <input type="password" placeholder="New Password " ng-model="password.password" ng-class="allvalidation[1].validation" required>
                             </label>
-                            <label class="item item-input ">
-                                <i class="lockicon iicon "></i>
-                                <input type="password" placeholder="Conform Password " ng-model="password.confirmpassword">
+                            <label class="item item-input">
+                                <i class="lockicon iicon"></i>
+                                <input type="password" placeholder="Conform Password " ng-model="password.confirmpassword" ng-class="allvalidation[2].validation" required>
                             </label>
 							<div class="btn-save">
+<!--
 								<button class="button button-small button-positive savebtn" ng-click="savepassword(password)">
 									Save
 								</button>
+-->
 							</div>
                         </li>
                     </ul>
@@ -54,27 +56,27 @@
                             <div class="list ">
                                 <label class="item item-input ">
                                     <i class="personicon iicon "></i>
-                                    <input type="text " placeholder="Name " ng-model="profile.name">
+                                    <input type="text " placeholder="Name " ng-model="profile.name" ng-class="allvalidation1[0].validation" required>
                                 </label>
-                                <label class="item item-input ">
+                                <label class="item item-input " ng-class="allvalidation1[1].validation">
                                     <i class="contacticon iicon "></i>
-                                    <input type="text " placeholder="Contact " ng-model="profile.contact">
+                                    <input type="text " placeholder="Contact " ng-model="profile.contact" required>
                                 </label>
-                                <label class="item item-input ">
+                                <label class="item item-input " ng-class="allvalidation1[2].validation">
                                     <i class="cityicon iicon "></i>
 <!--
                                     <select>
                                         <option>demo</option>
                                     </select>
 -->
-                                    <input type="text " placeholder="City " ng-model="profile.city">
+                                    <input type="text " placeholder="City " ng-model="profile.city" required>
                                 </label>
-                                <label class="item item-input ">
+                                <label class="item item-input " ng-class="allvalidation1[3].validation">
                                     <i class="bodicon iicon "></i>
-                                    <input type="text " placeholder="Birth of Date " ng-model="profile.dob">
+                                    <input type="text " placeholder="Birth of Date " ng-model="profile.dob" required>
                                 </label>
                                 <div class="btn-save">
-								<button class="button button-small button-positive savebtn" ng-click="saveprofile(profile)">
+								<button class="button button-small button-positive savebtn" ng-click="saveprofile(profile,password)">
 									Save
 								</button>
 								</div>
