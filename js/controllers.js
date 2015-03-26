@@ -915,7 +915,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	
 })
 
-.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout, $ionicLoading) {
+.controller('TableCtrl', function($scope, $stateParams, TemplateService, MyServices, $location, $interval, $timeout, $ionicLoading,$ionicPopup) {
 
 
     $scope.user = 0;
@@ -1082,7 +1082,7 @@ angular.module('starter.controllers', ['ionic', 'templateservicemod', 'myservice
 	$ionicLoading.show({
         //        template: 'We are fetching the best rates for you.',
 
-        content: 'We are fetching the best rates for you.',
+        content: 'Loading',
         animation: 'fade-in',
         showBackdrop: true,
         maxWidth: 200,
