@@ -26,11 +26,12 @@
             <i class="iicons ion-fb1"></i>
             <h5>date</h5> {{post.timestamp|date:fullDate}}
         </div>
+
         <div class="box-slider">
             <div class="box">
                 <div class="box-infofb">
                     <div class="fbpost">
-                        <img ng-src="{{post.image|imagepath}}" alt="">
+                        <img ng-src="{{post.image|imagepath}}"  class="imageisloading" alt="">
                     </div>
                     <div class="postinfofb">
                         <h5>{{post.posttext}}</h5>

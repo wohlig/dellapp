@@ -226,7 +226,9 @@ $ionicConfigProvider.views.maxCache(0);
 })
 .filter('imagepath', function() {
     return function(input) {
-        if (input == "" || !input) {
+        console.log(input);
+        console.log("IMAGEEEEEEEEEEEEEEEE");
+        if (!input || input == "") {
             return "http://dellcampassador.com/new/assets/images/tcp-no-image.jpg";
 //            return "http://localhost/dellapp/img/tcp-no-image.jpg";
         } else {
